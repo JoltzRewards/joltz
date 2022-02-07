@@ -1,0 +1,2 @@
+# TrubitTech
+Trubit monorepo
