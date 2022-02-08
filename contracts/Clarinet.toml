@@ -1,0 +1,20 @@
+[project]
+name = "contracts"
+requirements = []
+costs_version = 1
+
+[contracts.identity-nft]
+path = "contracts/identity-nft.clar"
+depends_on = ["nft-trait"]
+
+[contracts.nft-trait]
+path = "contracts/nft-trait.clar"
+depends_on = []
+
+[contracts.payload-001]
+path = "contracts/payload-001.clar"
+depends_on = []
+
+[contracts.payload-002]
+path = "contracts/payload-002.clar"
+depends_on = []
