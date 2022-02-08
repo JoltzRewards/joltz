@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@blockstack/ui": "*",
-    "@craco/craco": "patch:@craco/craco@^6.4.0#../../patches/craco-postcss.patch",
+    "@craco/craco": "patch:@craco/craco@^6.4.0#../../.patches/craco-postcss.patch",
     "@emotion/react": "*",
     "@headlessui/react": "*",
     "@heroicons/react": "^1.0.5",
