@@ -1,0 +1,20 @@
+{
+  "name": "@trubittech/trubittech",
+  "version": "0.0.1",
+  "repository": "git@github.com:TrubitTech/TrubitTech.git",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "contributors": [
+    {
+      "email": "joey@joeyfigaro.com",
+      "name": "Joey Figaro",
+      "url": "https://github.com/joeyfigaro"
+    },
+    {
+      "name": "Gurjit Singh"
+    }
+  ]
+}
