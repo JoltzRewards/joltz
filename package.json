@@ -1,7 +1,15 @@
 {
   "name": "@trubittech/trubittech",
   "version": "0.0.1",
-  "repository": "git@github.com:TrubitTech/TrubitTech.git",
+  "repository": {
+    "url": "git@github.com:TrubitTech/TrubitTech.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/TrubitTech/TrubitTech/issues"
+  },
+  "author": "Trubit",
+  "homepage": "https://trubit.tech",
   "workspaces": {
     "packages": [
       "packages/*"
