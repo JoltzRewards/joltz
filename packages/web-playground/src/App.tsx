@@ -8,9 +8,15 @@ import './App.css'
 
 function App() {
   return (
-    <Box>
-      <Text as="h1">What</Text>
-    </Box>
+    <ThemeProvider theme={theme}>
+      <ToastProvider>
+        <Box>
+          <Text as="h1">What</Text>
+          <Button>Test</Button>
+        </Box>
+      </ToastProvider>
+      <CSSReset />
+    </ThemeProvider>
   )
 }
 
