@@ -1440,7 +1440,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.6.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.6.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.17.2
   resolution: "@babel/runtime@npm:7.17.2"
   dependencies:
@@ -3708,22 +3708,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stacks/auth@npm:2.0.1":
-  version: 2.0.1
-  resolution: "@stacks/auth@npm:2.0.1"
-  dependencies:
-    "@stacks/common": ^2.0.1
-    "@stacks/encryption": ^2.0.1
-    "@stacks/network": ^2.0.1
-    "@stacks/profile": ^2.0.1
-    c32check: ^1.1.2
-    cross-fetch: ^3.1.4
-    jsontokens: ^3.0.0
-    query-string: ^6.13.1
-  checksum: 5bae36457baef805629cc6f9bf4154ba673a1a17284e17d2724aa8e1e98cfbe12b161b074c975f58a2acd696bfb47ca1bc2af92f9c4acf758999c4c9f70ab707
-  languageName: node
-  linkType: hard
-
 "@stacks/auth@npm:^3.1.0, @stacks/auth@npm:^3.2.0":
   version: 3.2.0
   resolution: "@stacks/auth@npm:3.2.0"
@@ -3755,27 +3739,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stacks/common@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "@stacks/common@npm:1.2.2"
-  dependencies:
-    cross-fetch: ^3.0.6
-  checksum: b26028fdce181a57f1f2e3f9b5424dace889722e663fb66d425299c88f1659b76be193ec913d31385ec0756cd7a3da45810fecb7db278c9f3c42d6efd99915e4
-  languageName: node
-  linkType: hard
-
-"@stacks/common@npm:^2.0.1, @stacks/common@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "@stacks/common@npm:2.0.2"
-  dependencies:
-    "@types/node": ^14.14.43
-    bn.js: ^4.12.0
-    buffer: ^6.0.3
-    cross-fetch: ^3.1.4
-  checksum: 0e2acde3bd01c22f4eb62f4f70a2f7270f5240ceb00a94bb7c9e7cdd20d69cdc5b03005c45221260edc2a7ed92b7a25084f9ad74de160657e2735acf1f3af9c9
-  languageName: node
-  linkType: hard
-
 "@stacks/common@npm:^3.0.0":
   version: 3.0.0
   resolution: "@stacks/common@npm:3.0.0"
@@ -3785,84 +3748,6 @@ __metadata:
     buffer: ^6.0.3
     cross-fetch: ^3.1.4
   checksum: 36102813c9d1cb871ccc43091a2132195a51651dd8b1585d624c4f5645a94aeb59ea7d3298502033fbc1976062747f76a5ddc25fb3c97d54a68f09918adebe14
-  languageName: node
-  linkType: hard
-
-"@stacks/connect-react@npm:^13.0.0":
-  version: 13.0.0
-  resolution: "@stacks/connect-react@npm:13.0.0"
-  dependencies:
-    "@stacks/auth": 2.0.1
-    "@stacks/connect": 6.2.0
-    jsontokens: ^3.0.0
-  peerDependencies:
-    "@stacks/connect": ^6.2.0
-    react: ^16.x || 17.x
-    react-dom: ^16.x || 17.x
-  checksum: af2b02749eff380864cc9a82c8660675c2fabb500a412c6229bfbe8ad498147df61a8642d2fb751d3854e1857a87478b8adf4cba68d199b26cd58dbebfb20f89
-  languageName: node
-  linkType: hard
-
-"@stacks/connect-ui@npm:5.2.0":
-  version: 5.2.0
-  resolution: "@stacks/connect-ui@npm:5.2.0"
-  dependencies:
-    "@stencil/core": ^2.6.0
-  checksum: fe8802fbc359667450f49b38647d5be614efc2216fe395851cb261141fa03315cd1806528ece107f7eee1ec0eb0bbb7e08b4ce565f8f340cc284789f48ffc4cf
-  languageName: node
-  linkType: hard
-
-"@stacks/connect@npm:6.2.0":
-  version: 6.2.0
-  resolution: "@stacks/connect@npm:6.2.0"
-  dependencies:
-    "@stacks/auth": 2.0.1
-    "@stacks/connect-ui": 5.2.0
-    "@stacks/network": 2.0.1
-    "@stacks/prettier-config": 0.0.8
-    "@stacks/transactions": 2.0.1
-    bn.js: ^5.2.0
-    buffer: 6.0.3
-    jsontokens: ^3.0.0
-    readable-stream: ^3.6.0
-    url: ^0.11.0
-  checksum: 696e960efc93c62aef077aac7f08aea809e773e55601751f212a64bac94e3111bb64e081a6a9e54e7b602c90d869bf34b5e08ac1d810549bf92333549e6fa2fd
-  languageName: node
-  linkType: hard
-
-"@stacks/connect@npm:^6.4.0":
-  version: 6.4.0
-  resolution: "@stacks/connect@npm:6.4.0"
-  dependencies:
-    "@stacks/auth": 2.0.1
-    "@stacks/connect-ui": 5.2.0
-    "@stacks/network": 2.0.1
-    "@stacks/prettier-config": 0.0.8
-    "@stacks/transactions": 2.1.0-beta.2
-    bn.js: ^5.2.0
-    buffer: 6.0.3
-    jsontokens: ^3.0.0
-    readable-stream: ^3.6.0
-    url: ^0.11.0
-  checksum: 2c896c1c5a6e47e86945062ee8cdf542ba86faeb3ad14de2c473674331aba401d683f95edc35adbe4501a8dfd2ab39ae4964ff3065af57243f63d3983813775c
-  languageName: node
-  linkType: hard
-
-"@stacks/encryption@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@stacks/encryption@npm:2.0.1"
-  dependencies:
-    "@stacks/common": ^2.0.1
-    "@types/bn.js": ^4.11.6
-    "@types/node": ^14.14.43
-    bip39: ^3.0.2
-    bitcoinjs-lib: ^5.2.0
-    bn.js: ^4.12.0
-    elliptic: ^6.5.4
-    randombytes: ^2.1.0
-    ripemd160-min: ^0.0.6
-    sha.js: ^2.4.11
-  checksum: 0fc4f0e92bfb3859afc53ac9dd8a5cd0aa8be29762351fa77022d4f645dfe3c9ab043435b3465404e795bd54f2b1c19c71a5d4e2579264ad9163854702ff7835
   languageName: node
   linkType: hard
 
@@ -3912,62 +3797,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stacks/network@npm:2.0.1":
-  version: 2.0.1
-  resolution: "@stacks/network@npm:2.0.1"
-  dependencies:
-    "@stacks/common": ^2.0.1
-  checksum: 8e23f6b9718e4665215d9c1e637e2f6c47a17633e369a37c5e581e19cf26d13b863534a5be345762e3d6589622c0c3cb8f6d66c6d4f72042854cfebceda122b4
-  languageName: node
-  linkType: hard
-
-"@stacks/network@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "@stacks/network@npm:1.2.2"
-  dependencies:
-    "@stacks/common": ^1.2.2
-  checksum: 00ea239749dd23d8a091342aabc14b65b226d2a2654f93dcfd44728e8cca3dc3f29efc3f95851456143c601f005421dbfc9c7cedfaeca3de1eb2a0fec0834bc0
-  languageName: node
-  linkType: hard
-
-"@stacks/network@npm:^2.0.1":
-  version: 2.0.2
-  resolution: "@stacks/network@npm:2.0.2"
-  dependencies:
-    "@stacks/common": ^2.0.1
-  checksum: c06899570d880f87046308783efae3c26828373f2e26c8b21cde56a634920e7444ae4cbfe52777e71d01cdf532a6e2a8d24aca2bcbdff743e3ba58d833713b2b
-  languageName: node
-  linkType: hard
-
 "@stacks/network@npm:^3.0.0, @stacks/network@npm:^3.2.0":
   version: 3.2.0
   resolution: "@stacks/network@npm:3.2.0"
   dependencies:
     "@stacks/common": ^3.0.0
   checksum: 6665d8d2149373366d52cdfde337bcac331c83f3682ebf79ba9bf60f0a26545fd8de35c93475b8ea2d3488106917c78fcdf4efb706a99aed5d6eb1efc5170497
-  languageName: node
-  linkType: hard
-
-"@stacks/prettier-config@npm:0.0.8":
-  version: 0.0.8
-  resolution: "@stacks/prettier-config@npm:0.0.8"
-  dependencies:
-    prettier: ^2.3.0
-  checksum: 387e6d52df9377e618778bae2b3d94c5bf6b389eda5fd9e30227463c3240617d089623d00b2ee165f00951a3276fb1c6cb80a2e6941c3937a3111a00d0fd7f4c
-  languageName: node
-  linkType: hard
-
-"@stacks/profile@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@stacks/profile@npm:2.0.1"
-  dependencies:
-    "@stacks/common": ^2.0.1
-    "@stacks/network": ^1.2.2
-    "@stacks/transactions": ^2.0.1
-    jsontokens: ^3.0.0
-    schema-inspector: ^2.0.1
-    zone-file: ^1.0.0
-  checksum: a3b9fb544f2b1e54a4e65706909fde5b1626fe6367680b0babb9ef4eedfa22aa9d6615e76aff1a933e60930328b6fa0a0c2a8ec48752012a9c35ff42d91f9787
   languageName: node
   linkType: hard
 
@@ -4002,54 +3837,6 @@ __metadata:
     bitcoinjs-lib: ^5.2.0
     jsontokens: ^3.0.0
   checksum: 1889f63129657dd584e49681c9ad2025b845f18e6321a4fad11f514e5726a538f7c9a3503bfd8e6291355f5d8855ea4d18a042f7e8bab09d49d50d7637577f23
-  languageName: node
-  linkType: hard
-
-"@stacks/transactions@npm:2.0.1, @stacks/transactions@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@stacks/transactions@npm:2.0.1"
-  dependencies:
-    "@stacks/common": ^2.0.1
-    "@stacks/network": ^1.2.2
-    "@types/bn.js": ^4.11.6
-    "@types/elliptic": ^6.4.12
-    "@types/node": ^14.14.43
-    "@types/randombytes": ^2.0.0
-    "@types/sha.js": ^2.4.0
-    bn.js: ^4.12.0
-    c32check: ^1.1.2
-    cross-fetch: ^3.1.4
-    elliptic: ^6.5.4
-    lodash: ^4.17.20
-    randombytes: ^2.1.0
-    ripemd160-min: ^0.0.6
-    sha.js: ^2.4.11
-    smart-buffer: ^4.1.0
-  checksum: d20df04583734b7e42b479b17b0f62a26bbddd8499b357ac1f5e2681036b4922d59dd315aeb71390ca842a4bca748470dd0f0614f4bb0bda17cde5f34471d104
-  languageName: node
-  linkType: hard
-
-"@stacks/transactions@npm:2.1.0-beta.2":
-  version: 2.1.0-beta.2
-  resolution: "@stacks/transactions@npm:2.1.0-beta.2"
-  dependencies:
-    "@stacks/common": ^2.0.2
-    "@stacks/network": ^2.0.1
-    "@types/bn.js": ^4.11.6
-    "@types/elliptic": ^6.4.12
-    "@types/node": ^14.14.43
-    "@types/randombytes": ^2.0.0
-    "@types/sha.js": ^2.4.0
-    bn.js: ^4.12.0
-    c32check: ^1.1.3
-    cross-fetch: ^3.1.4
-    elliptic: ^6.5.4
-    lodash: ^4.17.20
-    randombytes: ^2.1.0
-    ripemd160-min: ^0.0.6
-    sha.js: ^2.4.11
-    smart-buffer: ^4.1.0
-  checksum: c098b760d3dfa06117cf497253d71a173dd05335bc3402366b53b0a6e7b07310a554028227696957be634c481ef84c60e4bc9d5021ebdccac1943605e2aee1dc
   languageName: node
   linkType: hard
 
@@ -4147,15 +3934,6 @@ __metadata:
     react: ^17.x
     react-dom: ^17.x
   checksum: 4805a40752951ff140b2c6c60185580b7d5410562517fa1090bb875abe88899689df6f312dfb6f6313993db7c42d615a23c596096ee1c645cd090298d4f5ce77
-  languageName: node
-  linkType: hard
-
-"@stencil/core@npm:^2.6.0":
-  version: 2.13.0
-  resolution: "@stencil/core@npm:2.13.0"
-  bin:
-    stencil: bin/stencil
-  checksum: 9ac7fdb7fa90e7b1e40c12820aab9a284c0bcbc1bf80b36dd3324d86ee07a9ece7e0e54231ea3a7210ffa44ece1c285bcb6778c4ac2e8dae041550494a442bf3
   languageName: node
   linkType: hard
 
@@ -4543,8 +4321,6 @@ __metadata:
     "@stacks/auth": ^3.1.0
     "@stacks/blockchain-api-client": ^1.0.7
     "@stacks/common": ^3.0.0
-    "@stacks/connect": ^6.4.0
-    "@stacks/connect-react": ^13.0.0
     "@stacks/keychain": ^3.1.0
     "@stacks/network": ^3.0.0
     "@stacks/profile": ^3.1.0
@@ -4562,12 +4338,14 @@ __metadata:
     buffer: "*"
     c32check: ^1.1.3
     classnames: ^2.3.1
+    console-browserify: ^1.2.0
     crypto-browserify: "*"
     node-polyfill-webpack-plugin: "*"
     postcss: "*"
     react: "*"
     react-activity: ^2.1.1
     react-dom: "*"
+    react-router-dom: ^6.2.1
     react-scripts: "*"
     react-select: ^5.2.1
     socket.io-client: ^4.4.0
@@ -6505,7 +6283,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bn.js@npm:^5.0.0, bn.js@npm:^5.1.1, bn.js@npm:^5.2.0":
+"bn.js@npm:^5.0.0, bn.js@npm:^5.1.1":
   version: 5.2.0
   resolution: "bn.js@npm:5.2.0"
   checksum: 6117170393200f68b35a061ecbf55d01dd989302e7b3c798a3012354fa638d124f0b2f79e63f77be5556be80322a09c40339eda6413ba7468524c0b6d4b4cb7a
@@ -6722,7 +6500,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"buffer@npm:*, buffer@npm:6.0.3, buffer@npm:^6.0.3":
+"buffer@npm:*, buffer@npm:^6.0.3":
   version: 6.0.3
   resolution: "buffer@npm:6.0.3"
   dependencies:
@@ -9740,6 +9518,15 @@ __metadata:
   bin:
     he: bin/he
   checksum: 3d4d6babccccd79c5c5a3f929a68af33360d6445587d628087f39a965079d84f18ce9c3d3f917ee1e3978916fc833bb8b29377c3b403f919426f91bc6965e7a7
+  languageName: node
+  linkType: hard
+
+"history@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "history@npm:5.2.0"
+  dependencies:
+    "@babel/runtime": ^7.7.6
+  checksum: 2c6a05aa86793e0a0857013457f34474c17f81a012c6bdb00bf30862389ac6a8c2df113d82176f67af2fd534ea9dc4e1218470c5526355b6fc1aefcc971f2eb2
   languageName: node
   linkType: hard
 
@@ -13563,7 +13350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.0.5, prettier@npm:^2.3.0":
+"prettier@npm:^2.0.5":
   version: 2.5.1
   resolution: "prettier@npm:2.5.1"
   bin:
@@ -13612,12 +13399,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prism-react-renderer@npm:^1.0.2, prism-react-renderer@npm:^1.2.0":
-  version: 1.3.0
-  resolution: "prism-react-renderer@npm:1.3.0"
+"prism-react-renderer@npm:1.3.1":
+  version: 1.3.1
+  resolution: "prism-react-renderer@npm:1.3.1"
   peerDependencies:
     react: ">=0.14.9"
-  checksum: cd515477c77a995e8eef5b4f482402ac44165dd3ff131d55308b99bf1567652ed541d1919041fcbf0c6a108d7f66ad20774c7aa6cdbdbc4057d8568790300655
+  checksum: 883693ea59dd6c7d821930ff232f1b28cd3f5d4a111fdb0a730f2ae34ffc7ca805ad3522c86eecbc79f9bee30279371e1fa6b33b4f72a6d3f17921b733b303b6
   languageName: node
   linkType: hard
 
@@ -14004,6 +13791,30 @@ __metadata:
   version: 0.11.0
   resolution: "react-refresh@npm:0.11.0"
   checksum: 112178a05b1e0ffeaf5d9fb4e56b4410a34a73adeb04dbf13abdc50d9ac9df2ada83e81485156cca0b3fa296aa3612751b3d6cd13be4464642a43679b819cbc7
+  languageName: node
+  linkType: hard
+
+"react-router-dom@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "react-router-dom@npm:6.2.1"
+  dependencies:
+    history: ^5.2.0
+    react-router: 6.2.1
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: fa0edc69fddf0cb1313bcb3dbd5eb2b2ff24a75ee03ba928995e16a6a251585750f91d966612e868eb68a5aebc4a5240be40fd96c4acf1d8d48d33f54ad3f4e2
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.2.1":
+  version: 6.2.1
+  resolution: "react-router@npm:6.2.1"
+  dependencies:
+    history: ^5.2.0
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 081a89237ab4f32195d1f2173bc4b3d95637cd6942a4d1a9e90d4ac8c80faa95528255ca2ec44c1e88c1b369e712c4ca74cba5ae3acef6fc30a51a62805b95a4
   languageName: node
   linkType: hard
 
