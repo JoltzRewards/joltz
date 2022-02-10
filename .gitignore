@@ -114,3 +114,6 @@ dist
 
 # Shhhh
 **/.env
+
+# artifacts
+.dist
