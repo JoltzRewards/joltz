@@ -117,3 +117,4 @@ dist
 
 # artifacts
 .dist
+.DS_Store
