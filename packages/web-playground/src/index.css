@@ -15,3 +15,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* @stacks/ui doesn't explain how it expects you to override any of its defaults */
+/* ...forcing with !important for now */
+:root {
+  --colors-bg: var(--colors-text-body) !important;
+}

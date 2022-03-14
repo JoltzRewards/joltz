@@ -1,14 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { ThemeProvider, ToastProvider, theme } from '@stacks/ui'
+import { CSSReset } from '@blockstack/ui'
+import { BrowserRouter } from 'react-router-dom'
+
 import './index.css'
 import App from './App'
-import { BrowserRouter } from 'react-router-dom'
+import { Auth } from './modules'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ThemeProvider theme={theme}>
+        <ToastProvider>
+          <Auth.AuthProvider>
+            <App />
+            <CSSReset />
+          </Auth.AuthProvider>
+        </ToastProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
