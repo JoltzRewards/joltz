@@ -6,12 +6,13 @@ import { Outlet } from 'react-router-dom'
 
 import { IS_MAINNET } from './lib/constants'
 import { Auth } from './modules'
+import { TXActivityFeed } from './components'
 
 export const Layout: React.FC = () => {
   const { signOut, isSignedIn, userData, did } = Auth.useAuth()
   return (
     <>
-      <div className="min-h-full">
+      <div className="h-full">
         <div className="w-full h-1 bg-indigo-600" />
         <Transition
           show={isSignedIn}
@@ -24,7 +25,7 @@ export const Layout: React.FC = () => {
           leaveTo="transform opacity-0 scale-95"
         >
           <header className="bg-white shadow">
-            <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex items-center justify-start">
+            <div className="py-6 px-4 sm:px-6 lg:px-8 flex items-center justify-start">
               <div className="flex items-center justify-between">
                 <img
                   src="/trubit-black.svg"
@@ -46,13 +47,14 @@ export const Layout: React.FC = () => {
               </div>
               <div className="flex items-center ml-auto">
                 {isSignedIn ? (
-                  <Menu as="div" className="ml-3 relative">
-                    <div>
+                  <>
+                    <TXActivityFeed />
+                    <Menu as="div" className="ml-3 relative">
                       <Menu.Button className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span className="sr-only">Open user menu</span>
                         {
                           <img
-                            className="h-8 w-8 rounded-full"
+                            className="h-10 w-10 rounded-full"
                             src={
                               userData?.profile.avatar ||
                               `https://ui-avatars.com/api/?name=${did}&background=0D8ABC&color=fefefe`
@@ -62,48 +64,43 @@ export const Layout: React.FC = () => {
                           />
                         }
                       </Menu.Button>
-                    </div>
-                    <Transition
-                      as={React.Fragment}
-                      enter="transition ease-out duration-200"
-                      enterFrom="transform opacity-0 scale-95"
-                      enterTo="transform opacity-100 scale-100"
-                      leave="transition ease-in duration-75"
-                      leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95"
-                    >
-                      <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <button
-                              onClick={signOut}
-                              className={classNames(
-                                'w-full text-left px-4 py-2 text-sm text-gray-700',
-                                {
-                                  'bg-gray-100': active,
-                                },
-                              )}
-                            >
-                              Sign Out
-                            </button>
-                          )}
-                        </Menu.Item>
-                      </Menu.Items>
-                    </Transition>
-                  </Menu>
+                      <Transition
+                        as={React.Fragment}
+                        enter="transition ease-out duration-200"
+                        enterFrom="transform opacity-0 scale-95"
+                        enterTo="transform opacity-100 scale-100"
+                        leave="transition ease-in duration-75"
+                        leaveFrom="transform opacity-100 scale-100"
+                        leaveTo="transform opacity-0 scale-95"
+                      >
+                        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <Menu.Item>
+                            {({ active }) => (
+                              <button
+                                onClick={signOut}
+                                className={classNames(
+                                  'w-full text-left px-4 py-2 text-sm text-gray-700',
+                                  {
+                                    'bg-gray-100': active,
+                                  },
+                                )}
+                              >
+                                Sign Out
+                              </button>
+                            )}
+                          </Menu.Item>
+                        </Menu.Items>
+                      </Transition>
+                    </Menu>
+                  </>
                 ) : null}
               </div>
             </div>
           </header>
         </Transition>
         <main>
-          <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            {/* Replace with your content */}
-            <div className="px-4 py-4 sm:px-0">
-              {/* <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" /> */}
-              <Outlet />
-            </div>
-            {/* /End replace */}
+          <div className="px-4 py-4 sm:px-0">
+            <Outlet />
           </div>
         </main>
       </div>

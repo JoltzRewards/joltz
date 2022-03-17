@@ -2,6 +2,7 @@ import { createContext } from 'react'
 import { UserSession, AppConfig, UserData } from '@stacks/auth'
 import React, { useCallback, useEffect, useMemo } from 'react'
 import { AuthOptions } from '@stacks/connect'
+import { IS_MAINNET } from '../../lib/constants'
 
 function useStacksAuth() {
   const [state, setState] = React.useState<UserData | null>(null)
@@ -62,6 +63,9 @@ function useStacksAuth() {
   return {
     authOptions,
     state,
+    wallet: IS_MAINNET
+      ? state?.profile.stxAddress.mainnet
+      : state?.profile.stxAddress.testnet,
     userSession,
     authResponse,
     appPrivateKey,
@@ -71,11 +75,13 @@ function useStacksAuth() {
 
 export type AuthState = {
   userData: UserData | null
+  wallet: string | null
   isSignedIn: boolean
   authOptions: AuthOptions
   signOut: () => void
   did: string | null
 }
+
 const AuthContext = createContext<AuthState | null>(null)
 // export const defaultState = (): Partial<AuthState> => {
 //   const appConfig = new AppConfig(['store_write'], document.location.href)
@@ -107,17 +113,24 @@ export const useAuth = () => {
 }
 
 export const AuthProvider: React.FC = ({ children }) => {
-  const { handleSignOut, state, authOptions, userSession } = useStacksAuth()
+  const {
+    handleSignOut,
+    wallet,
+    state,
+    authOptions,
+    userSession,
+  } = useStacksAuth()
 
   const value: AuthState = React.useMemo(
     () => ({
       authOptions,
       did: state?.decentralizedID || null,
+      wallet: wallet || null,
       signOut: handleSignOut,
       userData: state,
       isSignedIn: userSession.isUserSignedIn(),
     }),
-    [handleSignOut, state, authOptions, userSession],
+    [handleSignOut, state, authOptions, userSession, wallet],
   )
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>

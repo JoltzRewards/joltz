@@ -30,7 +30,7 @@ function App() {
     {
       path: '*',
       element: (
-        <div className="min-h-full bg-indigo-600 w-full align-center flex justify-center">
+        <div className="h-full bg-indigo-600 w-full align-center flex justify-center">
           <h1>Not Found</h1>
         </div>
       ),
@@ -46,7 +46,7 @@ function App() {
   }, [isSignedIn, pathname, userData, navigate])
 
   return (
-    <div className="min-h-full max-w-7xl mx-auto">
+    <div className="h-full min-w-full">
       <Connect authOptions={authOptions}>{routes}</Connect>
     </div>
   )
