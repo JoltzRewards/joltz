@@ -133,7 +133,6 @@ export const TXActivityFeed = () => {
           <Popover.Button
             className={cx(
               'group bg-white rounded-full inline-flex items-center text-base border border-gray-300 p-3',
-              // { 'text-gray-900': open, 'text-gray-500': !open },
             )}
           >
             {isFetching ? (
@@ -144,7 +143,19 @@ export const TXActivityFeed = () => {
                 className="text-gray-600 group-hover:text-gray-500"
               />
             )}
-            <span className="absolute bottom-0.5 right-0.5 w-2.5 h-2.5 block rounded-full ring-2 ring-white bg-green-400" />
+            <span
+              className={cx(
+                'absolute bottom-0.5 right-0.5 w-2.5 h-2.5 block rounded-full ring-2 ring-white bg-green-400',
+                {
+                  'animate-ping': true,
+                },
+              )}
+            />
+            <span
+              className={cx(
+                'absolute bottom-0.5 right-0.5 w-2.5 h-2.5 block rounded-full ring-3 ring-white bg-green-400',
+              )}
+            />
           </Popover.Button>
 
           <Transition
@@ -197,8 +208,26 @@ export const TXActivityFeed = () => {
                     </a>
                   ))}
                 </div>
-                <div className="p-4 py-2 bg-gray-800 absolute bottom-0 left-0 right-0">
+                <div className="flex items-center justify-start w-full text-md font-medium pb-3 px-4">
+                  {transactions && transactions?.length < 1 ? (
+                    'No Recent Transactions'
+                  ) : (
+                    <span className="text-xs">
+                      <em className="font-bold not-italic">
+                        {transactions?.length}
+                      </em>{' '}
+                      Transactions
+                    </span>
+                  )}
                   <a
+                    className="ml-auto transition-all hover:underline hover:underline-offset-1 text-gray-700 text-xs"
+                    href="https://explorer.stacks.co"
+                  >
+                    View All
+                  </a>
+                </div>
+                {/* <div className="p-4 py-2 bg-gray-800 absolute bottom-0 left-0 right-0"> */}
+                {/* <a
                     href="##"
                     className="flow-root px-2 py-2 transition duration-150 ease-in-out rounded-md focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                   >
@@ -210,9 +239,9 @@ export const TXActivityFeed = () => {
                     <span className="block text-sm text-gray-100">
                       View account activity on explorer
                     </span>
-                  </a>
-                </div>
+                  </a> */}
               </div>
+              {/* </div> */}
             </Popover.Panel>
           </Transition>
         </>
