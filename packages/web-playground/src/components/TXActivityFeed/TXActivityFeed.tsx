@@ -17,7 +17,7 @@ import {
   TransactionsApi,
 } from '@stacks/blockchain-api-client'
 import { Spinner } from '@stacks/ui'
-import { Transaction } from '@stacks/stacks-blockchain-api-types'
+import { AddressTransactionWithTransfers } from '@stacks/stacks-blockchain-api-types'
 
 import { Auth } from '../../modules'
 import { API_URL, SOCKET_URL } from '../../lib/constants'
@@ -46,7 +46,9 @@ export const TXActivityFeed = () => {
   const { wallet } = Auth.useAuth()
   const [isFetching, setIsFetching] = React.useState(true)
   const subscription = React.useRef<Subscription | null>(null)
-  const [transactions, setTransactions] = React.useState<Transaction[] | []>([])
+  const [transactions, setTransactions] = React.useState<
+    AddressTransactionWithTransfers[] | []
+  >([])
 
   const accountApi = React.useMemo(() => new AccountsApi(apiConfig), [])
 
@@ -56,12 +58,12 @@ export const TXActivityFeed = () => {
     async function getTransactions() {
       if (!wallet) return
 
-      const response = await accountApi.getAccountTransactions({
+      const response = await accountApi.getAccountTransactionsWithTransfers({
         principal: wallet,
         limit: 50,
       })
 
-      setTransactions(response.results as Transaction[])
+      setTransactions(response.results as AddressTransactionWithTransfers[])
       setIsFetching(false)
     }
 
@@ -77,7 +79,7 @@ export const TXActivityFeed = () => {
         async (tx) => {
           const txDetails = (await txApi.getTransactionById({
             txId: tx.tx_id,
-          })) as Transaction
+          })) as AddressTransactionWithTransfers
 
           console.info(txDetails)
 
@@ -133,49 +135,53 @@ export const TXActivityFeed = () => {
                 <div className="relative flex flex-col items-stretch justify-start max-h-80 overflow-scroll">
                   {transactions?.map((tx) => (
                     <a
-                      key={tx.tx_id}
-                      href={`https://explorer.stacks.co/txid/${tx.tx_id}`}
+                      key={tx.tx.tx_id}
+                      href={`https://explorer.stacks.co/txid/${tx.tx.tx_id}`}
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center justify-start p-4 py-3 block hover:bg-gray-50l transition ease-in-out duration-150"
                     >
+                      {console.info(tx)}
                       <div className="w-full flex items-stretch justify-end">
                         <div className="pr-3 flex items-center w-8">
-                          {tx.tx_status === 'success' ? (
+                          {tx.tx.tx_status === 'success' ? (
                             <CheckIcon width={16} opacity={0.6} />
                           ) : (
                             <XIcon width={18} color="red" />
                           )}
                         </div>
                         <div className="py-0.25 grow">
-                          {tx.tx_type === 'token_transfer' ? (
+                          {tx.tx.tx_type === 'token_transfer' ? (
                             <div className="font-medium flex items-center justify-start">
                               <span className="text-sm text-gray-700">
-                                {Number(tx.token_transfer.amount) / 1000000} STX
+                                {Number(tx.tx.token_transfer.amount) / 1000000}{' '}
+                                STX
                               </span>
                               <span className="px-1">
                                 <ArrowSmRightIcon width={12} />
                               </span>
                               <span className="text-sm">
                                 {truncateMiddle(
-                                  tx.token_transfer.recipient_address,
+                                  tx.tx.token_transfer.recipient_address,
                                   5,
                                 )}
                               </span>
                             </div>
                           ) : null}
-                          {tx.tx_type === 'smart_contract' ? (
+                          {tx.tx.tx_type === 'smart_contract' ? (
                             <p className="text-sm font-medium text-gray-700">
-                              {getContractName(tx.smart_contract.contract_id)}{' '}
+                              {getContractName(
+                                tx.tx.smart_contract.contract_id,
+                              )}{' '}
                             </p>
                           ) : null}
                           <p className="text-sm text-gray-500">
-                            {TransactionType[tx.tx_type]}
+                            {TransactionType[tx.tx.tx_type]}
                           </p>
                         </div>
                         <div className="flex items-center flex">
                           <span className="text-xs">
-                            {truncateMiddle(tx.tx_id, 3)}
+                            {truncateMiddle(tx.tx.tx_id, 3)}
                           </span>
                         </div>
                         {/* <p className="text-gray-500 text-xs mt-1">
