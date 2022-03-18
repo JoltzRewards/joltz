@@ -6,7 +6,7 @@ module.exports = {
   webpack: {
     configure: {
       plugins: [
-        new NodePolyfillPlugin(),
+        new NodePolyfillPlugin({ excludeAliases: ['console'] }),
         new webpack.ProvidePlugin({
           Buffer: ['buffer', 'Buffer'],
         }),

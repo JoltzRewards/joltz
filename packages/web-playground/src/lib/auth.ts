@@ -6,7 +6,23 @@ const appConfig = new AppConfig(['store_write', 'publish_data'])
 export const userSession = new UserSession({ appConfig })
 
 export function authenticate() {
-  console.warn('no')
+  // showConnect({
+  //   appDetails: {
+  //     name: 'Trubit (Web Playground)',
+  //     icon: window.location.origin + '/trubit.svg',
+  //   },
+  //   redirectTo: '/',
+  //   onFinish: () => {
+  //     window.location.reload()
+  //   },
+  //   userSession,
+  // })
+  const transitKey = userSession.generateAndStoreTransitKey()
+  const authRequest = userSession.makeAuthRequest(
+    transitKey,
+    '/auth',
+    'manifest.json',
+  )
 }
 
 export function getUserData(): UserData {

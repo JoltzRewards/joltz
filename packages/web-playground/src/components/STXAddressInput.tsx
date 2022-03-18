@@ -1,7 +1,7 @@
 import React from 'react'
-import * as c32 from 'c32check'
 import cx from 'classnames'
 import { CheckIcon } from '@heroicons/react/outline'
+import { validateStacksAddress } from '@stacks/transactions'
 
 type STXAddressInputProps = {
   id: string
@@ -27,8 +27,8 @@ export const STXAddressInput: React.FC<STXAddressInputProps> = ({
   React.useEffect(() => {
     if (initialValue) {
       try {
-        c32.c32addressDecode(initialValue)
-        setIsValid(true)
+        const results = validateStacksAddress(initialValue)
+        setIsValid(results)
       } catch (error) {
         setIsValid(false)
       }
@@ -40,9 +40,9 @@ export const STXAddressInput: React.FC<STXAddressInputProps> = ({
       setValue(e.target.value)
 
       try {
-        c32.c32addressDecode(e.target.value)
+        const results = validateStacksAddress(e.target.value)
 
-        setIsValid(true)
+        setIsValid(results)
       } catch (error) {
         setIsValid(false)
       } finally {
