@@ -1,19 +1,26 @@
 import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-import { CollectionIcon, CheckIcon, XIcon } from '@heroicons/react/outline'
+import { getContractName, truncateMiddle } from '@stacks/ui-utils'
+import {
+  CollectionIcon,
+  CheckIcon,
+  XIcon,
+  ArrowSmRightIcon,
+} from '@heroicons/react/outline'
 import cx from 'classnames'
 import fetch from 'cross-fetch'
 import {
-  // connectWebSocketClient,
-  // Subscription,
+  connectWebSocketClient,
+  Subscription,
   AccountsApi,
   Configuration,
+  TransactionsApi,
 } from '@stacks/blockchain-api-client'
 import { Spinner } from '@stacks/ui'
 import { Transaction } from '@stacks/stacks-blockchain-api-types'
 
 import { Auth } from '../../modules'
-import { IS_MAINNET } from '../../lib/constants'
+import { API_URL, SOCKET_URL } from '../../lib/constants'
 import { AnimatedPing } from '../AnimatedPing'
 
 export enum TransactionType {
@@ -30,32 +37,26 @@ export enum TransactionStatus {
   'abort_by_post_condition' = 'Aborted',
 }
 
+const apiConfig = new Configuration({
+  fetchApi: fetch,
+  basePath: API_URL,
+})
+
 export const TXActivityFeed = () => {
   const { wallet } = Auth.useAuth()
   const [isFetching, setIsFetching] = React.useState(true)
-  // const subscription = React.useRef<Subscription | null>(null)
-  const [transactions, setTransactions] = React.useState<Transaction[] | null>(
-    null,
-  )
+  const subscription = React.useRef<Subscription | null>(null)
+  const [transactions, setTransactions] = React.useState<Transaction[] | []>([])
 
-  const api = React.useMemo(
-    () =>
-      new AccountsApi(
-        new Configuration({
-          fetchApi: fetch,
-          basePath: `https://stacks-node-api.${
-            IS_MAINNET ? 'mainnet' : 'testnet'
-          }.stacks.co`,
-        }),
-      ),
-    [],
-  )
+  const accountApi = React.useMemo(() => new AccountsApi(apiConfig), [])
+
+  const txApi = React.useMemo(() => new TransactionsApi(apiConfig), [])
 
   React.useEffect(() => {
     async function getTransactions() {
       if (!wallet) return
 
-      const response = await api.getAccountTransactions({
+      const response = await accountApi.getAccountTransactions({
         principal: wallet,
         limit: 50,
       })
@@ -65,31 +66,38 @@ export const TXActivityFeed = () => {
     }
 
     getTransactions()
-  }, [api, wallet])
+  }, [accountApi, wallet])
 
-  // React.useEffect(() => {
-  //   async function getSubscription() {
-  //     const client = await connectWebSocketClient(
-  //       'wss://stacks-node-api.testnet.stacks.co/',
-  //     )
+  React.useEffect(() => {
+    async function getSubscription() {
+      const client = await connectWebSocketClient(SOCKET_URL)
 
-  //     const sub = await client.subscribeAddressTransactions(wallet!, (event) =>
-  //       console.info('address tx:', event),
-  //     )
+      const sub = await client.subscribeAddressTransactions(
+        wallet!,
+        async (tx) => {
+          const txDetails = (await txApi.getTransactionById({
+            txId: tx.tx_id,
+          })) as Transaction
 
-  //     subscription.current = sub
-  //   }
+          console.info(txDetails)
 
-  //   if (!subscription.current && wallet) {
-  //     getSubscription()
-  //   }
+          setTransactions((transactions) => [...transactions, txDetails])
+        },
+      )
 
-  //   return () => {
-  //     if (subscription.current) {
-  //       subscription.current.unsubscribe()
-  //     }
-  //   }
-  // }, [wallet, subscription])
+      subscription.current = sub
+    }
+
+    if (!subscription.current && wallet) {
+      getSubscription()
+    }
+
+    return () => {
+      if (subscription.current) {
+        subscription.current.unsubscribe()
+      }
+    }
+  }, [wallet, subscription, txApi])
 
   return (
     <Popover className="relative">
@@ -131,24 +139,48 @@ export const TXActivityFeed = () => {
                       rel="noreferrer"
                       className="flex items-center justify-start p-4 py-3 block hover:bg-gray-50l transition ease-in-out duration-150"
                     >
-                      <div className="flex items-center justify-start">
-                        <div className="pr-3">
+                      <div className="w-full flex items-stretch justify-end">
+                        <div className="pr-3 flex items-center w-8">
                           {tx.tx_status === 'success' ? (
-                            <CheckIcon width={16} color="black" />
+                            <CheckIcon width={16} opacity={0.6} />
                           ) : (
                             <XIcon width={18} color="red" />
                           )}
                         </div>
-                        <div className="py-0.5">
+                        <div className="py-0.25 grow">
+                          {tx.tx_type === 'token_transfer' ? (
+                            <div className="font-medium flex items-center justify-start">
+                              <span className="text-sm text-gray-700">
+                                {Number(tx.token_transfer.amount) / 1000000} STX
+                              </span>
+                              <span className="px-1">
+                                <ArrowSmRightIcon width={12} />
+                              </span>
+                              <span className="text-sm">
+                                {truncateMiddle(
+                                  tx.token_transfer.recipient_address,
+                                  5,
+                                )}
+                              </span>
+                            </div>
+                          ) : null}
                           {tx.tx_type === 'smart_contract' ? (
-                            <p className="text-sm font-medium text-gray-900">
-                              {tx.smart_contract.contract_id.split('.')[1]}{' '}
+                            <p className="text-sm font-medium text-gray-700">
+                              {getContractName(tx.smart_contract.contract_id)}{' '}
                             </p>
                           ) : null}
                           <p className="text-sm text-gray-500">
                             {TransactionType[tx.tx_type]}
                           </p>
                         </div>
+                        <div className="flex items-center flex">
+                          <span className="text-xs">
+                            {truncateMiddle(tx.tx_id, 3)}
+                          </span>
+                        </div>
+                        {/* <p className="text-gray-500 text-xs mt-1">
+                          {dayjs(tx.burn_block_time_iso).format('M/D/YYYY')}
+                        </p> */}
                       </div>
                     </a>
                   ))}
