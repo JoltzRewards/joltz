@@ -1,1 +1,3 @@
-# Generated using FASTIFY-Generator
+## Mutable NFT API
+
+Serves up metadata and static assets for NFTs. 
