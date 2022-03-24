@@ -1,0 +1,21 @@
+name: 'Analyze Pull Request'
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  analyze_changes:
+    name: Analyze Changes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Check dependencies
+        uses: juanigalan91/monorepolyser@0.2.6
+        with:
+          check-dependencies: true
+          include-main-package-json: true
+          impact-analysis: true
+          on-high-impact: 'comment,add-labels'
+          high-impact-labels: 'high-impact'
