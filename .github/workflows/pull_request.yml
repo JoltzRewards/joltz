@@ -3,9 +3,21 @@ on: pull_request
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
+  label_pr:
+    name: Label PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: add package labels
+        uses: tinkurlab/monorepo-pr-labeler-action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_DIRS: 'packages'
+        with:
+          prefix: 'package'
+
   analyze_changes:
-    name: 'analyze changes'
-    runs-on: macos-latest
+    name: Analyze Changes
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
