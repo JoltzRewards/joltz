@@ -1,0 +1,19 @@
+name: 'Pull Request'
+on: pull_request
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  analyze_changes:
+    name: 'analyze changes'
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Check dependencies
+        uses: juanigalan91/monorepolyser@0.2.6
+        with:
+          check-dependencies: true
+          include-main-package-json: true
+          impact-analysis: true
+          on-high-impact: 'comment,add-labels'
+          high-impact-labels: 'high-impact'
