@@ -1,5 +1,7 @@
 name: 'Pull Request'
-on: [pull_request, pull_request_target]
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
@@ -13,7 +15,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_DIRS: 'packages'
         with:
-          prefix: 'package'
+          prefix: 'pkg:'
 
   analyze_changes:
     name: Analyze Changes
