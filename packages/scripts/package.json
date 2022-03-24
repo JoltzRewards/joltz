@@ -1,0 +1,10 @@
+{
+  "name": "@trubittech/scripts",
+  "dependencies": {
+    "@stacks/transactions": "*",
+    "node-fetch": "*"
+  },
+  "devDependencies": {
+    "typescript": "*"
+  }
+}
