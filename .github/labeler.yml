@@ -1,0 +1,15 @@
+'@trubittech/web-playground':
+  - packages/web-playground/*
+  - packages/web-playground/**/*
+
+'@trubittech/scripts':
+  - packages/scripts/*
+  - packages/scripts/**/*
+
+'@trubittech/mutable-nft':
+  - packages/mutable-nft/*
+  - packages/mutable-nft/**/*
+
+'@trubittech/ui':
+  - packages/ui/*
+  - packages/ui/**/*

@@ -1,22 +1,10 @@
-name: 'Pull Request'
+name: 'Analyze Pull Request'
 on:
   pull_request:
     types: [opened, reopened, synchronize]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
-  label_pr:
-    name: Label PR
-    runs-on: ubuntu-latest
-    steps:
-      - name: add package labels
-        uses: tinkurlab/monorepo-pr-labeler-action@3.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_DIRS: 'packages'
-        with:
-          prefix: '@trubittech/'
-
   analyze_changes:
     name: Analyze Changes
     runs-on: ubuntu-latest
