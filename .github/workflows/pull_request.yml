@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: add package labels
-        uses: tinkurlab/monorepo-pr-labeler-action
+        uses: tinkurlab/monorepo-pr-labeler-action@3.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_DIRS: 'packages'
