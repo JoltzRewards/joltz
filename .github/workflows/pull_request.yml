@@ -15,7 +15,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_DIRS: 'packages'
         with:
-          prefix: 'pkg:'
+          prefix: '@trubittech/'
 
   analyze_changes:
     name: Analyze Changes
