@@ -1,0 +1,19 @@
+{
+  "env": {
+    "es2021": true
+  },
+  "extends": ["plugin:prettier/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "brace-style": "error",
+    "prefer-template": "error",
+    "radix": "error",
+    "space-before-blocks": "error",
+    "import/prefer-default-export": "off"
+  }
+}
