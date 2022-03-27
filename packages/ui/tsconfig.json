@@ -6,6 +6,7 @@
     "declarationDir": "types",
     "outDir": ".dist",
     "sourceMap": true,
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "typeRoots": ["./node_modules/@types"]
   }
 }
