@@ -13,3 +13,10 @@
 '@trubittech/ui':
   - packages/ui/*
   - packages/ui/**/*
+
+'workflows':
+  - .github/workflows/*
+
+'infrastructure':
+  - .changeset/**/*
+  - .husky/**/*
