@@ -8,14 +8,6 @@
   "bugs": {
     "url": "https://github.com/TrubitTech/TrubitTech/issues"
   },
-  "lint-staged": {
-    "*.{js,ts,tsx, jsx}": [
-      "yarn eslint --quiet --fix"
-    ],
-    "*.{json,md,html,js,jsx,ts,tsx}": [
-      "yarn prettier --write"
-    ]
-  },
   "author": "Trubit",
   "homepage": "https://trubit.tech",
   "workspaces": {
@@ -36,10 +28,21 @@
       "name": "Gurjit Singh"
     }
   ],
+  "lint-staged": {
+    "*.{js,ts,tsx, jsx}": [
+      "yarn eslint --quiet --fix"
+    ],
+    "*.{json,md,html,js,jsx,ts,tsx}": [
+      "yarn prettier --write"
+    ]
+  },
   "scripts": {
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "changeset:version": "yarn changeset version",
+    "changeset:publish": "yarn changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.22.0",
     "@types/node": "^17.0.17",
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "latest",
