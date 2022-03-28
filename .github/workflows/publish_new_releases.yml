@@ -22,7 +22,7 @@ jobs:
       - name: Install Dependencies
         run: yarn
       - name: Create Release Pull Request or Publish
-        uses: changesets/action@master
+        uses: changesets/action@v1
         with:
           publish: yarn run changeset:publish
         env:
