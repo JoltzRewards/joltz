@@ -38,8 +38,11 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "changeset:version": "yarn changeset version",
-    "changeset:publish": "yarn changeset publish"
+    "version": "yarn changeset version",
+    "prerelease": "yarn run build:notes && yarn run test && yarn workspace @trubittech/ui run build",
+    "release": "yarn changeset publish",
+    "build:notes": "echo 'only building @trubittech/ui for now'",
+    "test": "echo 'not implemented yet'"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
