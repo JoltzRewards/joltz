@@ -40,7 +40,7 @@
     "postinstall": "yarn preconstruct dev",
     "precommit": "lint-staged",
     "version": "yarn changeset version",
-    "prerelease": "yarn run validate && yarn run build && yarn run test && yarn workspace @trubittech/ui run build",
+    "prerelease": "yarn run validate && yarn run build",
     "release": "yarn changeset publish",
     "dev": "yarn preconstruct dev",
     "build": "yarn preconstruct build",
