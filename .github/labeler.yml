@@ -2,9 +2,9 @@
   - packages/web-playground/*
   - packages/web-playground/**/*
 
-'@trubittech/scripts':
-  - packages/scripts/*
-  - packages/scripts/**/*
+'@trubittech/docs':
+  - packages/docs/*
+  - packages/docs/**/*
 
 '@trubittech/mutable-nft':
   - packages/mutable-nft/*
@@ -13,3 +13,10 @@
 '@trubittech/ui':
   - packages/ui/*
   - packages/ui/**/*
+
+'workflows':
+  - .github/workflows/*
+
+'infrastructure':
+  - .changeset/**/*
+  - .husky/**/*
