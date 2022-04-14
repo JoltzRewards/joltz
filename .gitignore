@@ -116,5 +116,5 @@ dist
 **/.env
 
 # artifacts
-.dist
+dist
 .DS_Store

@@ -16,6 +16,6 @@
     }
   },
   "rules": {
-    "react-hooks/exhaustive-deps": "warning"
+    "react-hooks/exhaustive-deps": 1
   }
 }
