@@ -37,16 +37,25 @@
     ]
   },
   "scripts": {
+    "postinstall": "preconstruct dev",
     "precommit": "lint-staged",
     "version": "yarn changeset version",
-    "prerelease": "yarn run build:notes && yarn run test && yarn workspace @trubittech/ui run build",
+    "prerelease": "yarn run validate && yarn run build && yarn run test && yarn workspace @trubittech/ui run build",
     "release": "yarn changeset publish",
-    "build:notes": "echo 'only building @trubittech/ui for now'",
+    "dev": "preconstruct dev",
+    "build": "preconstruct build",
+    "fix": "preconstruct fix",
+    "validate": "preconstruct validate",
     "test": "echo 'not implemented yet'"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@changesets/changelog-github": "^0.4.4",
     "@changesets/cli": "^2.22.0",
+    "@preconstruct/cli": "^2.1.5",
     "@types/node": "^17.0.17",
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "latest",
@@ -65,5 +74,10 @@
     "tslib": "^2.3.1",
     "typescript": "^4.5.5",
     "webpack": "^5.68.0"
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/ui"
+    ]
   }
 }
