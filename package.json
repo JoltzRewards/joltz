@@ -37,15 +37,15 @@
     ]
   },
   "scripts": {
-    "postinstall": "preconstruct dev",
+    "postinstall": "yarn preconstruct dev",
     "precommit": "lint-staged",
     "version": "yarn changeset version",
     "prerelease": "yarn run validate && yarn run build && yarn run test && yarn workspace @trubittech/ui run build",
     "release": "yarn changeset publish",
-    "dev": "preconstruct dev",
-    "build": "preconstruct build",
-    "fix": "preconstruct fix",
-    "validate": "preconstruct validate",
+    "dev": "yarn preconstruct dev",
+    "build": "yarn preconstruct build",
+    "fix": "yarn preconstruct fix",
+    "validate": "yarn preconstruct validate",
     "test": "echo 'not implemented yet'"
   },
   "devDependencies": {
