@@ -1,6 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-const { tailwindPlugin, webpackPlugin, posthogPlugin } = require('./src/plugins')
+const { tailwindPlugin } = require('./src/plugins')
 
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
@@ -19,10 +19,10 @@ const config = {
   clientModules: [require.resolve('./src/css/tailwind.css')],
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      '@docusaurus/preset-classic',
+      {
         docs: {
+          sidebarCollapsible: false,
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
@@ -37,7 +37,7 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      },
     ],
   ],
 
@@ -45,7 +45,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       hideableSidebar: true,
-      sidebarCollapsible: true,
       colorMode: {
         defaultMode: 'dark',
         respectPrefersColorScheme: true,
@@ -129,7 +128,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-  plugins: [tailwindPlugin, webpackPlugin /*posthogPlugin*/],
+  plugins: [tailwindPlugin],
 }
 
 module.exports = config
