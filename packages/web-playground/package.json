@@ -1,10 +1,8 @@
 {
   "name": "@trubittech/web-playground",
   "version": "0.1.0",
+  "main": "src/index.tsx",
   "private": true,
-  "browser": {
-    "false": true
-  },
   "dependencies": {
     "@blockstack/ui": "*",
     "@craco/craco": "patch:@craco/craco@^6.4.0#../../.patches/craco-postcss.patch",

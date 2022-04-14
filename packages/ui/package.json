@@ -1,18 +1,32 @@
 {
   "name": "@trubittech/ui",
-  "main": ".dist/cjs/index.js",
-  "module": ".dist/esm/index.js",
-  "types": ".dist/index.d.ts",
+  "main": "dist/trubittech-ui.cjs.js",
+  "module": "dist/trubittech-ui.esm.js",
+  "types": "dist/trubittech-ui.cjs.d.ts",
+  "license": "MIT",
   "packageManager": "yarn@3.1.1",
+  "version": "0.1.0",
+  "homepage": "https://github.com/trubittech/trubittech",
+  "repository": {
+    "url": "https://github.com/trubittech/trubittech"
+  },
   "scripts": {
-    "build": "rm -rf .dist && rollup -c"
+    "build": "preconstruct build"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "*",
+    "@babel/preset-react": "*",
+    "@babel/preset-typescript": "*",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.0",
     "@types/react": "^17.0.39",
     "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "rollup": "^2.67.2",
     "rollup-plugin-dts": "^4.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",

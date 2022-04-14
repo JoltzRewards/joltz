@@ -116,9 +116,8 @@ dist
 **/.env
 
 # artifacts
-.dist
+dist
 .DS_Store
-
 
 # Clarity/clarinet
 settings/Mainnet.toml

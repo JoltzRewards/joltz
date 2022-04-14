@@ -11,5 +11,5 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "exclude": ["**/.dist", "rollup.config.js"]
+  "exclude": ["**/dist"]
 }
