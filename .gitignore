@@ -118,3 +118,8 @@ dist
 # artifacts
 dist
 .DS_Store
+
+# Clarity/clarinet
+settings/Mainnet.toml
+settings/Testnet.toml
+history.txt

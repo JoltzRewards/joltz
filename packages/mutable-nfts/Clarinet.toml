@@ -1,0 +1,16 @@
+
+[project]
+name = "mutable-nft"
+
+[contracts.mutable-nft]
+path = "contracts/mutable-nft.clar"
+depends_on = ["nft-trait"]
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = true
+trusted_caller = true
+callee_filter = true
