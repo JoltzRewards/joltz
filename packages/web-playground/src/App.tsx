@@ -1,20 +1,14 @@
 import React from 'react'
 // import { CSSReset } from '@stacks/ui'
 import 'react-activity/dist/library.css'
-import {
-  Link,
-  Outlet,
-  RouteObject,
-  useLocation,
-  useNavigate,
-  useRoutes,
-} from 'react-router-dom'
+import { Link, Outlet, RouteObject, useLocation, useNavigate, useRoutes } from 'react-router-dom'
 
 import './App.css'
 
 import { ContractGui, Auth } from './modules'
 import { Layout } from './Layout'
 import { Connect } from '@stacks/connect-react'
+import { UIShowcase } from './pages/ui-showcase'
 
 function App() {
   const { authOptions, isSignedIn, userData } = Auth.useAuth()
@@ -24,8 +18,9 @@ function App() {
     {
       path: '/',
       element: <Layout />,
-      children: [...ContractGui.routes],
+      children: [...ContractGui.routes, { path: '/components', element: <UIShowcase /> }],
     },
+
     ...Auth.routes,
     {
       path: '*',

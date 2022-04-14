@@ -7,6 +7,7 @@ import { Outlet } from 'react-router-dom'
 import { IS_MAINNET } from './lib/constants'
 import { Auth } from './modules'
 import { TXActivityFeed } from './components'
+import { Link } from 'react-router-dom'
 
 export const Layout: React.FC = () => {
   const { signOut, isSignedIn, userData, did } = Auth.useAuth()
@@ -27,29 +28,34 @@ export const Layout: React.FC = () => {
           <header className="bg-white shadow">
             <div className="py-6 px-4 sm:px-6 lg:px-8 flex items-center justify-start">
               <div className="flex items-center justify-between">
-                <img
-                  src="/trubit-black.svg"
-                  width="150"
-                  alt="Trubit Web Playground"
-                  title="Trubit Web Playground"
-                />
-                <div className="ml-2">
-                  {IS_MAINNET ? (
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
-                      mainnet
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
-                      {process.env.NODE_ENV === 'test' ? 'mocknet' : 'testnet'}
-                    </span>
-                  )}
-                </div>
+                <Link to="/" className="mr-3">
+                  <img
+                    src="/trubit-black.svg"
+                    width="200"
+                    alt="Trubit Web Playground"
+                    title="Trubit Web Playground"
+                  />
+                </Link>
+                {IS_MAINNET ? (
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                    mainnet
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
+                    {process.env.NODE_ENV === 'test' ? 'mocknet' : 'testnet'}
+                  </span>
+                )}
               </div>
-              <div className="flex items-center ml-auto">
+              <div className="px-8 flex items-center justify-end w-full">
+                <Link className="text-sm font-medium text-gray-600" to="/components">
+                  Components
+                </Link>
+              </div>
+              <div className="flex items-center">
                 {isSignedIn ? (
                   <>
                     <TXActivityFeed />
-                    <Menu as="div" className="ml-3 relative">
+                    <Menu as="div" className="ml-3 relative" style={{ minWidth: 40 }}>
                       <Menu.Button className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span className="sr-only">Open user menu</span>
                         {
