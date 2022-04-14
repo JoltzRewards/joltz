@@ -48,7 +48,6 @@ const Button = styled(TButton, {
   fill: 'currentColor',
   p: '$2',
   color: '$amber9',
-  fill: '$amber9',
   '&:hover': {
     backgroundColor: '$slate3',
     color: '$slate11',
