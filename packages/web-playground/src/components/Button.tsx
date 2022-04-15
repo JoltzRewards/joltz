@@ -33,12 +33,7 @@ export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
       {...props}
     >
       {props.loading ? (
-        <Dots
-          speed={1.25}
-          color="#dadaff"
-          animating={props.loading}
-          size={13}
-        />
+        <Dots speed={1.25} color="#dadaff" animating={props.loading} size={13} />
       ) : (
         children
       )}

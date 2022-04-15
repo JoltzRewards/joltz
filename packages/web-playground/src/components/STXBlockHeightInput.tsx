@@ -65,12 +65,9 @@ export const STXBlockHeightInput: React.FC<STXBlockHeightInputProps> = ({
           id={id}
           onChange={handleOnChange}
           disabled={isLoading}
-          className={cx(
-            'block w-full pl-10 sm:text-sm border-gray-300 rounded-md',
-            {
-              'focus:ring-indigo-500 focus:border-indigo-500': true,
-            },
-          )}
+          className={cx('block w-full pl-10 sm:text-sm border-gray-300 rounded-md', {
+            'focus:ring-indigo-500 focus:border-indigo-500': true,
+          })}
           aria-describedby="agreement-recipient"
         />
       </div>

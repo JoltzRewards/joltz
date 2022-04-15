@@ -21,6 +21,7 @@
     "@babel/preset-env": "*",
     "@babel/preset-react": "*",
     "@babel/preset-typescript": "*",
+    "@preconstruct/cli": "^2.1.5",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.0",
@@ -31,6 +32,13 @@
     "rollup-plugin-dts": "^4.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.5.5"
+    "rollup-plugin-typescript2": "^0.31.2",
+    "typescript": "*"
+  },
+  "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-icons": "^1.1.0",
+    "@radix-ui/react-toolbar": "^0.1.5",
+    "@stitches/react": "^1.2.7"
   }
 }

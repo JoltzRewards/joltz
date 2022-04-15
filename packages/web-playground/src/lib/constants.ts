@@ -1,14 +1,6 @@
-import {
-  StacksTestnet,
-  StacksMainnet,
-  StacksMocknet,
-  NetworkConfig,
-} from '@stacks/network'
+import { StacksTestnet, StacksMainnet, StacksMocknet, NetworkConfig } from '@stacks/network'
 
-const getNetwork = (
-  env: 'test' | 'development' | 'production',
-  options?: NetworkConfig,
-) => {
+const getNetwork = (env: 'test' | 'development' | 'production', options?: NetworkConfig) => {
   if (env === 'test') {
     return new StacksMocknet(options)
   }

@@ -1,12 +1,7 @@
 import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { getContractName, truncateMiddle } from '@stacks/ui-utils'
-import {
-  CollectionIcon,
-  CheckIcon,
-  XIcon,
-  ArrowSmRightIcon,
-} from '@heroicons/react/outline'
+import { CollectionIcon, CheckIcon, XIcon, ArrowSmRightIcon } from '@heroicons/react/outline'
 import cx from 'classnames'
 import fetch from 'cross-fetch'
 import {
@@ -46,9 +41,7 @@ export const TXActivityFeed = () => {
   const { wallet } = Auth.useAuth()
   const [isFetching, setIsFetching] = React.useState(true)
   const subscription = React.useRef<Subscription | null>(null)
-  const [transactions, setTransactions] = React.useState<
-    AddressTransactionWithTransfers[] | []
-  >([])
+  const [transactions, setTransactions] = React.useState<AddressTransactionWithTransfers[] | []>([])
 
   const accountApi = React.useMemo(() => new AccountsApi(apiConfig), [])
 
@@ -74,18 +67,15 @@ export const TXActivityFeed = () => {
     async function getSubscription() {
       const client = await connectWebSocketClient(SOCKET_URL)
 
-      const sub = await client.subscribeAddressTransactions(
-        wallet!,
-        async (tx) => {
-          const txDetails = (await txApi.getTransactionById({
-            txId: tx.tx_id,
-          })) as AddressTransactionWithTransfers
+      const sub = await client.subscribeAddressTransactions(wallet!, async (tx) => {
+        const txDetails = (await txApi.getTransactionById({
+          txId: tx.tx_id,
+        })) as AddressTransactionWithTransfers
 
-          console.info(txDetails)
+        console.info(txDetails)
 
-          setTransactions((transactions) => [...transactions, txDetails])
-        },
-      )
+        setTransactions((transactions) => [...transactions, txDetails])
+      })
 
       subscription.current = sub
     }
@@ -113,10 +103,7 @@ export const TXActivityFeed = () => {
             {isFetching ? (
               <Spinner size="sm" className="text-gray-600" />
             ) : (
-              <CollectionIcon
-                width={16}
-                className="text-gray-600 group-hover:text-gray-500"
-              />
+              <CollectionIcon width={16} className="text-gray-600 group-hover:text-gray-500" />
             )}
             <AnimatedPing animating color="green-400" />
           </Popover.Button>
@@ -154,35 +141,25 @@ export const TXActivityFeed = () => {
                           {tx.tx.tx_type === 'token_transfer' ? (
                             <div className="font-medium flex items-center justify-start">
                               <span className="text-sm text-gray-700">
-                                {Number(tx.tx.token_transfer.amount) / 1000000}{' '}
-                                STX
+                                {Number(tx.tx.token_transfer.amount) / 1000000} STX
                               </span>
                               <span className="px-1">
                                 <ArrowSmRightIcon width={12} />
                               </span>
                               <span className="text-sm">
-                                {truncateMiddle(
-                                  tx.tx.token_transfer.recipient_address,
-                                  5,
-                                )}
+                                {truncateMiddle(tx.tx.token_transfer.recipient_address, 5)}
                               </span>
                             </div>
                           ) : null}
                           {tx.tx.tx_type === 'smart_contract' ? (
                             <p className="text-sm font-medium text-gray-700">
-                              {getContractName(
-                                tx.tx.smart_contract.contract_id,
-                              )}{' '}
+                              {getContractName(tx.tx.smart_contract.contract_id)}{' '}
                             </p>
                           ) : null}
-                          <p className="text-sm text-gray-500">
-                            {TransactionType[tx.tx.tx_type]}
-                          </p>
+                          <p className="text-sm text-gray-500">{TransactionType[tx.tx.tx_type]}</p>
                         </div>
                         <div className="flex items-center flex">
-                          <span className="text-xs">
-                            {truncateMiddle(tx.tx.tx_id, 3)}
-                          </span>
+                          <span className="text-xs">{truncateMiddle(tx.tx.tx_id, 3)}</span>
                         </div>
                         {/* <p className="text-gray-500 text-xs mt-1">
                           {dayjs(tx.burn_block_time_iso).format('M/D/YYYY')}
@@ -196,10 +173,7 @@ export const TXActivityFeed = () => {
                     'No Recent Transactions'
                   ) : (
                     <span className="text-xs">
-                      <em className="font-bold not-italic">
-                        {transactions?.length}
-                      </em>{' '}
-                      Transactions
+                      <em className="font-bold not-italic">{transactions?.length}</em> Transactions
                     </span>
                   )}
                   <a

@@ -1,3 +1,3 @@
 ## Mutable NFT API
 
-Serves up metadata and static assets for NFTs. 
+Serves up metadata and static assets for NFTs.

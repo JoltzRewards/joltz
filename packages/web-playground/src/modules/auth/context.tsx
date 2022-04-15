@@ -10,8 +10,7 @@ function useStacksAuth() {
   const [appPrivateKey, setAppPrivateKey] = React.useState('')
 
   const appConfig = useMemo(
-    () =>
-      new AppConfig(['store_write', 'publish_data'], document.location.href),
+    () => new AppConfig(['store_write', 'publish_data'], document.location.href),
     [],
   )
   const userSession = useMemo(() => new UserSession({ appConfig }), [appConfig])
@@ -63,9 +62,7 @@ function useStacksAuth() {
   return {
     authOptions,
     state,
-    wallet: IS_MAINNET
-      ? state?.profile.stxAddress.mainnet
-      : state?.profile.stxAddress.testnet,
+    wallet: IS_MAINNET ? state?.profile.stxAddress.mainnet : state?.profile.stxAddress.testnet,
     userSession,
     authResponse,
     appPrivateKey,
@@ -104,22 +101,14 @@ export const useAuth = () => {
   const context = React.useContext(AuthContext)
 
   if (!context) {
-    throw new Error(
-      'No context found. useAuth must be used within an AuthProvider!',
-    )
+    throw new Error('No context found. useAuth must be used within an AuthProvider!')
   }
 
   return context as AuthState
 }
 
 export const AuthProvider: React.FC = ({ children }) => {
-  const {
-    handleSignOut,
-    wallet,
-    state,
-    authOptions,
-    userSession,
-  } = useStacksAuth()
+  const { handleSignOut, wallet, state, authOptions, userSession } = useStacksAuth()
 
   const value: AuthState = React.useMemo(
     () => ({

@@ -62,15 +62,12 @@ export const STXAddressInput: React.FC<STXAddressInputProps> = ({
           value={value}
           id={id}
           onChange={handleOnChange}
-          className={cx(
-            'block w-full pl-3 pr-12 sm:text-sm border-gray-300 rounded-md',
-            {
-              'focus:ring-indigo-500 focus:border-indigo-500': isValid,
-              'focus:outline-none focus:ring-red-500 focus:border-red-500':
-                // block w-full pr-10 border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md
-                !isValid && value,
-            },
-          )}
+          className={cx('block w-full pl-3 pr-12 sm:text-sm border-gray-300 rounded-md', {
+            'focus:ring-indigo-500 focus:border-indigo-500': isValid,
+            'focus:outline-none focus:ring-red-500 focus:border-red-500':
+              // block w-full pr-10 border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md
+              !isValid && value,
+          })}
           aria-describedby="agreement-recipient"
         />
         {isValid && (
@@ -80,9 +77,7 @@ export const STXAddressInput: React.FC<STXAddressInputProps> = ({
         )}
       </div>
       {!isValid && value && (
-        <p className="mt-1 mb-0 text-sm text-red-600">
-          Not a valid STX address
-        </p>
+        <p className="mt-1 mb-0 text-sm text-red-600">Not a valid STX address</p>
       )}
     </>
   )
