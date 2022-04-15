@@ -34,7 +34,7 @@ const Root = styled(TRoot, {
   bs: `0 0 10px 10px $shadowLight`,
 })
 
-const Button = styled(TButton, {
+const baseButtonStyles = {
   ...baseStyles,
   // backgroundColor: '$canvas',
   // color: '$hiContrast',
@@ -45,9 +45,9 @@ const Button = styled(TButton, {
   //   transition: 'all 0.2s ease-in-out',
   //   backgroundColor: '$whiteA10',
   // },
-  fill: 'currentColor',
+  fill: '$hiContrast',
   p: '$2',
-  color: '$amber9',
+  color: '$hiContrast',
   '&:hover': {
     backgroundColor: '$slate3',
     color: '$slate11',
@@ -56,7 +56,9 @@ const Button = styled(TButton, {
     position: 'relative',
     bs: '0 0 0 2px $violet6',
   },
-})
+}
+
+const Button = styled(TButton, baseButtonStyles)
 
 const Link = styled(TLink, {
   textDecoration: 'underline',
@@ -64,9 +66,15 @@ const Link = styled(TLink, {
   fontWeight: 'bold',
 })
 
-const Separator = styled(TSeparator, {})
+const Separator = styled(TSeparator, {
+  ...baseStyles,
+  background: '$slate12',
+  borderColor: '$slate12',
+  width: '500px',
+  height: '100%',
+})
 const ToggleGroup = styled(TToggleGroup, {})
-const ToggleItem = styled(TToggleItem, {})
+const ToggleItem = styled(TToggleItem, baseButtonStyles)
 
 interface Toolbar {
   Root: typeof Root

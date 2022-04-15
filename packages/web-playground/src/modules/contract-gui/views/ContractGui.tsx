@@ -8,11 +8,7 @@ import { AnchorMode } from '@stacks/transactions'
 import { Transition } from '@headlessui/react'
 import { connectWebSocketClient } from '@stacks/blockchain-api-client'
 
-import {
-  STXBlockHeightInput,
-  Button,
-  STXAddressInput,
-} from '../../../components'
+import { STXBlockHeightInput, Button, STXAddressInput } from '../../../components'
 import { getUserData } from '../../../lib/auth'
 import { IS_MAINNET, NETWORK, SOCKET_URL } from '../../../lib/constants'
 import { createContractFromPayload } from '../../../lib/contracts'
@@ -27,9 +23,7 @@ export const ContractGui: React.FC = () => {
   const userAddress = IS_MAINNET
     ? userData.profile.stxAddress.mainnet
     : userData.profile.stxAddress.testnet
-  const [recipients, setRecipients] = React.useState<
-    { label: string; value: string }[] | []
-  >([])
+  const [recipients, setRecipients] = React.useState<{ label: string; value: string }[] | []>([])
 
   const handleChangeRecipients = (
     newValue: OnChangeValue<{ label: string; value: string }, true>,
@@ -124,15 +118,10 @@ export const ContractGui: React.FC = () => {
                   <div className="p-4">
                     <div className="flex items-start">
                       <div className="flex-shrink-0">
-                        <CheckCircleIcon
-                          className="h-6 w-6 text-green-400"
-                          aria-hidden="true"
-                        />
+                        <CheckCircleIcon className="h-6 w-6 text-green-400" aria-hidden="true" />
                       </div>
                       <div className="ml-3 w-0 flex-1 pt-0.5">
-                        <p className="text-sm font-medium text-gray-900">
-                          Successfully saved!
-                        </p>
+                        <p className="text-sm font-medium text-gray-900">Successfully saved!</p>
                         <p className="mt-1 text-sm text-gray-500">
                           Anyone with a link can now view this file.
                         </p>
@@ -160,17 +149,12 @@ export const ContractGui: React.FC = () => {
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
             <div className="px-4 sm:px-0">
-              <h1 className="text-xl  leading-6 text-black-900">
-                New Agreement
-              </h1>
-              <h3 className="text-sm font-medium leading-6 text-gray-500">
-                Configure & Deploy
-              </h3>
+              <h1 className="text-xl  leading-6 text-black-900">New Agreement</h1>
+              <h3 className="text-sm font-medium leading-6 text-gray-500">Configure & Deploy</h3>
               <p className="mt-3 pr-4 text-sm text-gray-600">
-                Provide the amount of STX you'd like to be paid, who the
-                contract is being deployed on behalf of, who should be allowed
-                to access, when the contract should go into effect, and when it
-                should end.
+                Provide the amount of STX you'd like to be paid, who the contract is being deployed
+                on behalf of, who should be allowed to access, when the contract should go into
+                effect, and when it should end.
               </p>
             </div>
           </div>
@@ -180,25 +164,14 @@ export const ContractGui: React.FC = () => {
                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                   <div className="grid grid-cols-3 gap-6">
                     <div className="col-span-3 sm:col-span-2">
-                      <label
-                        htmlFor="price"
-                        className="block text-sm font-medium text-gray-700"
-                      >
+                      <label htmlFor="price" className="block text-sm font-medium text-gray-700">
                         Price
                       </label>
                       <div className="mt-1 relative rounded-md shadow-sm">
                         <div className="absolute inset-y-0 right-0 pr-2 pl-3 flex items-center justify-center pointer-events-none">
                           {/* <span className="text-gray-500 sm:text-sm">$</span> */}
-                          <img
-                            src="/stacks-stx-logo.png"
-                            width="20"
-                            height="20"
-                            alt="STX"
-                          />
-                          <span
-                            className="text-gray-500 sm:text-sm pl-2"
-                            id="price-currency"
-                          >
+                          <img src="/stacks-stx-logo.png" width="20" height="20" alt="STX" />
+                          <span className="text-gray-500 sm:text-sm pl-2" id="price-currency">
                             STX
                           </span>
                         </div>
@@ -226,46 +199,28 @@ export const ContractGui: React.FC = () => {
                       />
                     </div>
                     <div className="col-span-3 sm:col-span-2">
-                      <label
-                        htmlFor="sender"
-                        className="block text-sm font-medium text-gray-700"
-                      >
+                      <label htmlFor="sender" className="block text-sm font-medium text-gray-700">
                         Sender
                       </label>
                       <div className="mt-1 relative rounded-md shadow-sm">
-                        <STXAddressInput
-                          id="sender"
-                          initialValue={userAddress}
-                        />
+                        <STXAddressInput id="sender" initialValue={userAddress} />
                       </div>
                     </div>
                     <div className="col-span-3 sm:col-span-2">
-                      <label
-                        htmlFor="start"
-                        className="block text-sm font-medium text-gray-700"
-                      >
+                      <label htmlFor="start" className="block text-sm font-medium text-gray-700">
                         Starting Block Height
                       </label>
                       <STXBlockHeightInput id="start" />
-                      <p
-                        className="mt-2 text-sm text-gray-500"
-                        id="start-description"
-                      >
+                      <p className="mt-2 text-sm text-gray-500" id="start-description">
                         When should this contract begin?
                       </p>
                     </div>
                     <div className="col-span-3 sm:col-span-2">
-                      <label
-                        htmlFor="end"
-                        className="block text-sm font-medium text-gray-700"
-                      >
+                      <label htmlFor="end" className="block text-sm font-medium text-gray-700">
                         Ending Block Height
                       </label>
                       <STXBlockHeightInput id="end" />
-                      <p
-                        className="mt-2 text-sm text-gray-500"
-                        id="end-description"
-                      >
+                      <p className="mt-2 text-sm text-gray-500" id="end-description">
                         When should this contract end?
                       </p>
                     </div>
@@ -304,7 +259,7 @@ export const ContractGui: React.FC = () => {
                           },
                           appDetails: {
                             name: 'Contract Composer',
-                            icon: window.location.origin + '/trubit.svg',
+                            icon: `${window.location.origin}/trubit.svg`,
                           },
                           onFinish: (data) => {
                             setTxId(data.txId)
