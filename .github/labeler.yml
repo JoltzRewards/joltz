@@ -1,10 +1,10 @@
 '@trubittech/web-playground':
-  - packages/web-playground/*
-  - packages/web-playground/**/*
+  - applications/web-playground/*
+  - applications/web-playground/**/*
 
 '@trubittech/docs':
-  - packages/docs/*
-  - packages/docs/**/*
+  - docs/*
+  - docs/**/*
 
 '@trubittech/mutable-nft':
   - packages/mutable-nft/*

@@ -2358,9 +2358,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@craco/craco@patch:@craco/craco@^6.4.0#../../.patches/craco-postcss.patch::locator=%40trubittech%2Fweb-playground%40workspace%3Apackages%2Fweb-playground":
+"@craco/craco@patch:@craco/craco@^6.4.0#../../.patches/craco-postcss.patch::locator=%40trubittech%2Fweb-playground%40workspace%3Aapplications%2Fweb-playground":
   version: 6.4.3
-  resolution: "@craco/craco@patch:@craco/craco@npm%3A6.4.3#../../.patches/craco-postcss.patch::version=6.4.3&hash=36da0b&locator=%40trubittech%2Fweb-playground%40workspace%3Apackages%2Fweb-playground"
+  resolution: "@craco/craco@patch:@craco/craco@npm%3A6.4.3#../../.patches/craco-postcss.patch::version=6.4.3&hash=36da0b&locator=%40trubittech%2Fweb-playground%40workspace%3Aapplications%2Fweb-playground"
   dependencies:
     cosmiconfig: ^7.0.1
     cosmiconfig-typescript-loader: ^1.0.0
@@ -6763,9 +6763,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@trubittech/web-playground@workspace:packages/web-playground":
+"@trubittech/web-playground@workspace:applications/web-playground":
   version: 0.0.0-use.local
-  resolution: "@trubittech/web-playground@workspace:packages/web-playground"
+  resolution: "@trubittech/web-playground@workspace:applications/web-playground"
   dependencies:
     "@blockstack/ui": "*"
     "@craco/craco": "patch:@craco/craco@^6.4.0#../../.patches/craco-postcss.patch"
@@ -11974,9 +11974,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docs@workspace:packages/docs":
+"docs@workspace:docs":
   version: 0.0.0-use.local
-  resolution: "docs@workspace:packages/docs"
+  resolution: "docs@workspace:docs"
   dependencies:
     "@docusaurus/core": 2.0.0-beta.18
     "@docusaurus/module-type-aliases": 2.0.0-beta.18

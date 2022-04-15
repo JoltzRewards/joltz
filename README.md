@@ -17,7 +17,7 @@ We are currently using node `v17.4.0`–you can (and should) use [nvm](https://g
 
 ## Starting the Web Playground
 
-1. `cd packages/web-playground`
+1. `cd applications/web-playground`
 2. `yarn start`
 
 ---

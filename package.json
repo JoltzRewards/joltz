@@ -12,7 +12,9 @@
   "homepage": "https://trubit.tech",
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "applications/*",
+      "docs"
     ]
   },
   "resolutions": {
