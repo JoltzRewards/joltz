@@ -6674,9 +6674,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trubittech/mutable-nft-api@workspace:packages/mutable-nfts":
+"@trubittech/mutable-nft-api@workspace:applications/mutable-nfts":
   version: 0.0.0-use.local
-  resolution: "@trubittech/mutable-nft-api@workspace:packages/mutable-nfts"
+  resolution: "@trubittech/mutable-nft-api@workspace:applications/mutable-nfts"
   dependencies:
     "@types/babel__core": ^7.1.14
     "@types/cors": ^2.8.10
