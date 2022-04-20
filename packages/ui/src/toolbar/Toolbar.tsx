@@ -20,8 +20,6 @@ const baseStyles = {
   lineHeight: 1,
   alignItems: 'center',
   justifyContent: 'center',
-  // '&:hover': { backgroundColor: violet.violet3, color: violet.violet11 },
-  // '&:focus': { position: 'relative', boxShadow: `0 0 0 2px ${violet.violet7}` },
 }
 
 const Root = styled(TRoot, {
@@ -36,15 +34,6 @@ const Root = styled(TRoot, {
 
 const baseButtonStyles = {
   ...baseStyles,
-  // backgroundColor: '$canvas',
-  // color: '$hiContrast',
-  // py: '$1',
-  // px: '$3',
-  // transition: 'all 0.15s ease-in-out',
-  // '&:hover': {
-  //   transition: 'all 0.2s ease-in-out',
-  //   backgroundColor: '$whiteA10',
-  // },
   fill: '$hiContrast',
   p: '$2',
   color: '$hiContrast',

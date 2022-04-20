@@ -172,18 +172,18 @@ export const Button = styled('button', {
         },
       },
       transparentBlack: {
-        backgroundColor: 'hsla(0,0%,0%,.2)',
+        backgroundColor: 'hsla(0,0%,0%,.08)',
         color: 'black',
         '@hover': {
           '&:hover': {
-            backgroundColor: 'hsla(0,0%,0%,.25)',
+            backgroundColor: 'hsla(0,0%,0%,.1)',
           },
         },
         '&:active': {
-          backgroundColor: 'hsla(0,0%,0%,.3)',
+          backgroundColor: 'hsla(0,0%,0%,.15)',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px hsla(0,0%,0%,.35), 0 0 0 1px hsla(0,0%,0%,.35)',
+          boxShadow: 'inset 0 0 0 1px hsla(0,0%,0%,.3), 0 0 0 1px hsla(0,0%,0%,.3)',
         },
       },
     },
