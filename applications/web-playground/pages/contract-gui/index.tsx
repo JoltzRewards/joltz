@@ -8,10 +8,8 @@ import { AnchorMode } from '@stacks/transactions'
 import { Transition } from '@headlessui/react'
 import { connectWebSocketClient } from '@stacks/blockchain-api-client'
 
-import { STXBlockHeightInput, Button, STXAddressInput } from '../../../components'
-import { getUserData } from '../../../lib/auth'
-import { IS_MAINNET, NETWORK, SOCKET_URL } from '../../../lib/constants'
-import { createContractFromPayload } from '../../../lib/contracts'
+import { STXBlockHeightInput, Button, STXAddressInput } from '../../components'
+import { createContractFromPayload, getUserData, IS_MAINNET, NETWORK, SOCKET_URL } from '../../lib'
 
 export const ContractGui: React.FC = () => {
   const [isDeploying, setIsDeploying] = React.useState(false)

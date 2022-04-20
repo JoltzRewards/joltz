@@ -1,0 +1,4 @@
+{
+  "presets": ["next/babel", "next/core-web-vitals"],
+  "plugins": []
+}
