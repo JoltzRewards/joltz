@@ -1,0 +1,43 @@
+{
+  "name": "web-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@trubittech/ui": "workspace:^",
+    "next": "12.1.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "@headlessui/react": "*",
+    "@heroicons/react": "^1.0.5",
+    "@preconstruct/next": "^4.0.0",
+    "@stacks/auth": "^3.1.0",
+    "@stacks/blockchain-api-client": "^1.0.7",
+    "@stacks/common": "^3.0.0",
+    "@stacks/keychain": "^3.1.0",
+    "@stacks/network": "^3.0.0",
+    "@stacks/profile": "^3.1.0",
+    "@stacks/storage": "^3.1.0",
+    "@stacks/ui": "*",
+    "@tailwindcss/forms": "^0.4.0",
+    "@types/node": "17.0.24",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "autoprefixer": "*",
+    "classnames": "^2.3.1",
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.5",
+    "postcss": "*",
+    "tailwindcss": "*",
+    "typescript": "4.6.3"
+  }
+}
