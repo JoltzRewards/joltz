@@ -1,27 +1,21 @@
 const navigation = {
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
+  packages: [
+    { name: '@trubittech/ui', href: '#' },
+    { name: '@trubittech/gaia', href: '#' },
   ],
-  support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
-  ],
+  // support: [
+  //   { name: 'Pricing', href: '#' },
+  //   { name: 'Documentation', href: '#' },
+  //   { name: 'Guides', href: '#' },
+  //   { name: 'API Status', href: '#' },
+  // ],
   company: [
     { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'Web', href: 'https://trubit.tech' },
   ],
-  legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+  community: [
+    { name: 'Discord', href: '#' },
+    { name: 'Twitter', href: 'https://twitter.com/TRUBIT_TECH' },
   ],
   social: [
     {
@@ -121,7 +115,7 @@ export default function Footer({ style }) {
                   Solutions
                 </h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  {navigation.solutions.map((item) => (
+                  {navigation.packages.map((item) => (
                     <li key={item.name}>
                       <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
                         {item.name}
@@ -135,7 +129,7 @@ export default function Footer({ style }) {
                   Support
                 </h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  {navigation.support.map((item) => (
+                  {navigation.company.map((item) => (
                     <li key={item.name}>
                       <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
                         {item.name}
@@ -165,7 +159,7 @@ export default function Footer({ style }) {
                   Legal
                 </h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  {navigation.legal.map((item) => (
+                  {navigation.social.map((item) => (
                     <li key={item.name}>
                       <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
                         {item.name}
