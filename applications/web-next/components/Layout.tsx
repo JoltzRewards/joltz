@@ -8,6 +8,7 @@ import { Button } from '@trubittech/ui'
 
 import { IS_MAINNET, useAuth } from '../lib'
 import * as styles from './styles.module.css'
+import Footer from './Footer'
 
 export const Layout: React.FC = ({ children }) => {
   const { signOut, signIn, isSigningIn, isSignedIn, userData, did } = useAuth()
@@ -51,7 +52,7 @@ export const Layout: React.FC = ({ children }) => {
               </div>
               <div className="px-8 flex items-center justify-end w-full">
                 <Link /*className="text-sm font-medium text-gray-600"*/ href="/components">
-                  Components
+                  Showcase
                 </Link>
               </div>
               <div className="flex items-center">
@@ -113,20 +114,15 @@ export const Layout: React.FC = ({ children }) => {
             </div>
           </header>
         </Transition>
-        <main className="h-full ">
-          <div className="px-4 py-4 sm:px-0">{children}</div>
-          <footer className={styles.footer}>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Powered by{' '}
-              <span className={styles.logo}>
-                <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-              </span>
-            </a>
-          </footer>
+        <main
+          style={{
+            flexDirection: 'column',
+            alignItems: 'stretch',
+            justifyContent: 'flex-start',
+          }}
+        >
+          <div className="px-5 py-6 sm:px-0 100vh">{children}</div>
+          <Footer style={{ marginTop: 'auto' }} />
         </main>
       </div>
     </>
