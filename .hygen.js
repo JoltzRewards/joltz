@@ -43,8 +43,7 @@ module.exports = {
     workspaces: getWorkspaces(__dirname).workspaces,
     packages: getWorkspaces(__dirname).packages,
     paths: {
-      components: path.resolve(__dirname, 'applications/web-playground/src/components'),
-      features: path.resolve(__dirname, 'applications/web-playground/src/modules'),
+      components: path.resolve(__dirname, 'applications/web-playground/components'),
     },
   },
 }
