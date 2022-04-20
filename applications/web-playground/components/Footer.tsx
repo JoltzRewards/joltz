@@ -88,7 +88,7 @@ export default function Footer({ style }) {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      {/* <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
             <img
@@ -176,7 +176,7 @@ export default function Footer({ style }) {
             &copy; 2020 Workflow, Inc. All rights reserved.
           </p>
         </div>
-      </div>
+      </div> */}
     </footer>
   )
 }

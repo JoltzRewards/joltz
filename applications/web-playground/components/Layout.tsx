@@ -31,15 +31,13 @@ export const Layout: React.FC = ({ children }) => {
           <header className="bg-white shadow">
             <div className="py-6 px-4 sm:px-6 lg:px-8 flex items-center justify-start">
               <div className="flex items-center justify-between">
-                <Link href="/" passHref>
-                  <Image
-                    src="/trubit-black.svg"
-                    width="180"
-                    height="60"
-                    alt="Trubit Web Playground"
-                    title="Trubit Web Playground"
-                  />
-                </Link>
+                <Image
+                  src="/trubit-black.svg"
+                  width="180"
+                  height="60"
+                  alt="Trubit Web Playground"
+                  title="Trubit Web Playground"
+                />
                 {IS_MAINNET ? (
                   <span className="inline-flex items-center mx-2.5 px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
                     mainnet
@@ -51,9 +49,7 @@ export const Layout: React.FC = ({ children }) => {
                 )}
               </div>
               <div className="px-8 flex items-center justify-end w-full">
-                <Link /*className="text-sm font-medium text-gray-600"*/ href="/components">
-                  Showcase
-                </Link>
+                <Link href="/showcase">Showcase</Link>
               </div>
               <div className="flex items-center">
                 {isSignedIn ? (
