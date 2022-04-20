@@ -9,15 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@stacks/connect": "^6.5.0",
+    "@stacks/connect-react": "^14.0.0",
     "@trubittech/ui": "workspace:^",
     "next": "12.1.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "*",
+    "react-dom": "*"
   },
   "devDependencies": {
     "@babel/core": "*",
     "@babel/preset-env": "*",
-    "@headlessui/react": "*",
+    "@headlessui/react": "insiders",
     "@heroicons/react": "^1.0.5",
     "@preconstruct/next": "^4.0.0",
     "@stacks/auth": "^3.1.0",
@@ -37,6 +39,7 @@
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
     "postcss": "*",
+    "regenerator-runtime": "^0.13.9",
     "tailwindcss": "*",
     "typescript": "4.6.3"
   }

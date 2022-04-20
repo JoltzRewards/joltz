@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
+import React from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 import { Icon, Toolbar } from '@trubittech/ui'
 
 import styles from '../../styles/Home.module.css'
