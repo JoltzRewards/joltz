@@ -4,6 +4,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@geometricpanda/storybook-addon-badges',
   ],
   framework: '@storybook/react',
   webpackFinal: (config) => {
