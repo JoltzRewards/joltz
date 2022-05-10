@@ -2,15 +2,13 @@ import React from 'react'
 
 import { defaultTheme } from '../theming'
 
-export type Theme = typeof defaultTheme
-
 type ThemeProviderContextValue = {
-  theme: Theme
+  theme: typeof defaultTheme
   toggleDarkMode: () => void
 }
 
 type ThemeProviderProps = {
-  theme?: Theme
+  theme?: typeof defaultTheme
 }
 
 const ThemeProviderContext = React.createContext<ThemeProviderContextValue | null>(null)
