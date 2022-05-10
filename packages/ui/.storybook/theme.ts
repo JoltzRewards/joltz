@@ -1,7 +1,7 @@
 import { create } from '@storybook/theming'
 
 export default create({
-  base: 'light',
+  base: 'dark',
   brandTitle: '@trubittech/ui',
   brandUrl: 'https://trubit.tech',
   appContentBg: 'white',
