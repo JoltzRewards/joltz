@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
+import merge from 'lodash/merge'
 
-import { defaultTheme } from '../theming'
+import { defaultTheme } from '../stitches.config'
+import type { Theme } from '../stitches.config'
 
 type ThemeProviderContextValue = {
-  theme: typeof defaultTheme
+  theme: Theme
+  isDark: boolean
   toggleDarkMode: () => void
+  extendTheme: (t: Theme) => void
+  replaceTheme: (t: Theme) => void
 }
 
-type ThemeProviderProps = {
-  theme?: typeof defaultTheme
+export type ThemeProviderProps = {
+  theme?: Partial<Theme>
 }
 
 const ThemeProviderContext = React.createContext<ThemeProviderContextValue | null>(null)
@@ -24,15 +29,27 @@ export const useTheme = () => {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ theme, children }) => {
-  const [useDarkMode, setUseDarkMode] = React.useState(false)
-  const toggleDarkMode = React.useCallback(() => setUseDarkMode((s) => !s), [])
+  const [useDarkMode, setUseDarkMode] = useState(false)
+  const toggleDarkMode = useCallback(() => setUseDarkMode((s) => !s), [])
+  const [selectedTheme, setSelectedTheme] = useState(theme || defaultTheme)
+  const replaceTheme = useCallback((t: Theme) => setSelectedTheme(t), [])
+  const extendTheme = useCallback(
+    (t: Theme) => {
+      const updatedTheme = merge(t, theme)
+
+      setSelectedTheme(updatedTheme)
+    },
+    [theme],
+  )
   const value = React.useMemo(
     () => ({
-      theme: theme || defaultTheme,
+      theme: selectedTheme as Theme,
+      extendTheme,
+      replaceTheme,
       toggleDarkMode,
-      selectedTheme: useDarkMode ? 'dark' : 'default',
+      isDark: useDarkMode !== false,
     }),
-    [theme, toggleDarkMode, useDarkMode],
+    [selectedTheme, extendTheme, replaceTheme, toggleDarkMode, useDarkMode],
   )
   return <ThemeProviderContext.Provider value={value}>{children}</ThemeProviderContext.Provider>
 }
