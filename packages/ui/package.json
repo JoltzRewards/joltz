@@ -13,15 +13,17 @@
   "scripts": {
     "build": "preconstruct build",
     "build:storybook": "build-storybook",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "test": "jest --coverage --env=jest-environment-jsdom",
+    "test:watch": "yarn run test --watchAll"
   },
   "peerDependencies": {
     "react": "^17.0 || ^ 18.0",
     "react-dom": "^17.0 || ^18.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
-    "@babel/preset-env": "*",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "*",
     "@babel/preset-typescript": "*",
     "@geometricpanda/storybook-addon-badges": "^0.2.1",
@@ -38,8 +40,13 @@
     "@storybook/addon-links": "^6.4.22",
     "@storybook/react": "^6.4.22",
     "@storybook/testing-library": "^0.0.10",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
     "@types/react": "^17.0.39",
+    "babel-jest": "^28.1.0",
     "babel-loader": "^8.2.5",
+    "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
     "react": "^18.0",
     "react-dom": "^18.0",
     "rollup": "^2.67.2",
@@ -51,6 +58,7 @@
   },
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-dialog": "^0.1.7",
     "@radix-ui/react-icons": "^1.1.0",
     "@radix-ui/react-toolbar": "^0.1.5",
     "@stitches/react": "^1.2.7"
