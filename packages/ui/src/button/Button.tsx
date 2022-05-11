@@ -1,4 +1,4 @@
-import { styled } from '../theming'
+import { styled } from '../stitches.config'
 
 export const Button = styled('button', {
   cursor: 'pointer',

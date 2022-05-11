@@ -1,7 +1,7 @@
 import * as IconPrimitives from '@radix-ui/react-icons'
 import React from 'react'
 
-import { AvailableColors } from '../theming'
+import { AvailableColors } from '../stitches.config'
 
 export type AvailableIcons = keyof typeof IconPrimitives
 export interface IconProps extends React.SVGAttributes<SVGElement> {
