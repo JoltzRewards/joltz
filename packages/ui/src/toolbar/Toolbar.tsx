@@ -1,13 +1,6 @@
-import {
-  Button as TButton,
-  Root as TRoot,
-  Separator as TSeparator,
-  ToggleGroup as TToggleGroup,
-  ToggleItem as TToggleItem,
-  Link as TLink,
-} from '@radix-ui/react-toolbar'
+import * as Primitive from '@radix-ui/react-toolbar'
 
-import { styled } from '../theming'
+import { styled } from '../stitches.config'
 
 const baseStyles = {
   all: 'unset',
@@ -22,7 +15,7 @@ const baseStyles = {
   justifyContent: 'center',
 }
 
-const Root = styled(TRoot, {
+const Root = styled(Primitive.Root, {
   display: 'flex',
   padding: '$2',
   width: '100%',
@@ -47,23 +40,23 @@ const baseButtonStyles = {
   },
 }
 
-const Button = styled(TButton, baseButtonStyles)
+const Button = styled(Primitive.Button, baseButtonStyles)
 
-const Link = styled(TLink, {
+const Link = styled(Primitive.Link, {
   textDecoration: 'underline',
   color: '$purple3',
   fontWeight: 'bold',
 })
 
-const Separator = styled(TSeparator, {
+const Separator = styled(Primitive.Separator, {
   ...baseStyles,
   background: '$slate12',
   borderColor: '$slate12',
   width: '500px',
   height: '100%',
 })
-const ToggleGroup = styled(TToggleGroup, {})
-const ToggleItem = styled(TToggleItem, baseButtonStyles)
+const ToggleGroup = styled(Primitive.ToggleGroup, {})
+const ToggleItem = styled(Primitive.ToggleItem, baseButtonStyles)
 
 interface Toolbar {
   Root: typeof Root
