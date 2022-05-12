@@ -5,7 +5,7 @@ import { Codeblock } from './Codeblock'
 import { STATUS_BADGES } from '../../.storybook'
 
 export default {
-  title: 'Codeblock',
+  title: 'Primitives/Codeblock',
   component: Codeblock,
   argTypes: {
     ref: { table: { disable: true } },

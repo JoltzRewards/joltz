@@ -5,7 +5,7 @@ import { Tooltip } from './Tooltip'
 import { STATUS_BADGES } from '../../.storybook'
 
 export default {
-  title: 'Tooltip',
+  title: 'Primitives/Tooltip',
   component: Tooltip,
   argTypes: {
     ref: { table: { disable: true } },

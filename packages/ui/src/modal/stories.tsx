@@ -5,7 +5,7 @@ import { Modal, ModalProps } from './Modal'
 import { STATUS_BADGES } from '../../.storybook'
 
 export default {
-  title: 'Modal',
+  title: 'Primitives/Modal',
   component: Modal.Root,
   argTypes: {
     ref: { table: { disable: true } },

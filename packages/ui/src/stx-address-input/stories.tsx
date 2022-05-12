@@ -5,7 +5,7 @@ import { StxAddressInput } from './StxAddressInput'
 import { STATUS_BADGES } from '../../.storybook'
 
 export default {
-  title: 'StxAddressInput',
+  title: 'Components/StxAddressInput',
   component: StxAddressInput,
   argTypes: {
     ref: { table: { disable: true } },

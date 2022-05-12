@@ -5,7 +5,7 @@ import { Popover } from './Popover'
 import { STATUS_BADGES } from '../../.storybook'
 
 export default {
-  title: 'Popover',
+  title: 'Primitives/Popover',
   component: Popover,
   argTypes: {
     ref: { table: { disable: true } },

@@ -10,7 +10,7 @@ export default {
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'Box',
+  title: 'Primitives/Box',
   component: Box,
 } as ComponentMeta<typeof Box>
 

@@ -5,7 +5,7 @@ import { Transition } from './Transition'
 import { STATUS_BADGES } from '../../.storybook'
 
 export default {
-  title: 'Transition',
+  title: 'Primitives/Transition',
   component: Transition,
   argTypes: {
     ref: { table: { disable: true } },

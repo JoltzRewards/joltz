@@ -5,7 +5,7 @@ import { WalletActivityFeed } from './WalletActivityFeed'
 import { STATUS_BADGES } from '../../.storybook'
 
 export default {
-  title: 'WalletActivityFeed',
+  title: 'Components/WalletActivityFeed',
   component: WalletActivityFeed,
   argTypes: {
     ref: { table: { disable: true } },

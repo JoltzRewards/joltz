@@ -5,7 +5,7 @@ import { Button } from './Button'
 import { STATUS_BADGES } from '../../.storybook'
 
 export default {
-  title: 'Button',
+  title: 'Primitives/Button',
   component: Button,
   argTypes: {
     ref: { table: { disable: true } },
