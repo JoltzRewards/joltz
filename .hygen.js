@@ -39,11 +39,28 @@ module.exports = {
   templates: path.resolve(__dirname, '.templates'),
   helpers: {
     inflection,
-    componentCase: inflection.classify,
+    // componentCase: (s) => inflection.camelize(s),
+    componentCase: (s) => {
+      if (s.includes('-')) {
+        // e.g. Toast-Notification
+        // return 'ToastNotification'
+        const parts = s.split('-')
+        const titleCasing = parts.map((p) => inflection.titleize(p))
+
+        return titleCasing.join('')
+      }
+
+      return inflection.titleize(s)
+    },
+    kebobCase: (s) => {
+      const lowercaseString = s.toLowerCase()
+
+      return inflection.dasherize(lowercaseString)
+    },
     workspaces: getWorkspaces(__dirname).workspaces,
     packages: getWorkspaces(__dirname).packages,
     paths: {
-      components: path.resolve(__dirname, 'applications/web-playground/components'),
+      components: path.resolve(__dirname, 'packages/ui/src'),
     },
   },
 }
