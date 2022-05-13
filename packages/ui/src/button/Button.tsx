@@ -1,31 +1,14 @@
 import { styled } from '../stitches.config'
 
 export const Button = styled('button', {
-  cursor: 'pointer',
   all: 'unset',
-  alignItems: 'center',
-  boxSizing: 'border-box',
   userSelect: 'none',
-
-  '&::before': {
-    boxSizing: 'border-box',
-  },
-  '&::after': {
-    boxSizing: 'border-box',
-  },
-
-  // Custom reset?
-  display: 'inline-flex',
-  flexShrink: 0,
+  cursor: 'pointer !important',
   justifyContent: 'center',
-  lineHeight: '1',
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
-  // Custom
-  height: '$5',
   px: '$2',
   fontFamily: '$untitled',
-  fontSize: '$2',
+  fontSize: '$sizes$2 !important',
   fontWeight: 500,
   fontVariantNumeric: 'tabular-nums',
 
@@ -45,6 +28,11 @@ export const Button = styled('button', {
   },
 
   variants: {
+    full: {
+      true: {
+        width: '100%',
+      },
+    },
     size: {
       '1': {
         borderRadius: '$1',
@@ -93,19 +81,22 @@ export const Button = styled('button', {
       },
       secondary: {
         backgroundColor: '$colors$secondary',
-        boxShadow: 'inset 0 0 0 1px $colors$blue7',
-        color: '$blue11',
+        // boxShadow: 'inset 0 0 0 1px $colors$secondaryDarkCompliment',
+        color: '$colors$purple3',
         // '@hover': {
         //   '&:hover': {
         //     boxShadow: 'inset 0 0 0 1px $colors$blue8'
         //   },
         // },                  ``````````````````````````````````````````````````````````````````````````````````
         '&:active': {
-          backgroundColor: '$blue9',
-          boxShadow: 'inset 0 0 0 1px $colors$blue8',
+          backgroundColor: '$colors$purple10',
+          boxShadow: 'inset 0 0 0 1px $colors$purple8',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$blue8, 0 0 0 1px $colors$blue8',
+          boxShadow: 'inset 0 0 0 1px $colors$purple8, 0 0 0 1px $colors$purple8',
+        },
+        '&:hover': {
+          backgroundColor: '$colors$purple10',
         },
         // '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
         //   {
@@ -116,7 +107,7 @@ export const Button = styled('button', {
       tertiary: {
         backgroundColor: '$colors$tertiary',
         boxShadow: 'inset 0 0 0 1px $colors$green7',
-        color: '$green11',
+        color: '$hiContrast',
         '@hover': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px $colors$green8',
@@ -135,9 +126,9 @@ export const Button = styled('button', {
         //     boxShadow: 'inset 0 0 0 1px $colors$green8',
         //   },
       },
-      transparentWhite: {
+      subtle: {
         backgroundColor: 'hsla(0,100%,100%,.2)',
-        color: 'white',
+        color: '$hiContrast',
         '@hover': {
           '&:hover': {
             backgroundColor: 'hsla(0,100%,100%,.25)',
@@ -148,21 +139,6 @@ export const Button = styled('button', {
         },
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px hsla(0,100%,100%,.35), 0 0 0 1px hsla(0,100%,100%,.35)',
-        },
-      },
-      transparentBlack: {
-        backgroundColor: 'hsla(0,0%,0%,.08)',
-        color: 'black',
-        '@hover': {
-          '&:hover': {
-            backgroundColor: 'hsla(0,0%,0%,.1)',
-          },
-        },
-        '&:active': {
-          backgroundColor: 'hsla(0,0%,0%,.15)',
-        },
-        '&:focus': {
-          boxShadow: 'inset 0 0 0 1px hsla(0,0%,0%,.3), 0 0 0 1px hsla(0,0%,0%,.3)',
         },
       },
     },
