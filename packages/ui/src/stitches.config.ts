@@ -130,7 +130,7 @@ export type {
 import type * as PrimitiveTypes from '@radix-ui/react-primitive'
 export type { PrimitiveTypes }
 
-const baseColors = {
+export const baseColors = {
   ...gray,
   ...mauve,
   ...slate,
@@ -192,24 +192,158 @@ const baseColors = {
   ...whiteA,
   ...blackA,
 
-  // Semantic colors
   hiContrast: '$slate12',
   loContrast: 'white',
+  // semantic
   warning: '$amber9',
   error: '$tomato9',
   success: '$teal9',
   info: '$indigo9',
   canvas: 'hsl(0 0% 93%)',
-  panel: 'white',
-  primary: '$cyan9',
+  primary: '$teal9',
   secondary: '$purple9',
-  tertiary: '$gray11',
+  tertiary: '$amber9',
+  // semantic compliments
+  primaryDarkCompliment: '$teal8',
+  secondaryDarkCompliment: '$purple8',
+  tertiaryDarkCompliment: '$amber8',
+  //
+  panel: 'white',
   transparentPanel: 'hsl(0 0% 0% / 97%)',
   shadowLight: 'hsl(206 22% 7% / 35%)',
   shadowDark: 'hsl(206 22% 7% / 20%)',
 }
 
+export const darkColors = {
+  ...grayDark,
+  ...mauveDark,
+  ...slateDark,
+  ...sageDark,
+  ...oliveDark,
+  ...sandDark,
+  ...tomatoDark,
+  ...redDark,
+  ...crimsonDark,
+  ...pinkDark,
+  ...plumDark,
+  ...purpleDark,
+  ...violetDark,
+  ...indigoDark,
+  ...blueDark,
+  ...skyDark,
+  ...mintDark,
+  ...cyanDark,
+  ...tealDark,
+  ...greenDark,
+  ...grassDark,
+  ...limeDark,
+  ...yellowDark,
+  ...amberDark,
+  ...orangeDark,
+  ...brownDark,
+  ...bronzeDark,
+  ...goldDark,
+
+  ...grayDarkA,
+  ...mauveDarkA,
+  ...slateDarkA,
+  ...sageDarkA,
+  ...oliveDarkA,
+  ...sandDarkA,
+  ...tomatoDarkA,
+  ...redDarkA,
+  ...crimsonDarkA,
+  ...pinkDarkA,
+  ...plumDarkA,
+  ...purpleDarkA,
+  ...violetDarkA,
+  ...indigoDarkA,
+  ...blueDarkA,
+  ...skyDarkA,
+  ...mintDarkA,
+  ...cyanDarkA,
+  ...tealDarkA,
+  ...greenDarkA,
+  ...grassDarkA,
+  ...limeDarkA,
+  ...yellowDarkA,
+  ...amberDarkA,
+  ...orangeDarkA,
+  ...brownDarkA,
+  ...bronzeDarkA,
+  ...goldDarkA,
+
+  // Semantic colors
+  hiContrast: '$slate12',
+  loContrast: '$slate1',
+  canvas: 'hsl(0 0% 15%)',
+  panel: '$slate3',
+  transparentPanel: 'hsl(0 100% 100% / 97%)',
+  shadowLight: 'hsl(206 22% 7% / 35%)',
+  shadowDark: 'hsl(206 22% 7% / 20%)',
+}
+
+/**
+ * @name AvailableColors
+ * @description all available colors provided
+ * @see https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale#use-cases
+ *
+ * 1: App background
+ *
+ * 2: Subtle background
+ *
+ * 3: UI element background
+ *
+ * 4: Hovered UI element background
+ *
+ * 5: Active/Selected UI element background
+ *
+ * 6: Subtle borders and separators
+ *
+ * 7: UI element border and focus rings
+ *
+ * 8: Hovered UI element border
+ *
+ * 9: Solid backgrounds
+ *
+ * 10: Hovered solid backgrounds
+ *
+ * 11: Low-contrast text
+ *
+ * 12: High-contrast text
+ */
 export type AvailableColors = keyof typeof baseColors
+
+/**
+ * @name AvailableDarkColors
+ * @description all available dark colors provided
+ * @see https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale#use-cases
+ *
+ * 1: App background
+ *
+ * 2: Subtle background
+ *
+ * 3: UI element background
+ *
+ * 4: Hovered UI element background
+ *
+ * 5: Active/Selected UI element background
+ *
+ * 6: Subtle borders and separators
+ *
+ * 7: UI element border and focus rings
+ *
+ * 8: Hovered UI element border
+ *
+ * 9: Solid backgrounds
+ *
+ * 10: Hovered solid backgrounds
+ *
+ * 11: Low-contrast text
+ *
+ * 12: High-contrast text
+ */
+export type AvailableDarkColors = keyof typeof darkColors
 
 export const {
   styled,
@@ -422,72 +556,5 @@ export type Theme = ConfigType.Theme
 export type CSS = Stitches.CSS<typeof config>
 
 export const darkTheme = createTheme('dark-theme', {
-  colors: {
-    ...grayDark,
-    ...mauveDark,
-    ...slateDark,
-    ...sageDark,
-    ...oliveDark,
-    ...sandDark,
-    ...tomatoDark,
-    ...redDark,
-    ...crimsonDark,
-    ...pinkDark,
-    ...plumDark,
-    ...purpleDark,
-    ...violetDark,
-    ...indigoDark,
-    ...blueDark,
-    ...skyDark,
-    ...mintDark,
-    ...cyanDark,
-    ...tealDark,
-    ...greenDark,
-    ...grassDark,
-    ...limeDark,
-    ...yellowDark,
-    ...amberDark,
-    ...orangeDark,
-    ...brownDark,
-    ...bronzeDark,
-    ...goldDark,
-
-    ...grayDarkA,
-    ...mauveDarkA,
-    ...slateDarkA,
-    ...sageDarkA,
-    ...oliveDarkA,
-    ...sandDarkA,
-    ...tomatoDarkA,
-    ...redDarkA,
-    ...crimsonDarkA,
-    ...pinkDarkA,
-    ...plumDarkA,
-    ...purpleDarkA,
-    ...violetDarkA,
-    ...indigoDarkA,
-    ...blueDarkA,
-    ...skyDarkA,
-    ...mintDarkA,
-    ...cyanDarkA,
-    ...tealDarkA,
-    ...greenDarkA,
-    ...grassDarkA,
-    ...limeDarkA,
-    ...yellowDarkA,
-    ...amberDarkA,
-    ...orangeDarkA,
-    ...brownDarkA,
-    ...bronzeDarkA,
-    ...goldDarkA,
-
-    // Semantic colors
-    hiContrast: '$slate12',
-    loContrast: '$slate1',
-    canvas: 'hsl(0 0% 15%)',
-    panel: '$slate3',
-    transparentPanel: 'hsl(0 100% 100% / 97%)',
-    shadowLight: 'hsl(206 22% 7% / 35%)',
-    shadowDark: 'hsl(206 22% 7% / 20%)',
-  },
+  colors: darkColors,
 })
