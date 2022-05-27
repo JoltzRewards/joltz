@@ -1,8 +1,9 @@
 'use strict'
 
+require('dotenv').config()
+
 const morgan = require('morgan')
 import { Response, Request } from 'express'
-require('dotenv').config()
 
 const morganLogType: string = process.env.NODE_ENV === 'production' ? 'common' : 'dev'
 

@@ -1,9 +1,10 @@
 'use strict'
 
+require('dotenv').config()
+
 const winston = require('winston')
 import * as path from 'path'
 import { Logger, format } from 'winston'
-require('dotenv').config()
 
 /* options based on NODE_ENV */
 const options =
