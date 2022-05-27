@@ -5,6 +5,6 @@ import * as userController from './userController'
 
 const userRouter = Router()
 
-userRouter.post('/create-user', userController.create)
+userRouter.post('/create', userController.create)
 
 export default userRouter
