@@ -4,6 +4,7 @@
 import express from 'express'
 import helmet from 'helmet'
 import * as morgan from './utils/logger/morgan'
+import mongo from './utils/mongo'
 import genericErrorHandler from './middlewares/genericErrorHandler'
 import notFoundErrorHandler from './middlewares/notFoundErrorHandler'
 import userRoutes from './modules/user/userRoutes'
@@ -21,6 +22,9 @@ if (app.get('env') !== 'test') {
   app.use(morgan.errorLogging)
   app.use(morgan.successLogging)
 }
+
+/* initialise MongoDB connection */
+mongo.init()
 
 /* initialize middlewares */
 app.use(express.json())
