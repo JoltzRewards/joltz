@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
-import { Router } from 'express';
-import * as userController from './userController';
+import { Router } from 'express'
+import * as userController from './userController'
 
-const userRouter = Router();
+const userRouter = Router()
 
-userRouter.post('/create-user', userController.create);
+userRouter.post('/create-user', userController.create)
 
-export default userRouter;
+export default userRouter
