@@ -1,17 +1,16 @@
 'use strict'
 
+require('dotenv').config()
+
 /* all imports */
 import express from 'express'
 import helmet from 'helmet'
-import * as morgan from './utils/logger/morgan'
-import mongo from './utils/mongo'
-import genericErrorHandler from './middlewares/genericErrorHandler'
-import notFoundErrorHandler from './middlewares/notFoundErrorHandler'
-import userRoutes from './modules/user/userRoutes'
+import { morgan } from './utils'
 
-require('dotenv').config()
+import { genericErrorHandler, notFoundErrorHandler } from './middlewares'
+import { userRouter } from './modules'
 
-const app = express()
+export const app = express()
 
 /* set options */
 app.set('port', process.env.PORT || 3000)
@@ -24,7 +23,7 @@ if (app.get('env') !== 'test') {
 }
 
 /* initialise MongoDB connection */
-mongo.init()
+// mongo.init()
 
 /* initialize middlewares */
 app.use(express.json())
@@ -37,10 +36,8 @@ app.get('/', (_req, res) => {
 })
 
 /* initialise API routes */
-app.use('/auth', userRoutes)
+app.use('/auth', userRouter)
 
 /* error middlewares */
 app.use(genericErrorHandler)
 app.use(notFoundErrorHandler)
-
-export default app
