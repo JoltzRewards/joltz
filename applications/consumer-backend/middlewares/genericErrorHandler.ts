@@ -1,6 +1,6 @@
 'use strict'
 
-import winston from '../utils/logger/winston'
+import { logger } from '../utils'
 import { Response, Request, NextFunction } from 'express'
 import { StatusCodes, getReasonPhrase } from 'http-status-codes'
 
@@ -11,7 +11,8 @@ import { StatusCodes, getReasonPhrase } from 'http-status-codes'
  * @param {Request} req
  * @param {Response} res
  */
-const genericErrorHandler = (
+
+export const genericErrorHandler = (
   err: any,
   req: Request,
   res: Response,
@@ -19,7 +20,7 @@ const genericErrorHandler = (
 ): Response => {
   // Error is of type Boom
   if (err.isBoom) {
-    winston.debug(err.output.payload.message)
+    logger.debug(err.output.payload.message)
     return res.status(err.output.statusCode).json({
       error: {
         code: err.output.statusCode,
@@ -36,5 +37,3 @@ const genericErrorHandler = (
     },
   })
 }
-
-export default genericErrorHandler

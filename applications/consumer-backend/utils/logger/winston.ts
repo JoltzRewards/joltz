@@ -1,10 +1,9 @@
 'use strict'
 
-require('dotenv').config()
-
-const winston = require('winston')
 import * as path from 'path'
 import { Logger, format } from 'winston'
+
+const winston = require('winston')
 
 /* options based on NODE_ENV */
 const options =
@@ -26,7 +25,7 @@ const logFilePath = path.join(__dirname, '../../../logs/', logFile)
  * format : timestamp & JSON
  * transports : Console & file
  */
-const logger: Logger = winston.createLogger({
+export const logger: Logger = winston.createLogger({
   transports: [
     new winston.transports.Console({
       ...options,
@@ -39,5 +38,3 @@ const logger: Logger = winston.createLogger({
   ],
   format: format.combine(format.timestamp(), format.json()),
 })
-
-export default logger

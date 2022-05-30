@@ -11,7 +11,7 @@ import { Request, Response, NextFunction } from 'express'
  * @param {NextFunction} next
  * @returns {Response}
  */
-const notFoundErrorHandler = (req: Request, res: Response, next: NextFunction): Response => {
+export const notFoundErrorHandler = (req: Request, res: Response, next: NextFunction): Response => {
   return res.status(StatusCodes.NOT_FOUND).json({
     error: {
       code: StatusCodes.NOT_FOUND,
@@ -19,5 +19,3 @@ const notFoundErrorHandler = (req: Request, res: Response, next: NextFunction): 
     },
   })
 }
-
-export default notFoundErrorHandler

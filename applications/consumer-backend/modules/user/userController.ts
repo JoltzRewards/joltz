@@ -4,7 +4,7 @@ import { Request, Response, NextFunction } from 'express'
 import { StatusCodes, getReasonPhrase } from 'http-status-codes'
 import { OperationResponse } from '../../utils/responseHandler'
 
-import User from './userModel'
+import { User } from './userModel'
 
 /**
  * Creates a new User, and returns it as a JSON
@@ -22,8 +22,8 @@ export const create = async (req: Request, res: OperationResponse, next: NextFun
       },
     })
   }
-  const { name } = req.body
 
+  const { name } = req.body
   const newUser = {
     name,
   }
