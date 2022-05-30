@@ -8600,13 +8600,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"builtin-modules@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "builtin-modules@npm:1.1.1"
-  checksum: 0fbf69ffe77fecf11c441b9a7d1e664bb8119a7d3004831d9bd6ce0eacfd5d121ed4b667172870b5f66ecfce4bd54f7c20060d21c339c29049a7a5dd2bb7bf8c
-  languageName: node
-  linkType: hard
-
 "builtin-modules@npm:^3.1.0":
   version: 3.2.0
   resolution: "builtin-modules@npm:3.2.0"
@@ -8805,7 +8798,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^2.0.0, chalk@npm:^2.1.0, chalk@npm:^2.3.0":
+"chalk@npm:^2.0.0, chalk@npm:^2.1.0":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
   dependencies:
@@ -9291,7 +9284,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^2.12.1, commander@npm:^2.20.0":
+"commander@npm:^2.20.0":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
   checksum: ab8c07884e42c3a8dbc5dd9592c606176c7eb5c1ca5ff274bcf907039b2c41de3626f684ea75ccf4d361ba004bbaff1f577d5384c155f3871e456bdf27becf9e
@@ -9421,9 +9414,6 @@ __metadata:
     nodemon: ^2.0.16
     prettier: "*"
     ts-node: "*"
-    tslint: ^6.1.3
-    tslint-config-prettier: ^1.18.0
-    tslint-config-standard: ^9.0.0
     typescript: "*"
     winston: ^3.7.2
   languageName: unknown
@@ -10431,16 +10421,6 @@ __metadata:
     typescript: ^4.6.3
   languageName: unknown
   linkType: soft
-
-"doctrine@npm:0.7.2":
-  version: 0.7.2
-  resolution: "doctrine@npm:0.7.2"
-  dependencies:
-    esutils: ^1.1.6
-    isarray: 0.0.1
-  checksum: 27d76a9a0f05c04a0011b8930ca79ffc28d93c7cebf6ea5baad8f387f2225999ad97bc3454a7e84bbfcc4f46ac78062dbda0a4197f3ed1b36df8db651baf4513
-  languageName: node
-  linkType: hard
 
 "doctrine@npm:^2.1.0":
   version: 2.1.0
@@ -11470,13 +11450,6 @@ __metadata:
   version: 2.0.2
   resolution: "estree-walker@npm:2.0.2"
   checksum: 6151e6f9828abe2259e57f5fd3761335bb0d2ebd76dc1a01048ccee22fabcfef3c0859300f6d83ff0d1927849368775ec5a6d265dde2f6de5a1be1721cd94efc
-  languageName: node
-  linkType: hard
-
-"esutils@npm:^1.1.6":
-  version: 1.1.6
-  resolution: "esutils@npm:1.1.6"
-  checksum: 1c6dbba5c2f67d5400432b5700ba58a67b5131f8d1c35cd9cf7b7b39b5ce1a06d4e6ef14571617cf3c155fd98133620b846f0ba76d04b2e37ee58f5e6d737a07
   languageName: node
   linkType: hard
 
@@ -15973,17 +15946,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mkdirp@npm:^0.5.3":
-  version: 0.5.6
-  resolution: "mkdirp@npm:0.5.6"
-  dependencies:
-    minimist: ^1.2.6
-  bin:
-    mkdirp: bin/cmd.js
-  checksum: 0c91b721bb12c3f9af4b77ebf73604baf350e64d80df91754dc509491ae93bf238581e59c7188360cec7cb62fc4100959245a42cfe01834efedc5e9d068376c2
-  languageName: node
-  linkType: hard
-
 "mkdirp@npm:^0.5.5":
   version: 0.5.5
   resolution: "mkdirp@npm:0.5.5"
@@ -19722,7 +19684,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:2 || 3 || 4 || 5, semver@npm:^5.3.0, semver@npm:^5.4.1, semver@npm:^5.5.0, semver@npm:^5.7.1":
+"semver@npm:2 || 3 || 4 || 5, semver@npm:^5.4.1, semver@npm:^5.5.0, semver@npm:^5.7.1":
   version: 5.7.1
   resolution: "semver@npm:5.7.1"
   bin:
@@ -21459,14 +21421,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:1.9.0":
-  version: 1.9.0
-  resolution: "tslib@npm:1.9.0"
-  checksum: 6f153f1f3a05855fd83fca3e6c45b7d545176d9e3d52e3e592484a5f293193e36aa8cfc8dc086ae71e4a81ebb9ca9cc965604cc742e56428750a522df0c3b38c
-  languageName: node
-  linkType: hard
-
-"tslib@npm:^1.13.0, tslib@npm:^1.8.1":
+"tslib@npm:^1.8.1":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
@@ -21480,75 +21435,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslint-config-prettier@npm:^1.18.0":
-  version: 1.18.0
-  resolution: "tslint-config-prettier@npm:1.18.0"
-  bin:
-    tslint-config-prettier-check: bin/check.js
-  checksum: f0c548a7a520f9247f8e4ddba1136f300d1b2ec48a8255b030c05e35866cc22c105d9120540dd5ee82e2a04a769d82f5d098b7eaf6928820f6dba1badad6704c
-  languageName: node
-  linkType: hard
-
-"tslint-config-standard@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "tslint-config-standard@npm:9.0.0"
-  dependencies:
-    tslint-eslint-rules: ^5.3.1
-  checksum: 079361d15c76953c6b712146033509c710656875e832f2ca2cb3a6e6c5cd3aff715d4bfd0ef84a2d42d34b78b11a50ead75303cd6d2a1944e53e2b24cefc71ee
-  languageName: node
-  linkType: hard
-
-"tslint-eslint-rules@npm:^5.3.1":
-  version: 5.4.0
-  resolution: "tslint-eslint-rules@npm:5.4.0"
-  dependencies:
-    doctrine: 0.7.2
-    tslib: 1.9.0
-    tsutils: ^3.0.0
-  peerDependencies:
-    tslint: ^5.0.0
-    typescript: ^2.2.0 || ^3.0.0
-  checksum: 23c3392d472a7d202976066a8e042affb4fe2965b2bc554aeefe9260913489ba7b24df1a09cf71cbaa465ae03d48b4bdf3ee81c9a67c0b19aaab86043f30d755
-  languageName: node
-  linkType: hard
-
-"tslint@npm:^6.1.3":
-  version: 6.1.3
-  resolution: "tslint@npm:6.1.3"
-  dependencies:
-    "@babel/code-frame": ^7.0.0
-    builtin-modules: ^1.1.1
-    chalk: ^2.3.0
-    commander: ^2.12.1
-    diff: ^4.0.1
-    glob: ^7.1.1
-    js-yaml: ^3.13.1
-    minimatch: ^3.0.4
-    mkdirp: ^0.5.3
-    resolve: ^1.3.2
-    semver: ^5.3.0
-    tslib: ^1.13.0
-    tsutils: ^2.29.0
-  peerDependencies:
-    typescript: ">=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >=3.0.0-dev || >= 3.1.0-dev || >= 3.2.0-dev || >= 4.0.0-dev"
-  bin:
-    tslint: bin/tslint
-  checksum: 7348b7abd6b8939f0b295c4dddbb104adfe2e96c9cc5be4a946a87a28df648bde61046cfb07951708938192f553eba6254f7729b85fd230efebbd72f7988255e
-  languageName: node
-  linkType: hard
-
-"tsutils@npm:^2.29.0":
-  version: 2.29.0
-  resolution: "tsutils@npm:2.29.0"
-  dependencies:
-    tslib: ^1.8.1
-  peerDependencies:
-    typescript: ">=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev"
-  checksum: 5d681bab79979e3b4d61dd0d1e6c1dd6a79b5608cf8dec5a5ee599ac8b5921107870bcf037140b8dce85a479df78aee0ffa61c1b3d8e5660748af36551946616
-  languageName: node
-  linkType: hard
-
-"tsutils@npm:^3.0.0, tsutils@npm:^3.21.0":
+"tsutils@npm:^3.21.0":
   version: 3.21.0
   resolution: "tsutils@npm:3.21.0"
   dependencies:
