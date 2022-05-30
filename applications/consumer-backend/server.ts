@@ -33,7 +33,7 @@ app.use(helmet())
 // app.use(cors);
 
 app.get('/', (_req, res) => {
-  res.send('Consumer Backend API')
+  res.send('OK')
 })
 
 /* initialise API routes */
