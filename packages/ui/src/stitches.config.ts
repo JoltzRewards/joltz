@@ -1,4 +1,5 @@
 import { createStitches } from '@stitches/react'
+import type { ConfigType } from '@stitches/react/types/config'
 
 import {
   gray,
@@ -200,6 +201,9 @@ const baseColors = {
   info: '$indigo9',
   canvas: 'hsl(0 0% 93%)',
   panel: 'white',
+  primary: '$cyan9',
+  secondary: '$purple9',
+  tertiary: '$gray11',
   transparentPanel: 'hsl(0 0% 0% / 97%)',
   shadowLight: 'hsl(206 22% 7% / 35%)',
   shadowDark: 'hsl(206 22% 7% / 20%)',
@@ -412,6 +416,8 @@ export const {
     }),
   },
 })
+
+export type Theme = ConfigType.Theme
 
 export type CSS = Stitches.CSS<typeof config>
 

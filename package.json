@@ -50,7 +50,8 @@
     "build": "yarn preconstruct build",
     "fix": "yarn preconstruct fix",
     "validate": "yarn preconstruct validate",
-    "test": "echo 'not implemented yet'"
+    "test": "echo 'not implemented yet'",
+    "new:component": "yarn hygen component new"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
@@ -72,7 +73,10 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "flatten": "^1.0.3",
     "husky": "^7.0.4",
+    "hygen": "^6.2.0",
+    "inflection": "^1.13.2",
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.1",
     "react": "18.0.0",
