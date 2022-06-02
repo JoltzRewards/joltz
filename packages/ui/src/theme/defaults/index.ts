@@ -1,0 +1,5 @@
+export type { AvailableLightColors } from './light-theme'
+export type { AvailableDarkColors } from './dark-theme'
+export { lightColors } from './light-theme'
+export { darkColors } from './dark-theme'
+export { theme } from './common'

@@ -1,12 +1,12 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { darkColors, baseColors } from '../stitches.config'
+import { defaultTheme } from '../stitches.config'
 import { Grid, Flex, Box } from '../layout'
 import { Text } from '../text'
 
 const ColorScaleSwatches = () => {
-  const baseColorNames = Object.keys(baseColors)
+  const baseColorNames = Object.keys(defaultTheme.colors)
   // const darkColorNames = Object.keys(baseColors)
 
   return (
@@ -35,7 +35,7 @@ const ColorScaleSwatches = () => {
             />
             <Text size="1" css={{ textAlign: 'center', fontWeight: 500 }} color="black">
               {identifier}
-              {scaleStep}
+              {/* {scaleStep} */}
             </Text>
           </Flex>
         )
@@ -56,7 +56,8 @@ export const Overview: ComponentStory<typeof ColorScaleSwatches> = () => <ColorS
 
 Overview.parameters = {
   docs: {
-    page: 'https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale#use-cases',
+    // page:
+    //   'https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale#use-cases',
     source: {
       code: 'Your code snippet goes here.',
       language: 'jsx',

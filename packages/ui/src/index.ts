@@ -1,5 +1,5 @@
 export * from './toolbar'
-export * from './theme-provider'
+export * from './theme'
 export * from './button'
 export * from './stitches.config'
 export * from './icon'
