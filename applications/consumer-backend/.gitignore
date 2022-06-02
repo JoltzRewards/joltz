@@ -1,0 +1,16 @@
+# node modules
+node_modules
+
+# dotenv environment variables files
+.env
+
+# Compiled binary addons
+build/Release
+dist/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
