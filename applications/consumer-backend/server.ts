@@ -5,25 +5,21 @@ require('dotenv').config()
 /* all imports */
 import express from 'express'
 import helmet from 'helmet'
-import { morgan } from './utils'
-
+import { morgan, env } from './utils'
 import { genericErrorHandler, notFoundErrorHandler } from './middlewares'
 import { userRouter } from './modules'
 
 export const app = express()
 
 /* set options */
-app.set('port', process.env.PORT || 3000)
-app.set('env', process.env.NODE_ENV || 'dev')
+app.set('port', env.PORT)
+app.set('env', env.NODE_ENV)
 
 /* set loggers */
 if (app.get('env') !== 'test') {
   app.use(morgan.errorLogging)
   app.use(morgan.successLogging)
 }
-
-/* initialise MongoDB connection */
-// mongo.init()
 
 /* initialize middlewares */
 app.use(express.json())
@@ -36,7 +32,10 @@ app.get('/', (_req, res) => {
 })
 
 /* initialise API routes */
-app.use('/auth', userRouter)
+app.use('/user', userRouter)
+
+// example of route mounting for upcoming oauth-related endpoints
+// app.use('/auth', authRouter)
 
 /* error middlewares */
 app.use(genericErrorHandler)
