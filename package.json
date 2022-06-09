@@ -73,6 +73,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "find-root": "^1.1.0",
     "flatten": "^1.0.3",
     "husky": "^7.0.4",
     "hygen": "^6.2.0",
