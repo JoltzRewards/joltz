@@ -8486,6 +8486,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@trubittech/gaia@workspace:packages/gaia":
+  version: 0.0.0-use.local
+  resolution: "@trubittech/gaia@workspace:packages/gaia"
+  peerDependencies:
+    "@stacks/storage": "*"
+  languageName: unknown
+  linkType: soft
+
 "@trubittech/mutable-nft-api@workspace:applications/mutable-nfts":
   version: 0.0.0-use.local
   resolution: "@trubittech/mutable-nft-api@workspace:applications/mutable-nfts"
@@ -8583,6 +8591,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.2.0
     "@types/lodash.merge": ^4.6.7
+    "@types/lodash.take": ^4.1.7
     "@types/react": ^17.0.39
     "@types/tinycolor2": ^1.4.3
     babel-jest: ^28.1.0
@@ -8590,6 +8599,7 @@ __metadata:
     jest: ^28.1.0
     jest-environment-jsdom: ^28.1.0
     lodash.merge: ^4.6.2
+    lodash.take: ^4.1.1
     react: ^18.0
     react-dom: ^18.0
     react-syntax-highlighter: ^15.5.0
@@ -9045,6 +9055,15 @@ __metadata:
   dependencies:
     "@types/lodash": "*"
   checksum: 94cd6fb8e606756a28f45d63c658aacfbce11a151f7fa322c4a3e87aa50d8bf26e0ae8cba0250070a7c5a6792fc51f79abf4c648bbb1850692be386cd76cd0ca
+  languageName: node
+  linkType: hard
+
+"@types/lodash.take@npm:^4.1.7":
+  version: 4.1.7
+  resolution: "@types/lodash.take@npm:4.1.7"
+  dependencies:
+    "@types/lodash": "*"
+  checksum: b309646d1c8b4783d76598a3be42640bdaa1ef09aa6739672ebcbc12f9e652e5d880cdf64dcf9224f492cfaca8b33bc101297533d78c4aa29c9ea63eca47b2e3
   languageName: node
   linkType: hard
 
@@ -20955,6 +20974,13 @@ __metadata:
   version: 4.4.0
   resolution: "lodash.startcase@npm:4.4.0"
   checksum: c03a4a784aca653845fe09d0ef67c902b6e49288dc45f542a4ab345a9c406a6dc194c774423fa313ee7b06283950301c1221dd2a1d8ecb2dac8dfbb9ed5606b5
+  languageName: node
+  linkType: hard
+
+"lodash.take@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "lodash.take@npm:4.1.1"
+  checksum: 5786572bb5865ba9f82e1a80f5a2ee861b38570fe7440af33cba4707dc87138b2dec836936fe87534f3da89f6899dd6d0f7287c1c4c3f0117cbfdb1aa6981a63
   languageName: node
   linkType: hard
 
