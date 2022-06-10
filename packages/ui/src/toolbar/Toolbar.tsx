@@ -1,4 +1,5 @@
 import * as Primitive from '@radix-ui/react-toolbar'
+import { Button as LibButton } from '..'
 
 import { styled } from '../stitches.config'
 
@@ -40,18 +41,18 @@ const baseButtonStyles = {
   },
 }
 
-const Button = styled(Primitive.Button, baseButtonStyles)
+const Button = styled(LibButton, baseButtonStyles)
 
 const Link = styled(Primitive.Link, {
   textDecoration: 'underline',
-  color: '$purple3',
+  color: 'purple',
   fontWeight: 'bold',
 })
 
 const Separator = styled(Primitive.Separator, {
   ...baseStyles,
-  background: '$slate12',
-  borderColor: '$slate12',
+  background: '$primary',
+  borderColor: '$primary',
   width: '500px',
   height: '100%',
 })

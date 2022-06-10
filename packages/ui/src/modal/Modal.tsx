@@ -1,6 +1,7 @@
 import React from 'react'
 import * as Primitive from '@radix-ui/react-dialog'
 
+import { fade, scale } from '../animations'
 import { styled } from '../stitches.config'
 
 export type ModalProps = React.ComponentProps<typeof Root>
@@ -17,11 +18,22 @@ const Root = styled(Primitive.Root, {
 })
 const Trigger = styled(Primitive.Trigger, {})
 const Content = styled(Primitive.Content, {
+  transformOrigin: 'var(--radix-modal-content-transform-origin)',
+  // animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+  // animationFillMode: 'forwards',
   backgroundColor: '$panel',
   position: 'relative',
   padding: '$3',
   borderRadius: '$3',
   zIndex: '$max',
+  '&[data-state="open"]': {
+    animationDuration: '0.3s',
+    animation: `${scale._in} 0.25s ease-out forwards`,
+  },
+  '&[data-state="closed"]': {
+    animationDuration: '0.15s',
+    animation: `${fade._out} 0.15s ease-out forwards`,
+  },
 })
 const Close = styled(Primitive.Close, {
   backgroundColor: 'transparent',
@@ -29,6 +41,13 @@ const Close = styled(Primitive.Close, {
 })
 const Portal = styled(Primitive.Portal, {})
 const Overlay = styled(Primitive.Overlay, {
+  '&[data-state="open"]': {
+    animationDuration: '0.3s',
+    animation: `${fade._in} 0.25s ease-out forwards`,
+  },
+  '&[data-state="closed"]': {
+    animation: `${fade._out} 0.25s ease-out forwards`,
+  },
   background: 'rgba(0 0 0 / 0.5)',
   position: 'fixed',
   top: 0,

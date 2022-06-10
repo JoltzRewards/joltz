@@ -1,30 +1,41 @@
-import { styled } from '../stitches.config'
+import tinycolor from 'tinycolor2'
+
+import { styled, config } from '../stitches.config'
+import { Icon } from '../icon'
 
 export const Button = styled('button', {
   all: 'unset',
+  p: '$1',
+  borderRadius: '$2',
   userSelect: 'none',
   cursor: 'pointer !important',
-  justifyContent: 'center',
+  fontSize: '$5',
+  transition: '$all',
 
-  px: '$2',
-  fontFamily: '$untitled',
-  fontSize: '$sizes$2 !important',
-  fontWeight: 500,
+  fontFamily: '$sans',
+  fontWeight: '$medium',
+  textAlign: 'center',
+  boxShadow: '0 0 0 3px $$borderColor',
   fontVariantNumeric: 'tabular-nums',
 
   '&:disabled': {
-    backgroundColor: '$slate2',
-    boxShadow: 'inset 0 0 0 1px $colors$slate7',
-    color: '$slate8',
+    opacity: 0.7,
     pointerEvents: 'none',
+    // color: '$hiContrast',
+    // backgroundColor: '$muted',
+    // boxShadow: 'inset 0 0 0 1px $muted',
   },
 
   // Inline icons
   '& svg': {
-    display: 'inline-block',
-    verticalAlign: 'bottom',
-    height: '13px',
-    marginLeft: '5px',
+    // display: 'inline-block',
+    // verticalAlign: 'bottom',
+    // height: '13px',
+    // marginLeft: '5px',
+  },
+
+  '&:hover': {
+    backgroundColor: '$$hoverBackground',
   },
 
   variants: {
@@ -33,25 +44,41 @@ export const Button = styled('button', {
         width: '100%',
       },
     },
+    loading: {
+      true: {
+        pointerEvents: 'none',
+      },
+    },
+    rounded: {
+      true: {
+        borderRadius: '$4',
+      },
+    },
+    round: {
+      true: {
+        width: '$6',
+        height: '$6',
+        minWidth: '$6',
+        minHeight: '$6',
+        padding: 0,
+        borderRadius: '$round',
+
+        '& svg': {
+          blockSize: '100%',
+          margin: 0,
+        },
+      },
+    },
     size: {
       '1': {
-        borderRadius: '$1',
-        height: '$5',
-        px: '$2',
         fontSize: '$1',
         lineHeight: '$sizes$5',
       },
       '2': {
-        borderRadius: '$2',
-        height: '$6',
-        px: '$3',
         fontSize: '$3',
         lineHeight: '$sizes$6',
       },
       '3': {
-        borderRadius: '$2',
-        height: '$7',
-        px: '$4',
         fontSize: '$4',
         lineHeight: '$sizes$7',
       },
@@ -59,126 +86,61 @@ export const Button = styled('button', {
     variant: {
       primary: {
         backgroundColor: '$primary',
-        boxShadow: 'inset 0 0 0 1px $slate7',
-        color: '$hiContrast',
-        '@hover': {
-          '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$slate8',
-          },
-        },
-        '&:active': {
-          backgroundColor: '$slate2',
-          boxShadow: 'inset 0 0 0 1px $colors$slate8',
-        },
+        color: '$loContrast',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
-        },
-        // '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-        //   {
-        //     backgroundColor: '$slate4',
-        //     boxShadow: 'inset 0 0 0 1px $colors$slate8',
-        //   },
-      },
-      secondary: {
-        backgroundColor: '$colors$secondary',
-        // boxShadow: 'inset 0 0 0 1px $colors$secondaryDarkCompliment',
-        color: '$colors$purple3',
-        // '@hover': {
-        //   '&:hover': {
-        //     boxShadow: 'inset 0 0 0 1px $colors$blue8'
-        //   },
-        // },                  ``````````````````````````````````````````````````````````````````````````````````
-        '&:active': {
-          backgroundColor: '$colors$purple10',
-          boxShadow: 'inset 0 0 0 1px $colors$purple8',
-        },
-        '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$purple8, 0 0 0 1px $colors$purple8',
+          $$borderColor: tinycolor(config.theme.colors.primary).darken(10).setAlpha(0.4),
         },
         '&:hover': {
-          backgroundColor: '$colors$purple10',
+          $$hoverBackground: tinycolor(config.theme.colors.primary).darken(2.5).toString(),
         },
-        // '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-        //   {
-        //     backgroundColor: '$blue4',
-        //     boxShadow: 'inset 0 0 0 1px $colors$blue8',
-        //   },
       },
-      tertiary: {
-        backgroundColor: '$colors$tertiary',
-        boxShadow: 'inset 0 0 0 1px $colors$green7',
-        color: '$hiContrast',
-        '@hover': {
-          '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$green8',
-          },
-        },
-        '&:active': {
-          backgroundColor: '$green3',
-          boxShadow: 'inset 0 0 0 1px $colors$green8',
+      secondary: {
+        backgroundColor: '$muted',
+        '&:hover': {
+          $$hoverBackground: tinycolor(config.theme.colors.muted).darken(4).toString(),
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$green8, 0 0 0 1px $colors$green8',
-        },
-        // '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-        //   {
-        //     backgroundColor: '$green4',
-        //     boxShadow: 'inset 0 0 0 1px $colors$green8',
-        //   },
-      },
-      subtle: {
-        backgroundColor: 'hsla(0,100%,100%,.2)',
-        color: '$hiContrast',
-        '@hover': {
-          '&:hover': {
-            backgroundColor: 'hsla(0,100%,100%,.25)',
-          },
-        },
-        '&:active': {
-          backgroundColor: 'hsla(0,100%,100%,.3)',
-        },
-        '&:focus': {
-          boxShadow: 'inset 0 0 0 1px hsla(0,100%,100%,.35), 0 0 0 1px hsla(0,100%,100%,.35)',
+          $$borderColor: tinycolor(config.theme.colors.muted).darken(25).setAlpha(0.4),
         },
       },
     },
-    state: {
-      active: {
-        backgroundColor: '$slate4',
-        boxShadow: 'inset 0 0 0 1px $colors$slate8',
-        color: '$slate11',
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$slate5',
-            boxShadow: 'inset 0 0 0 1px $colors$slate8',
-          },
-        },
-        '&:active': {
-          backgroundColor: '$slate5',
-        },
-        '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
-        },
-      },
-      waiting: {
-        backgroundColor: '$slate4',
-        boxShadow: 'inset 0 0 0 1px $colors$slate8',
-        color: 'transparent',
-        pointerEvents: 'none',
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$slate5',
-            boxShadow: 'inset 0 0 0 1px $colors$slate8',
-          },
-        },
-        '&:active': {
-          backgroundColor: '$slate5',
-        },
-        '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$slate8',
-        },
-      },
-    },
+    // state: {
+    //   active: {
+    //     backgroundColor: '$slate4',
+    //     boxShadow: 'inset 0 0 0 1px $colors$slate8',
+    //     color: '$slate11',
+    //     '@hover': {
+    //       '&:hover': {
+    //         backgroundColor: '$slate5',
+    //         boxShadow: 'inset 0 0 0 1px $colors$slate8',
+    //       },
+    //     },
+    //     '&:active': {
+    //       backgroundColor: '$slate5',
+    //     },
+    //     '&:focus': {
+    //       boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
+    //     },
+    //   },
+    //   waiting: {
+    //     backgroundColor: '$slate4',
+    //     boxShadow: 'inset 0 0 0 1px $colors$slate8',
+    //     color: 'transparent',
+    //     pointerEvents: 'none',
+    //     '@hover': {
+    //       '&:hover': {
+    //         backgroundColor: '$slate5',
+    //         boxShadow: 'inset 0 0 0 1px $colors$slate8',
+    //       },
+    //     },
+    //     '&:active': {
+    //       backgroundColor: '$slate5',
+    //     },
+    //     '&:focus': {
+    //       boxShadow: 'inset 0 0 0 1px $colors$slate8',
+    //     },
+    //   },
+    // },
     ghost: {
       true: {
         backgroundColor: 'transparent',
@@ -190,6 +152,8 @@ export const Button = styled('button', {
   },
   defaultVariants: {
     size: '1',
-    variant: 'blue',
+    variant: 'primary',
+    round: false,
+    full: false,
   },
 })

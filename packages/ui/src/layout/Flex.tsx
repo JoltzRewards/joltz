@@ -1,10 +1,13 @@
+import { boxModelVariants } from '../common'
 import { styled } from '../stitches.config'
 
-export const Flex = styled('div', {
+import { Box } from './Box'
+
+export const Flex = styled(Box, {
   boxSizing: 'border-box',
   display: 'flex',
-
   variants: {
+    ...boxModelVariants,
     direction: {
       row: {
         flexDirection: 'row',

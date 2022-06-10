@@ -3,7 +3,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Button } from './Button'
 import { STATUS_BADGES } from '../../.storybook'
-import { Flex } from '../layout'
+import { Flex, Box } from '../layout'
+import { Icon } from '../icon'
 
 export default {
   title: 'Primitives/Button',
@@ -17,40 +18,33 @@ export default {
   },
 } as ComponentMeta<typeof Button>
 
-export const Variants: ComponentStory<typeof Button> = () => (
-  <Flex wrap="wrap">
-    <Button variant="primary" full css={{ mb: '$1' }}>
-      Primary
-    </Button>
-    <Button variant="secondary" full css={{ mb: '$1' }}>
-      Secondary
-    </Button>
-    <Button variant="tertiary" full css={{ mb: '$1' }}>
-      Tertiary
-    </Button>
-    <Button variant="transparentBlack" full css={{ mb: '$1' }}>
-      Transparent Black
-    </Button>
-    <Button variant="transparentWhite" full css={{ mb: '$1' }}>
-      Transparent White
-    </Button>
+export const Overview: ComponentStory<typeof Button> = () => (
+  <Flex direction="column" css={{ width: 'max-content' }}>
+    <Box mb="3" css={{ width: 'max-content' }}>
+      <Button variant="primary" full css={{ mb: '$2' }}>
+        Primary
+      </Button>
+      <Button variant="secondary" full>
+        Secondary
+      </Button>
+    </Box>
+    <Flex>
+      <Button round variant="primary">
+        <Icon.FontBoldIcon />
+      </Button>
+      <Button round variant="secondary">
+        <Icon.BellIcon />
+      </Button>
+      <Button round variant="secondary" full>
+        <Icon.UploadIcon />
+      </Button>
+      <Button round loading variant="secondary" full>
+        <Icon.ReloadIcon />
+      </Button>
+    </Flex>
   </Flex>
 )
 
-Variants.parameters = {
+Overview.parameters = {
   badges: [STATUS_BADGES.BETA],
 }
-
-export const Sizes: ComponentStory<typeof Button> = () => (
-  <>
-    <Button variant="transparentBlack" size="1">
-      Deny
-    </Button>
-    <Button variant="transparentBlack" size="2">
-      Deny
-    </Button>
-    <Button variant="transparentBlack" size="3">
-      Deny
-    </Button>
-  </>
-)
