@@ -24,7 +24,7 @@ export const Overview: ComponentStory<typeof Button> = () => (
       <Button variant="primary" full css={{ mb: '$2' }}>
         Primary
       </Button>
-      <Button variant="secondary" full>
+      <Button variant="subtle" full>
         Secondary
       </Button>
     </Box>
@@ -32,13 +32,13 @@ export const Overview: ComponentStory<typeof Button> = () => (
       <Button round variant="primary">
         <Icon.FontBoldIcon />
       </Button>
-      <Button round variant="secondary">
+      <Button round variant="subtle">
         <Icon.BellIcon />
       </Button>
-      <Button round variant="secondary" full>
+      <Button round variant="subtle" full>
         <Icon.UploadIcon />
       </Button>
-      <Button round loading variant="secondary" full>
+      <Button round loading variant="subtle" full>
         <Icon.ReloadIcon />
       </Button>
     </Flex>

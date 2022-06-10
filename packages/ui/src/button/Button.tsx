@@ -94,7 +94,7 @@ export const Button = styled('button', {
           $$hoverBackground: tinycolor(config.theme.colors.primary).darken(2.5).toString(),
         },
       },
-      secondary: {
+      subtle: {
         backgroundColor: '$muted',
         '&:hover': {
           $$hoverBackground: tinycolor(config.theme.colors.muted).darken(4).toString(),
