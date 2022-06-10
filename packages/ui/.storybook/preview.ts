@@ -1,4 +1,5 @@
 import { slateDark, cyanDark, purpleDark, orangeA } from '@radix-ui/colors'
+import { themes } from '@storybook/theming'
 
 import { TrubitThemeProviderDecorator, GlobalStylesDecorator, StoryWrapper } from './decorators'
 import { STATUS_BADGES } from './constants'
@@ -12,6 +13,9 @@ const commonBadgeStyles = {
 export const decorators = [GlobalStylesDecorator, TrubitThemeProviderDecorator, StoryWrapper]
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
+  docs: {
+    theme: themes.dark,
+  },
   controls: {
     expanded: true,
     matchers: {
