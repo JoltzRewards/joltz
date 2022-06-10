@@ -1,0 +1,15 @@
+{
+  "name": "@trubittech/gaia",
+  "packageManager": "yarn@3.1.1",
+  "main": "dist/trubittech-gaia.cjs.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "preconstruct build",
+    "test": "echo 'no tests yet'"
+  },
+  "peerDependencies": {
+    "@stacks/storage": "*"
+  }
+}
