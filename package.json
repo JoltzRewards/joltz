@@ -89,7 +89,8 @@
   },
   "preconstruct": {
     "packages": [
-      "packages/ui"
+      "packages/ui",
+      "packages/gaia"
     ]
   },
   "dependencies": {
