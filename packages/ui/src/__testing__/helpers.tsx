@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from '../theme-provider'
+import { useTheme } from '../theme'
 
 export const ColorPrinter = () => {
   const { theme } = useTheme()

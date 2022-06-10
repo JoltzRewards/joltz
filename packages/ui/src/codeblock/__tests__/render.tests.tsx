@@ -2,11 +2,11 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import { Codeblock } from '../Codeblock'
+import { CodeBlock } from '../CodeBlock'
 
-describe(Codeblock, () => {
+describe(CodeBlock, () => {
   test('should render without issue', () => {
-    render(<Codeblock />)
+    render(<CodeBlock />)
 
     expect(true).toBeTruthy()
   })

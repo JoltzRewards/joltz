@@ -1,12 +1,12 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { ButtonGroup } from './ButtonGroup'
+import { TextInput } from './TextInput'
 import { STATUS_BADGES } from '../../.storybook'
 
 export default {
-  title: 'Primitives/ButtonGroup',
-  component: ButtonGroup,
+  title: 'Primitives/TextInput',
+  component: TextInput,
   argTypes: {
     ref: { table: { disable: true } },
     variant: {
@@ -14,9 +14,9 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof ButtonGroup>
+} as ComponentMeta<typeof TextInput>
 
-export const Overview: ComponentStory<typeof ButtonGroup> = () => <ButtonGroup />
+export const Overview: ComponentStory<typeof TextInput> = () => <TextInput />
 
 Overview.parameters = {
   badges: [STATUS_BADGES.BETA],

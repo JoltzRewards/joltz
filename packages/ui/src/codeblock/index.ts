@@ -1,1 +1,1 @@
-export * from './Codeblock'
+export * from './CodeBlock'

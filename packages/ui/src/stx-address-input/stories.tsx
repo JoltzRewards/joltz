@@ -20,4 +20,5 @@ export const Overview: ComponentStory<typeof StxAddressInput> = () => <StxAddres
 
 Overview.parameters = {
   badges: [STATUS_BADGES.BETA],
+  componentSubtitle: 'Text input with STX wallet address validation',
 }

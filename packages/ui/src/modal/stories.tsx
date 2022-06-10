@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Modal, ModalProps } from './Modal'
 import { STATUS_BADGES } from '../../.storybook'
+import { Button, Icon } from '..'
 
 export default {
   title: 'Primitives/Modal',
@@ -14,11 +15,13 @@ export default {
 
 export const Overview: ComponentStory<any> = (args) => (
   <Modal.Root>
-    <Modal.Trigger />
+    <Modal.Trigger>Open Modal</Modal.Trigger>
     <Modal.Portal>
       <Modal.Overlay />
       <Modal.Content>
-        <Modal.Close>X</Modal.Close>
+        <Modal.Close>
+          <Icon.Cross1Icon width={16} />
+        </Modal.Close>
         <Modal.Title>Modal Testing</Modal.Title>
         <Modal.Description>Modal Testing</Modal.Description>
       </Modal.Content>

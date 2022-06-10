@@ -12,36 +12,45 @@ export const Text = styled('span', {
     size: {
       '1': {
         fontSize: '$1',
+        lineHeight: '$2',
       },
       '2': {
         fontSize: '$2',
+        lineHeight: '$2',
       },
       '3': {
         fontSize: '$3',
+        lineHeight: '$2',
       },
       '4': {
         fontSize: '$4',
+        lineHeight: '$2',
       },
       '5': {
         fontSize: '$5',
+        lineHeight: '$2',
         letterSpacing: '-.015em',
       },
       '6': {
         fontSize: '$6',
+        lineHeight: '$2',
         letterSpacing: '-.016em',
       },
       '7': {
         fontSize: '$7',
+        lineHeight: '$2',
         letterSpacing: '-.031em',
         textIndent: '-.005em',
       },
       '8': {
         fontSize: '$8',
+        lineHeight: '$2',
         letterSpacing: '-.034em',
         textIndent: '-.018em',
       },
       '9': {
         fontSize: '$9',
+        lineHeight: '$2',
         letterSpacing: '-0.01em',
         textIndent: '-.025em',
       },

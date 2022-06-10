@@ -2,11 +2,11 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import { ButtonGroup } from '../ButtonGroup'
+import { TextInput } from '../TextInput'
 
-describe(ButtonGroup, () => {
+describe(TextInput, () => {
   test('should render without issue', () => {
-    render(<ButtonGroup />)
+    render(<TextInput />)
 
     expect(true).toBeTruthy()
   })

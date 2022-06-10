@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Toolbar } from './Toolbar'
 import { Icon } from '../icon'
+import { Box } from '../layout'
 
 export default {
   /* 👇 The title prop is optional.
@@ -10,16 +11,16 @@ export default {
    * to learn how to generate automatic titles
    */
   title: 'Components/Toolbar',
-  component: Toolbar.Root,
-  subcomponents: [
-    Toolbar.Button,
-    Toolbar.Link,
-    Toolbar.Root,
-    Toolbar.Separator,
-    Toolbar.ToggleGroup,
-    Toolbar.ToggleItem,
-  ],
-} as ComponentMeta<typeof Toolbar.Root>
+  // component: Toolbar.Root,
+  // subcomponents: [
+  //   Toolbar.Button,
+  //   Toolbar.Link,
+  //   Toolbar.Root,
+  //   Toolbar.Separator,
+  //   Toolbar.ToggleGroup,
+  //   Toolbar.ToggleItem,
+  // ],
+}
 
 export const Showcase: ComponentStory<typeof Toolbar.Root> = () => (
   <Toolbar.Root>
@@ -38,17 +39,19 @@ export const Showcase: ComponentStory<typeof Toolbar.Root> = () => (
       </Toolbar.ToggleItem>
     </Toolbar.ToggleGroup>
     <Toolbar.Separator />
-    <Toolbar.Link
-      href="#"
-      style={{ padding: '8px', color: '#0a0a0a', fontSize: 13, fontWeight: 500 }}
-    >
-      Documents
-    </Toolbar.Link>
-    <Toolbar.Button>
-      <Icon.UploadIcon />
-    </Toolbar.Button>
-    <Toolbar.Button>
-      <Icon.EnterFullScreenIcon />
-    </Toolbar.Button>
+    <Box css={{ ml: 'auto' }}>
+      <Toolbar.Link
+        href="#"
+        style={{ padding: '8px', color: '#0a0a0a', fontSize: 13, fontWeight: 500 }}
+      >
+        Documents
+      </Toolbar.Link>
+      <Toolbar.Button>
+        <Icon.UploadIcon />
+      </Toolbar.Button>
+      <Toolbar.Button>
+        <Icon.EnterFullScreenIcon />
+      </Toolbar.Button>
+    </Box>
   </Toolbar.Root>
 )

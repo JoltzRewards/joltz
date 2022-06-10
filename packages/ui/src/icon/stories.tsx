@@ -32,4 +32,5 @@ export const Overview: ComponentStory<typeof Icon.AccessibilityIcon> = () => {
 
 Overview.parameters = {
   badges: [STATUS_BADGES.BETA],
+  componentSubtitle: '15 x 15 iconset by Radix',
 }
