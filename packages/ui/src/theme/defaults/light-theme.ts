@@ -1,23 +1,53 @@
-import { defaultTokens } from './common'
+import {
+  greenA,
+  slate,
+  whiteA,
+  violet,
+  crimson,
+  amber,
+  teal,
+  indigo,
+  purple,
+  blue,
+  orange,
+} from '@radix-ui/colors'
 
-export const lightColors = {
-  // hiContrast: '$slate12',
-  // loContrast: 'white',
-  error: defaultTokens.colors.crimson[600],
-  warning: defaultTokens.colors.amber[400],
-  success: '$teal9',
-  info: '$indigo9',
-  panel: 'hsl(0 0% 93%)',
-  // branding
-  primary: defaultTokens.colors.purple[400],
-  accent: defaultTokens.colors.teal[400],
-  secondary: defaultTokens.colors.indigo[200],
-  highlight: defaultTokens.colors.blue[400],
-  muted: defaultTokens.colors.slate[700],
+import * as swatches from './palettes'
 
-  // transparentPanel: 'hsl(0 0% 0% / 97%)',
-  // shadowLight: 'hsl(206 22% 7% / 35%)',
-  // shadowDark: 'hsl(206 22% 7% / 20%)',
+export const colors = {
+  primary: '#501EF6',
+  secondary: '#3D15D3',
+  info: '#00CBFF',
+  success: '#86de13',
+  warning: '#FFAA00',
+  error: '#FF3426',
+  muted: '#e2e6ea',
+  panel: 'hsl(0 0% 97%)',
+  slate: '#03071e',
+  white: 'hsl(0 0% 100%)',
+
+  // Black and White
+  // primary: '#000814',
+  // secondary: '#f4f3ee',
+  // muted: '#f4f3ee',
+  // panel: 'hsl(0 0% 97%)',
+
+  // accent: swatches.hero.highlight,
+  loContrast: '#f4f3ee',
+  hiContrast: '#000814',
+
+  // error: crimson.crimson7,
+  // warning: amber.amber7,
+  // success: teal.teal9,
+  // info: indigo.indigo9,
+  // panel: 'hsl(0 0% 93%)',
+
+  // primary: blue.blue9,
+  // secondary: indigo.indigo9,
+  // tertiary: violet.violet9,
+  // accent: teal.teal9,
+  // highlight: orange.orange8,
+  // muted: slate.slate8,
 }
 
 /**
@@ -49,4 +79,4 @@ export const lightColors = {
  *
  * 12: High-contrast text
  */
-export type AvailableLightColors = keyof typeof lightColors
+export type AvailableLightColors = keyof typeof colors

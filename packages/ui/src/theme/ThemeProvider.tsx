@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import merge from 'lodash/merge'
+import merge from 'lodash.merge'
 
 import { defaultTheme } from '../stitches.config'
 import type { Theme } from '../stitches.config'
