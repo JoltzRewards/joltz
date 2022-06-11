@@ -4,7 +4,7 @@ import { IPutFileOptions, PutFileParams, StorageOperationResult } from '../types
 export async function putFile(
   { storage, fileName, data }: PutFileParams,
   options?: IPutFileOptions,
-): Promise<StorageOperationResult> {
+): Promise<StorageOperationResult<string>> {
   const mergedOptions = {
     ...putDefaults,
     ...(options || {}),

@@ -1,25 +1,16 @@
 import type { Storage } from '@stacks/storage'
 import { ESMap } from 'typescript'
 
+type ResultType = number | string | ESMap<number, string> | ArrayBuffer | void
+
 //-----------------------------------------------------------------------------
 //  Result of a Gaia call
 //-----------------------------------------------------------------------------
-export type StorageOperationResult =
-  | {
-      ok: boolean
-      results?: string | ESMap<number, string> | ArrayBuffer
-      error?: any | null
-    }
-  | {
-      ok: true
-      results: string | ESMap<number, string> | ArrayBuffer
-      error?: null
-    }
-  | {
-      ok: false
-      results?: null
-      error: any
-    }
+export type StorageOperationResult<Result extends ResultType> = {
+  ok: boolean
+  results: Result | null
+  error: Record<string, unknown> | null
+}
 
 //-----------------------------------------------------------------------------
 //  putFile() parameters
@@ -46,4 +37,13 @@ export type DeleteFileParams = {
   fileName: string
 }
 
-export type { PutFileOptions as IPutFileOptions } from '@stacks/storage'
+export interface IDeleteFileOptions {
+  wasSigned?: boolean
+}
+
+export type { Storage } from '@stacks/storage'
+
+export type {
+  PutFileOptions as IPutFileOptions,
+  GetFileOptions as IGetFileOptions,
+} from '@stacks/storage'
