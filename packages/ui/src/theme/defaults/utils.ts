@@ -1,5 +1,5 @@
 import type * as Stitches from '@stitches/react'
-import { take, takeRight, remove, drop } from 'lodash'
+import take from 'lodash.take'
 
 type ColorDictionaryKey<identifier extends string> =
   | `${identifier}100`
@@ -46,7 +46,8 @@ export function buildColorDictionary<id extends string>(scale: Record<string, st
   const startingPoint = scaleSteps[0] // first color in scale e.g. pink1
   const [identifier] = startingPoint.match(/[a-z]+|[^a-z]+/gi) || [] // ['pink', ...]
   const backgroundColors = take(scaleSteps, 2)
-  const foregroundColors = takeRight(scaleSteps, 2)
+  const foregroundColors = take(scaleSteps, 2)
+  // const foregroundColors = takeRight(scaleSteps, 2)
   const remainingColors = scaleSteps.slice(2, -2) // color names without colors intended for foreground and background
 
   const colors = remainingColors.reduce((acc, current, idx) => {

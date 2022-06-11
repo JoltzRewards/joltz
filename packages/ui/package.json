@@ -43,6 +43,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@types/lodash.merge": "^4.6.7",
+    "@types/lodash.take": "^4.1.7",
     "@types/react": "^17.0.39",
     "@types/tinycolor2": "^1.4.3",
     "babel-jest": "^28.1.0",
@@ -67,6 +68,7 @@
     "@radix-ui/react-tooltip": "^0.1.7",
     "@stitches/react": "^1.2.7",
     "lodash.merge": "^4.6.2",
+    "lodash.take": "^4.1.1",
     "react-syntax-highlighter": "^15.5.0",
     "tinycolor2": "^1.4.2"
   }

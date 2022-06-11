@@ -1,0 +1,39 @@
+{
+  "name": "@trubittech/gaia",
+  "version": "0.0.1",
+  "description": "Toolbelt for implementing Gaia for web3 storage",
+  "contributors": [
+    {
+      "name": "Joey Figaro",
+      "email": "joey@joeyfigaro.com",
+      "url": "https://github.com/joeyfigaro"
+    },
+    {
+      "name": "dartman10",
+      "email": "pp2e@protonmail.com",
+      "url": "https://github.com/dartman10"
+    }
+  ],
+  "packageManager": "yarn@3.1.1",
+  "main": "dist/trubittech-gaia.cjs.js",
+  "types": "dist/declaractions/src/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "preconstruct build",
+    "test": "yarn jest",
+    "test:watch": "yarn jest --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "*",
+    "jest": "*",
+    "jest-fetch-mock": "*",
+    "ts-jest": "*",
+    "typescript": "*"
+  },
+  "peerDependencies": {
+    "@stacks/storage": "*"
+  }
+}
