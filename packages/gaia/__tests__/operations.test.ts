@@ -49,3 +49,21 @@ describe('putFile', () => {
     expect(results).toThrowError
   })
 })
+
+describe('deleteFile', () => {
+  test('stub', () => {
+    expect(true).toBe(true)
+  })
+})
+
+describe('listFiles', () => {
+  test('stub', () => {
+    expect(true).toBe(true)
+  })
+})
+
+describe('getFile', () => {
+  test('stub', () => {
+    expect(true).toBe(true)
+  })
+})
