@@ -1,0 +1,111 @@
+{
+  "numFailedTestSuites": 0,
+  "numFailedTests": 0,
+  "numPassedTestSuites": 1,
+  "numPassedTests": 6,
+  "numPendingTestSuites": 0,
+  "numPendingTests": 0,
+  "numRuntimeErrorTestSuites": 0,
+  "numTodoTests": 0,
+  "numTotalTestSuites": 1,
+  "numTotalTests": 6,
+  "openHandles": [],
+  "snapshot": {
+    "added": 0,
+    "didUpdate": false,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0
+  },
+  "startTime": 1655050581183,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["putFile"],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "putFile returns expected payload on success",
+          "location": null,
+          "status": "passed",
+          "title": "returns expected payload on success"
+        },
+        {
+          "ancestorTitles": ["putFile"],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "putFile fails when storage param is missing",
+          "location": null,
+          "status": "passed",
+          "title": "fails when storage param is missing"
+        },
+        {
+          "ancestorTitles": ["putFile"],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "putFile fails when data param is missing",
+          "location": null,
+          "status": "passed",
+          "title": "fails when data param is missing"
+        },
+        {
+          "ancestorTitles": ["deleteFile"],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "deleteFile stub",
+          "location": null,
+          "status": "passed",
+          "title": "stub"
+        },
+        {
+          "ancestorTitles": ["listFiles"],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "listFiles stub",
+          "location": null,
+          "status": "passed",
+          "title": "stub"
+        },
+        {
+          "ancestorTitles": ["getFile"],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "getFile stub",
+          "location": null,
+          "status": "passed",
+          "title": "stub"
+        }
+      ],
+      "endTime": 1655050583403,
+      "message": "",
+      "name": "/Volumes/T7/repositories/crypto/TrubitTech/packages/gaia/__tests__/operations.test.ts",
+      "startTime": 1655050581243,
+      "status": "passed",
+      "summary": ""
+    }
+  ],
+  "wasInterrupted": false,
+  "coverageMap": {
+    "/Volumes/T7/repositories/crypto/TrubitTech/packages/gaia/src/index.ts": {
+      "path": "/Volumes/T7/repositories/crypto/TrubitTech/packages/gaia/src/index.ts",
+      "statementMap": {
+        "0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 25 } }
+      },
+      "fnMap": {},
+      "branchMap": {},
+      "s": { "0": 1 },
+      "f": {},
+      "b": {}
+    }
+  }
+}

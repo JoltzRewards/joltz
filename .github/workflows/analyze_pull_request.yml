@@ -23,7 +23,7 @@ jobs:
 
       - name: Execute tests
         continue-on-error: true
-        working-directory: packages/gaia
+        working-directory: ./packages/gaia
         run: yarn run jest:ci
 
       - name: Process test results
@@ -31,7 +31,7 @@ jobs:
         uses: im-open/process-jest-test-results@v2.0.5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          results-file: 'packages/gaia/jest-results.json'
+          results-file: ./packages/gaia/jest-results.json
           report-name: 'Test Results'
           create-status-check: true
           create-pr-comment: true
