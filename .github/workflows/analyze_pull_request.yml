@@ -24,7 +24,7 @@ jobs:
           node-version: '${{ steps.fnm.outputs.NVMRC }}'
 
       - name: Install Dependencies
-        run: yarn
+        run: yarn --
         env:
           NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
 
@@ -40,7 +40,7 @@ jobs:
       - name: Execute tests
         continue-on-error: true
         working-directory: ./packages/gaia
-        run: yarn run jest:ci
+        run: yarn workspace @trubittech/gaia run jest:ci
 
       - name: Process test results
         if: always()
