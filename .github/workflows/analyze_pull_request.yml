@@ -47,7 +47,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           results-file: './packages/gaia/test-results.json'
-          report-name: '@trubittech/gaia Tests'
+          report-name: 'Test Results for @trubittech/gaia'
           create-status-check: true
           create-pr-comment: true
           update-comment-if-one-exists: true
