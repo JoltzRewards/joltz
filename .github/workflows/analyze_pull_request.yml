@@ -40,7 +40,7 @@ jobs:
       - name: Execute tests
         continue-on-error: true
         working-directory: ./packages/gaia
-        run: yarn workspace @trubittech/gaia run jest:ci
+        run: yarn workspace @trubittech/gaia run test:ci
 
       - name: Process test results
         if: always()
