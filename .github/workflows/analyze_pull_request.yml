@@ -44,6 +44,12 @@ jobs:
         working-directory: ./packages/gaia
         run: yarn run test:ci
 
+      - name: Log PWD
+        run: pwd
+
+      - name: Log contents of current dir
+        run: ls -la
+
       - name: Process test results
         if: always()
         uses: im-open/process-jest-test-results@v2.0.5
