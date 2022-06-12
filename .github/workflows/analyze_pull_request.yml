@@ -23,6 +23,8 @@ jobs:
         with:
           node-version: '${{ steps.fnm.outputs.NVMRC }}'
 
+      - uses: c-hive/gha-yarn-cache@v2
+
       - name: Install Dependencies
         run: yarn
         env:
@@ -40,14 +42,14 @@ jobs:
       - name: Execute tests
         continue-on-error: true
         working-directory: ./packages/gaia
-        run: yarn workspace @trubittech/gaia run test:ci
+        run: yarn run test:ci
 
       - name: Process test results
         if: always()
         uses: im-open/process-jest-test-results@v2.0.5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          results-file: './packages/gaia/test-results.json'
+          results-file: 'test-results.json'
           report-name: 'Test Results'
           create-status-check: true
           create-pr-comment: true
