@@ -31,7 +31,7 @@ jobs:
         uses: im-open/process-jest-test-results@v2.0.5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          results-file: ./packages/gaia/jest-results.json
+          results-file: 'jest-results.json'
           report-name: 'Test Results'
           create-status-check: true
           create-pr-comment: true
