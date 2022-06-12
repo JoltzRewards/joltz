@@ -9,8 +9,24 @@ jobs:
     name: Analyze Changes
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout Repo
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+
+      - name: Read .nvmrc
+        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+        id: fnm
+
+      - name: Setup Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: '${{ steps.fnm.outputs.NVMRC }}'
+
+      - name: Install Dependencies
+        run: yarn
+        env:
+          NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
 
       - name: Check dependencies
         uses: juanigalan91/monorepolyser@0.2.6
