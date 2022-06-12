@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-        with:
-          fetch-depth: 0
+
+      - uses: c-hive/gha-yarn-cache@v2
 
       - name: Read .nvmrc
         run: echo ::set-output name=NVMRC::$(cat .nvmrc)
@@ -23,32 +23,23 @@ jobs:
         with:
           node-version: '${{ steps.fnm.outputs.NVMRC }}'
 
-      - uses: c-hive/gha-yarn-cache@v2
-
       - name: Install Dependencies
         run: yarn
         env:
           NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
 
-      - name: Check dependencies
-        uses: juanigalan91/monorepolyser@0.2.6
-        with:
-          check-dependencies: true
-          include-main-package-json: true
-          impact-analysis: true
-          on-high-impact: 'comment,add-labels'
-          high-impact-labels: 'high-impact'
+      # - name: Check dependencies
+      #   uses: juanigalan91/monorepolyser@0.2.6
+      #   with:
+      #     check-dependencies: true
+      #     include-main-package-json: true
+      #     impact-analysis: true
+      #     on-high-impact: 'comment,add-labels'
+      #     high-impact-labels: 'high-impact'
 
       - name: Execute tests
         continue-on-error: true
-        # working-directory: ./packages/gaia
         run: yarn workspace @trubittech/gaia run test:ci
-
-      - name: Log PWD
-        run: pwd
-
-      - name: Log contents of current dir
-        run: ls -la
 
       - name: Process test results
         if: always()
@@ -56,7 +47,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           results-file: './packages/gaia/test-results.json'
-          report-name: 'Test Results'
+          report-name: '@trubittech/gaia Tests'
           create-status-check: true
           create-pr-comment: true
           update-comment-if-one-exists: true
