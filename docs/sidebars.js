@@ -29,7 +29,18 @@ const sidebars = {
     {
       type: 'category',
       label: 'Components',
-      items: ['ui/components/button'],
+      items: [
+        'ui/components/button',
+        'ui/components/codeblock',
+        'ui/components/icon',
+        'ui/components/layout',
+        'ui/components/popover',
+        'ui/components/stx-address-input',
+        'ui/components/text-input',
+        'ui/components/text',
+        'ui/components/tooltip',
+        'ui/components/wallet-activity-feed',
+      ],
     },
   ],
 }
