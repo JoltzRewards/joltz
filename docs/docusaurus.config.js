@@ -2,49 +2,46 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 const { tailwindPlugin } = require('./src/plugins')
 
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Trubit',
   tagline: 'React UI-Kit for Projects Built on Stacks',
   url: 'https://docs.trubit.tech',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  organizationName: 'Trubit',
+  projectName: 'Trubit Docs',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'TrubitTech', // Usually your GitHub org/user name.
-  projectName: 'TrubitTech', // Usually your repo name.
   clientModules: [require.resolve('./src/css/tailwind.css')],
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarCollapsible: false,
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        blog: false,
+        // blog: {
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   editUrl:
+        //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       },
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      hideableSidebar: true,
+      hideableSidebar: false,
       colorMode: {
         defaultMode: 'dark',
         respectPrefersColorScheme: true,
@@ -56,22 +53,11 @@ const config = {
         // style: '',
         logo: {
           alt: 'Trubit',
-          src: 'img/logo.svg',
+          src: 'img/logos/logotext-mono-black.svg',
+          srcDark: 'img/logos/logotext-mono-white.svg',
         },
         items: [
-          // {
-          //   type: 'doc',
-          //   docId: 'ui',
-          //   position: 'left',
-          //   label: 'UI',
-          // },
           // { to: '/blog', label: 'Blog', position: 'left' },
-          {
-            type: 'doc',
-            docId: 'packages/README',
-            position: 'left',
-            label: 'Packages',
-          },
           {
             href: 'https://github.com/TrubitTech/TrubitTech',
             label: 'GitHub',
@@ -82,11 +68,11 @@ const config = {
       footer: {
         links: [
           {
-            title: 'Docs',
+            title: 'Packages',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: '@trubittech/ui',
+                to: '/docs/ui/components/button',
               },
             ],
           },
@@ -94,38 +80,30 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discordapp.com/invite/trubittech',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/trubittech',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Resources',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/trubittech',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Trubit, Corp.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: require('@kiwicopple/prism-react-renderer/themes/vsDark'),
+        darkTheme: require('@kiwicopple/prism-react-renderer/themes/vsDark'),
       },
     }),
   plugins: [tailwindPlugin],
