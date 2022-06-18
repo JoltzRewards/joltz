@@ -4244,6 +4244,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kiwicopple/prism-react-renderer@https://github.com/kiwicopple/prism-react-renderer.git":
+  version: 1.0.2
+  resolution: "@kiwicopple/prism-react-renderer@https://github.com/kiwicopple/prism-react-renderer.git#commit=4a09100a587bce2d94d7ac8ed3564a61c6e70781"
+  dependencies:
+    prismjs: ^1.22.0
+  peerDependencies:
+    react: ">=0.14.9"
+  checksum: 27fdf288d2b90230cc7265119738a0f3e9ab8f75c73f02be3a70e741c7b4d71ede0beafa39a95c228ce30f462f8e10e220751fa5f9ea7c4c6932e1fb83469542
+  languageName: node
+  linkType: hard
+
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.3
   resolution: "@leichtgewicht/ip-codec@npm:2.0.3"
@@ -14715,6 +14726,7 @@ __metadata:
     "@docusaurus/module-type-aliases": 2.0.0-beta.18
     "@docusaurus/plugin-content-docs": ^2.0.0-beta.18
     "@docusaurus/preset-classic": 2.0.0-beta.18
+    "@kiwicopple/prism-react-renderer": "https://github.com/kiwicopple/prism-react-renderer.git"
     "@mdx-js/react": ^1.6.22
     "@tsconfig/docusaurus": ^1.0.5
     clsx: ^1.1.1
@@ -25268,6 +25280,13 @@ __metadata:
   peerDependencies:
     react: ">=0.14.9"
   checksum: 883693ea59dd6c7d821930ff232f1b28cd3f5d4a111fdb0a730f2ae34ffc7ca805ad3522c86eecbc79f9bee30279371e1fa6b33b4f72a6d3f17921b733b303b6
+  languageName: node
+  linkType: hard
+
+"prismjs@npm:^1.22.0":
+  version: 1.28.0
+  resolution: "prismjs@npm:1.28.0"
+  checksum: bde93fb2beb45b7243219fc53855f59ee54b3fa179f315e8f9d66244d756ef984462e10561bbdc6713d3d7e051852472d7c284f5794a8791eeaefea2fb910b16
   languageName: node
   linkType: hard
 
