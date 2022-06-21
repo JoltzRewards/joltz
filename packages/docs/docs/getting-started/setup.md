@@ -1,6 +1,7 @@
 ---
 id: setup
-title: Setup & Configuration
+title: Setup
+slug: /
 description: Setup the providers and configure your theme
 ---
 
@@ -18,7 +19,14 @@ npm install react react-dom
 
 ---
 
-## Add ThemeProvider
+## Setup ThemeProvider
+
+:::info `ThemeProvider` takes a set of optional theme overrides via the `theme` prop.
+
+[Configuring Themes](/getting-started/theming)
+:::
+
+or rely on the minimal styles that ship with the library.
 
 ```tsx
 import { ThemeProvider } from '@trubittech/ui'
@@ -31,7 +39,3 @@ const App = ({ children }) => {
   )
 }
 ```
-
-1. Import UIProvider from '@trubittech/ui'
-2. Wrap the root of your application with it
-3. Create a theme object and pass it to the provider

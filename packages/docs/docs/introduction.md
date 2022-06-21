@@ -1,7 +1,7 @@
 ---
 id: introduction
 title: Getting Started
-slug: /
+slug: /debug-started
 draft: true
 # hide_table_of_contents: true
 keywords:

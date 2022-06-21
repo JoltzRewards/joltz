@@ -1,4 +1,0 @@
----
-id: layout
-title: Layout
----
