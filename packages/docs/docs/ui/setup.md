@@ -4,9 +4,6 @@ title: Setup & Configuration
 description: Setup the providers and configure your theme
 ---
 
-<!-- import Tabs from '@theme/Tabs'; -->
-<!-- import TabItem from '@theme/TabItem'; -->
-
 ## Install Library
 
 ```bash npm2yarn
@@ -18,15 +15,6 @@ npm install @trubittech/ui
 ```bash npm2yarn
 npm install react react-dom
 ```
-
-<!-- :::info
-testing
-::: -->
-
-<!-- <Tabs>
-  <TabItem value="npm" label="NPM">npm i @trubittech/ui</TabItem>
-  <TabItem value="yarn" label="Yarn">yarn add @trubittech/ui</TabItem>
-</Tabs> -->
 
 ---
 
