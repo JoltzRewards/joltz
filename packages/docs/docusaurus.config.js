@@ -14,17 +14,22 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   clientModules: [require.resolve('./src/css/tailwind.css')],
+  customFields: {
+    routeBasePath: '/',
+  },
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
+          breadcrumbs: false,
+          remarkPlugins: [[require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]],
           routeBasePath: '/',
           sidebarCollapsible: true,
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/trubittech/trubittech/tree/main/packages/docs/docs',
         },
+        pages: false,
         blog: false,
         // blog: {
         //   showReadingTime: true,
@@ -41,16 +46,24 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      hideableSidebar: false,
+      liveCodeBlock: {
+        /**
+         * The position of the live playground, above or under the editor
+         * Possible values: "top" | "bottom"
+         */
+        playgroundPosition: 'bottom',
+      },
       colorMode: {
         defaultMode: 'dark',
         respectPrefersColorScheme: true,
       },
+      docs: {
+        sidebar: {
+          hideable: false,
+        },
+      },
       navbar: {
-        // title: 'Docs',
         hideOnScroll: true,
-        // hideableSidebar: true,
-        // style: '',
         logo: {
           alt: 'Trubit',
           src: 'img/logos/logotext-mono-black.svg',
@@ -106,7 +119,7 @@ const config = {
         darkTheme: require('@kiwicopple/prism-react-renderer/themes/vsDark'),
       },
     }),
-  plugins: [tailwindPlugin],
+  plugins: ['@docusaurus/theme-live-codeblock', tailwindPlugin],
 }
 
 module.exports = config

@@ -13,8 +13,7 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "applications/*",
-      "docs"
+      "applications/*"
     ]
   },
   "resolutions": {
@@ -95,5 +94,6 @@
   },
   "dependencies": {
     "dotenv-cli": "^5.1.0"
-  }
+  },
+  "packageManager": "yarn@3.2.1"
 }

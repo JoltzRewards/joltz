@@ -123,6 +123,7 @@ Font import
   --custom-primary-darkest: hsl(203, 100, 40, 1);
   --custom-primary-darker: hsl(203, 100, 45, 1);
   --custom-primary-dark: hsl(203, 100, 50, 1);
+
   --custom-primary: #43b6ff;
   --custom-primary-light: #56bdff;
   --custom-primary-lighter: #77caff;
@@ -247,19 +248,15 @@ Font import
 }
 
 :root[data-theme='dark'] {
-  /* --ifm-color-primary: var(--custom-primary);
-  --ifm-color-primary-light: var(--custom-primary-light);
-  --ifm-color-primary-lighter: var(--custom-primary-lighter);
-  --ifm-color-primary-lightest: var(--custom-primary-lightest); */
-
   --custom-primary-darkest: hsl(203, 100, 40, 1);
-  --custom-primary-darker: hsl(203, 100, 45, 1);
-  --custom-primary-dark: hsl(203, 100, 50, 1);
-  --custom-primary: var(--ifm-color-primary);
+  --custom-primary-darker: #094062;
+  /* --custom-primary-dark: hsl(203, 100, 50, 1); */
+  --custom-primary-dark: #207fb9;
   --custom-primary-light: var(--ifm-color-primary);
   --custom-primary-lighter: #77caff;
   --custom-primary-lightest: #aee0ff;
   --custom-primary-rgba: RGBA(67, 182, 255, 1);
+
   --custom-color-subtle: #484848;
 
   --custom-background-color: hsl(208, 88, 3);
@@ -294,6 +291,23 @@ Font import
   --ifm-color-secondary-light: #2f2f2f;
   --ifm-color-secondary-lighter: #313131;
   --ifm-color-secondary-lightest: #333333;
+
+  /* Colors */
+  --ifm-color-content: var(--custom-content-color);
+  --ifm-heading-color: var(--custom-content-color);
+  --ifm-background-color: var(--custom-background-color);
+  --ifm-sidebar-background: var(--custom-background-color);
+  --ifm-color-content-secondary: var(--custom-content-color-light);
+  --ifm-code-background: var(--custom-background-color-diff);
+  --ifm-code-background-dark: #2a2a2a;
+  --ifm-code-color: var(--custom-content-color);
+  --ifm-color-warning: var(--custom-color-orange-600);
+  --ifm-color-info-contrast-background: var(--custom-background-color-diff);
+
+  /* Primary */
+  --ifm-color-primary-darkest: var(--custom-primary-darkest);
+  --ifm-color-primary-darker: var(--custom-primary-darker);
+  --ifm-color-primary-dark: var(--custom-primary-dark);
 
   /* Button */
   --ifm-button-background-color: var(--custom-background-color-highlight);
@@ -1475,6 +1489,26 @@ details summary:hover {
 
 .admonition.admonition-caution .admonition-heading h5 {
   color: var(--custom-color-orange-800) !important;
+}
+
+:root[data-theme='dark'] .admonition.admonition-info {
+  /* background-color: #0a95ff; */
+  /* border-left-color: var(--custom-primary); */
+  border-left-color: #bf0aff;
+}
+
+:root[data-theme='dark'] .admonition.admonition-info .admonition-heading h5 {
+  /* color: rgba(0, 0, 0, 0.6); */
+}
+
+:root[data-theme='dark'] .admonition.admonition-info .admonition-content p {
+  /* color: rgba(0, 0, 0, 0.9); */
+}
+
+:root[data-theme='dark'] .admonition.admonition-info .admonition-heading .admonition-icon svg {
+  /* fill: var(--custom-primary-darker); */
+  /* fill: var(--custom-primary); */
+  /* fill: #bf0aff; */
 }
 
 .theme-back-to-top-button {
