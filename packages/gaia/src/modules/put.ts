@@ -1,13 +1,15 @@
 import { putDefaults } from '../constants'
-import { IPutFileOptions, PutFileParams, StorageOperationResult } from '../types'
+import { IPutFileOptions, IPutFileParam, StorageOperationResult } from '../types'
 
 export async function putFile(
-  { storage, fileName, data }: PutFileParams,
+  { storage, fileName, data }: IPutFileParam,
   options?: IPutFileOptions,
 ): Promise<StorageOperationResult<string>> {
+  // dartman: take note of '<string>'
   const mergedOptions = {
+    // dartman: aaah, so this is how it's done. shallow copy.
     ...putDefaults,
-    ...(options || {}),
+    ...(options || {}), //dartman: need to google this part.
   }
 
   return await storage
