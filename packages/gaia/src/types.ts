@@ -2,7 +2,7 @@ import type { Storage } from '@stacks/storage'
 //import { Interface } from 'readline'
 import { ESMap } from 'typescript'
 
-type ResultType = number | string | ESMap<number, string> | ArrayBuffer | void
+type ResultType = number | string | string[] | ESMap<number, string> | ArrayBuffer | void
 
 /*
 -----------------------------------------------------------------------------
@@ -10,7 +10,6 @@ type ResultType = number | string | ESMap<number, string> | ArrayBuffer | void
 -----------------------------------------------------------------------------
 */
 export type StorageOperationResult<Result extends ResultType> = {
-  // dartman: what is 'Result' in the above line? is that a synonym to avoid possible misnomer effect of 'ResultType'?
   ok: boolean
   results: Result | null
   error: Record<string, unknown> | null // 'Record'? really? lol. read up dartman. hahaha. and remember, this is the 'error' result.
