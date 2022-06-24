@@ -16,11 +16,3 @@
 3. List Files - folders only
 4. Application controlled user data
 5. Operations involving own Gaia hub
-
-### Why?
-
-To alleviate dev pain points.
-
-### What pain points?
-
-Good question.
