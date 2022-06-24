@@ -4,14 +4,14 @@ import { IDeleteFileParam, IDeleteFileOptions, StorageOperationResult } from '..
 export async function deleteFile(
   { storage, fileName }: IDeleteFileParam,
   options?: IDeleteFileOptions,
-): Promise<StorageOperationResult<void>> {
+): Promise<StorageOperationResult<string>> {
   const mergedOptions = {
     ...deleteDefaults,
     ...(options || {}),
   }
   return await storage
     .deleteFile(fileName, mergedOptions)
-    .then(() => ({ ok: true, results: null, error: null }))
+    .then(() => ({ ok: true, results: fileName, error: null })) /* returns deleted filename */
     .catch((err) => ({
       ok: false,
       results: null,

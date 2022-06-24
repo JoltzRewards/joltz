@@ -13,7 +13,7 @@ export async function getFile(
 
   return await storage
     .getFile(fileName, mergedOptions)
-    .then(() => ({ ok: true, results: null, error: null }))
+    .then((fileContent) => ({ ok: true, results: fileContent, error: null }))
     .catch((err) => ({
       ok: false,
       results: null,
