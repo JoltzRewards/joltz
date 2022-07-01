@@ -11,7 +11,7 @@ description: Setup the providers and configure your theme
 npm install @trubittech/ui
 ```
 
-## Install Needed Dependencies
+## Install Needed encies
 
 ```bash npm2yarn
 npm install react react-dom
