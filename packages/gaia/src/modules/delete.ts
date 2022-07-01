@@ -11,10 +11,11 @@ export async function deleteFile(
   }
   return await storage
     .deleteFile(fileName, mergedOptions)
-    .then(() => ({ ok: true, results: fileName, error: null })) /* returns deleted filename */
-    .catch((err) => ({
-      ok: false,
-      results: null,
-      error: JSON.parse(JSON.stringify(err)),
-    }))
+    .then(() => ({ ok: true, results: fileName, error: null })) /* returns deleted file */
+    .catch((err) => {
+      if (err instanceof Error) {
+        return { ok: false, results: null, error: { name: err.name, message: err.message } }
+      }
+      return { ok: false, results: null, error: err }
+    })
 }

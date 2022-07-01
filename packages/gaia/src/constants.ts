@@ -8,19 +8,12 @@ import { IPutFileOptions, IGetFileOptions, IListFilesOptions, IDeleteFileOptions
 
 /* PutFileOptions default constant values */
 export const putDefaults: IPutFileOptions = {
-  cipherTextEncoding: 'base64', //  'base64' or 'hex' - what's the issue with using hex?
+  cipherTextEncoding: 'base64',
   dangerouslyIgnoreEtag: true,
   encrypt: true,
   sign: true,
-  wasString: false, // use Buffer, for both binary and string. Buffer may even be performant in this use case.
+  wasString: false, // use Buffer, for both binary and string.
 }
-
-/*
-export const putPDFDefaults: PutFileOptions = {
-  ...putDefaults, // dartman - shallow copy and overrides wasString value? interesting.
-  wasString: false, // during get, Buffer contents will be returned as opposed to String
-}
-*/
 
 /* GetFileOptions default constant values */
 export const getDefaults: IGetFileOptions = {

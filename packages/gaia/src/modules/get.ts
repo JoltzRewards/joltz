@@ -5,18 +5,18 @@ export async function getFile(
   { storage, fileName }: IGetFileParam,
   options?: IGetFileOptions,
 ): Promise<StorageOperationResult<string | ArrayBuffer>> {
-  // dartman: <string | ArrayBuffer>. got it. :)
   const mergedOptions = {
     ...getDefaults,
-    ...(options || {}), //dartman: need to google this part.
+    ...(options || {}),
   }
 
   return await storage
     .getFile(fileName, mergedOptions)
     .then((fileContent) => ({ ok: true, results: fileContent, error: null }))
-    .catch((err) => ({
-      ok: false,
-      results: null,
-      error: JSON.parse(JSON.stringify(err)),
-    }))
+    .catch((err) => {
+      if (err instanceof Error) {
+        return { ok: false, results: null, error: err.message }
+      }
+      return { ok: false, results: null, error: err }
+    })
 }

@@ -1,5 +1,4 @@
 import type { Storage } from '@stacks/storage'
-//import { Interface } from 'readline'
 import { ESMap } from 'typescript'
 
 type ResultType = number | string | string[] | ESMap<number, string> | ArrayBuffer | void
@@ -12,7 +11,7 @@ type ResultType = number | string | string[] | ESMap<number, string> | ArrayBuff
 export type StorageOperationResult<Result extends ResultType> = {
   ok: boolean
   results: Result | null
-  error: Record<string, unknown> | null // 'Record'? really? lol. read up dartman. hahaha. and remember, this is the 'error' result.
+  error: Record<string, unknown> | null
 }
 
 /*
@@ -53,15 +52,16 @@ export interface IDeleteFileParam {
 
 /* deleteFile() options */
 export interface IDeleteFileOptions {
-  wasSigned?: boolean // dartman : right, deleteFile has no interface options. How about including storage here?
+  wasSigned?: boolean
 }
 
-export type { Storage } from '@stacks/storage' // dartman : I think this is for listFiles() function, because the function parameter only accepts storage.
+export type { Storage } from '@stacks/storage'
 
 /* listFile() options */
-// dartman :  for listFile() options interface, build something that will be used for following scenarios:
+// To do : For listFile() options interface, build something that will be used for following scenarios:
 //   1. Accept a prefix and returns a list of filenames satisfying prefix.
 //   2. Accept a parameter that signal the function to return list of directories.
+
 export interface IListFilesOptions {
   prefix?: string
   folders?: boolean
