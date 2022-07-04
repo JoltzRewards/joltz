@@ -1,7 +1,7 @@
 import { AppConfig, UserSession } from '@stacks/auth'
 import { Storage } from '@stacks/storage'
-import { putFile } from '../src/modules/put'
-import { sampleAccount } from './sample_accts' // user credentials for test simulation.
+import { putFile } from '../../src'
+import { sampleAccount } from '../../__fixtures__' // user credentials for test simulation.
 
 const path = 'file.json'
 const data = JSON.stringify({ interest: 'skiing', age: 22, gender: 'male' })

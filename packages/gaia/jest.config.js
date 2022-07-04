@@ -1,7 +1,7 @@
 const path = require('path')
 module.exports = {
   rootDir: __dirname,
-  testMatch: ['**/__tests__/*.tests.*', '**/__tests__/*.test.*'],
+  testMatch: ['**/__tests__/*.tests.*', '**/__tests__/*.test.*', '!**/__stubs__/*.*'],
   preset: 'ts-jest',
   testEnvironment: 'node',
   coverageDirectory: './coverage/',

@@ -1,8 +1,8 @@
 //import fetchMock from 'jest-fetch-mock'
 import { AppConfig, UserSession } from '@stacks/auth'
 import { Storage } from '@stacks/storage'
-import { getFile } from '../src/modules/get'
-import { sampleAccount } from './sample_accts' // user credentials for test simulation.
+import { getFile } from '../../src'
+import { sampleAccount } from '../../__fixtures__' // user credentials for test simulation.
 
 async function f1() {
   //test('returns expected payload on success', async () => {

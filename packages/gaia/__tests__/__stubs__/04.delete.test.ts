@@ -1,7 +1,7 @@
 import { AppConfig, UserSession } from '@stacks/auth'
 import { Storage } from '@stacks/storage'
-import { deleteFile } from '../src/modules/delete'
-import { sampleAccount } from './sample_accts' // user credentials for test simulation.
+import { deleteFile } from '../../src'
+import { sampleAccount } from '../../__fixtures__' // user credentials for test simulation.
 
 async function fn1() {
   const path = 'file.json'
