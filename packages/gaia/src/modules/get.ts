@@ -1,15 +1,22 @@
-import { GetFileParams, IGetFileOptions, StorageOperationResult } from '../types'
+import { getDefaults } from '../constants'
+import { IGetFileParam, IGetFileOptions, StorageOperationResult } from '../types'
 
 export async function getFile(
-  { storage, fileName }: GetFileParams,
+  { storage, fileName }: IGetFileParam,
   options?: IGetFileOptions,
 ): Promise<StorageOperationResult<string | ArrayBuffer>> {
+  const mergedOptions = {
+    ...getDefaults,
+    ...(options || {}),
+  }
+
   return await storage
-    .getFile(fileName, options)
-    .then(() => ({ ok: true, results: null, error: null }))
-    .catch((err) => ({
-      ok: false,
-      results: null,
-      error: JSON.parse(JSON.stringify(err)),
-    }))
+    .getFile(fileName, mergedOptions)
+    .then((fileContent) => ({ ok: true, results: fileContent, error: null }))
+    .catch((err) => {
+      if (err instanceof Error) {
+        return { ok: false, results: null, error: err.message }
+      }
+      return { ok: false, results: null, error: err }
+    })
 }

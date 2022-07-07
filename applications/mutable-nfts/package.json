@@ -1,5 +1,7 @@
 {
   "name": "@trubittech/mutable-nft-api",
+  "private": true,
+  "version": "0.0.1",
   "scripts": {
     "dev": "nodemon --watch './src/**/*.ts' --exec ts-node ./src/index.ts",
     "build": "tsc",

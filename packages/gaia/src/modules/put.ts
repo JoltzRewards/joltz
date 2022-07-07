@@ -1,8 +1,8 @@
 import { putDefaults } from '../constants'
-import { IPutFileOptions, PutFileParams, StorageOperationResult } from '../types'
+import { IPutFileOptions, IPutFileParam, StorageOperationResult } from '../types'
 
 export async function putFile(
-  { storage, fileName, data }: PutFileParams,
+  { storage, fileName, data }: IPutFileParam,
   options?: IPutFileOptions,
 ): Promise<StorageOperationResult<string>> {
   const mergedOptions = {
@@ -13,9 +13,11 @@ export async function putFile(
   return await storage
     .putFile(fileName, data, mergedOptions)
     .then((url) => ({ ok: true, results: url, error: null }))
-    .catch((err) => ({
-      ok: false,
-      results: null,
-      error: JSON.parse(JSON.stringify(err)),
-    }))
+    .catch((err) => {
+      if (err instanceof Error) {
+        console.log(err.name)
+        return { ok: false, results: null, error: err.message }
+      }
+      return { ok: false, results: null, error: err }
+    })
 }
