@@ -8,6 +8,7 @@ import helmet from 'helmet'
 import { morgan, env } from './utils'
 import { genericErrorHandler, notFoundErrorHandler } from './middlewares'
 import { userRouter } from './modules'
+import { oauthRouter } from './modules'
 
 export const app = express()
 
@@ -33,6 +34,7 @@ app.get('/', (_req, res) => {
 
 /* initialise API routes */
 app.use('/user', userRouter)
+app.use('/oauth', oauthRouter)
 
 // example of route mounting for upcoming oauth-related endpoints
 // app.use('/auth', authRouter)
