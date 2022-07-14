@@ -3662,7 +3662,7 @@ __metadata:
     prismjs: ^1.22.0
   peerDependencies:
     react: ">=0.14.9"
-  checksum: 27fdf288d2b90230cc7265119738a0f3e9ab8f75c73f02be3a70e741c7b4d71ede0beafa39a95c228ce30f462f8e10e220751fa5f9ea7c4c6932e1fb83469542
+  checksum: 65573868ed7f0ccc85db46740f5420d91e9aa07efca3651044c4673b7d0ff28b24126a4e407aa9a4b302978af755d0d41eb53749a6c4dfedce888988eb091d93
   languageName: node
   linkType: hard
 
@@ -10808,6 +10808,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.27.2":
+  version: 0.27.2
+  resolution: "axios@npm:0.27.2"
+  dependencies:
+    follow-redirects: ^1.14.9
+    form-data: ^4.0.0
+  checksum: 38cb7540465fe8c4102850c4368053c21683af85c5fdf0ea619f9628abbcb59415d1e22ebc8a6390d2bbc9b58a9806c874f139767389c862ec9b772235f06854
+  languageName: node
+  linkType: hard
+
 "axobject-query@npm:^2.2.0":
   version: 2.2.0
   resolution: "axobject-query@npm:2.2.0"
@@ -12732,6 +12742,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "*"
     "@typescript-eslint/parser": "*"
     D: ^1.0.0
+    axios: ^0.27.2
     dotenv: "*"
     eslint: "*"
     express: ^4.18.1
@@ -15873,7 +15884,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.7":
+"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.7, follow-redirects@npm:^1.14.9":
   version: 1.15.1
   resolution: "follow-redirects@npm:1.15.1"
   peerDependenciesMeta:
