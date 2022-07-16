@@ -7,6 +7,8 @@
     FB_REDIRECT_URI='http://localhost:3000/oauth/facebook_authorize'
     FB_CLIENT_SECRET=AskVigas
     FB_SCOPES='email,public_profile,instagram_basic'
+    FB_OAUTH_URL='https://www.facebook.com/v14.0/dialog/oauth'
+    FB_GRAPH_URL='https://graph.facebook.com/v14.0'
     ```
 2. `yarn start`
 
