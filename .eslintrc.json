@@ -12,6 +12,7 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "prefer-template": "error",
+    "@typescript-eslint/no-explicit-any": "off",
     "radix": "error",
     "import/prefer-default-export": "off"
   }
