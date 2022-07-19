@@ -1,7 +1,5 @@
-'use strict'
-
 import { StatusCodes, getReasonPhrase } from 'http-status-codes'
-import { Request, Response, NextFunction } from 'express'
+import { Request, Response } from 'express'
 
 /**
  * Error response middleware for 404 not found
@@ -11,7 +9,7 @@ import { Request, Response, NextFunction } from 'express'
  * @param {NextFunction} next
  * @returns {Response}
  */
-export const notFoundErrorHandler = (req: Request, res: Response, next: NextFunction): Response => {
+export const notFoundErrorHandler = (req: Request, res: Response): Response => {
   return res.status(StatusCodes.NOT_FOUND).json({
     error: {
       code: StatusCodes.NOT_FOUND,

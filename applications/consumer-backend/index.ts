@@ -1,5 +1,3 @@
-'use strict'
-
 import { app } from './server'
 import { logger, env } from './utils'
 

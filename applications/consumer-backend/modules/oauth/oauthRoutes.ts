@@ -1,5 +1,3 @@
-'use strict'
-
 import { Router } from 'express'
 import * as oauthController from './oauthController'
 

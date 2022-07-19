@@ -1,9 +1,5 @@
-'use strict'
-
 import * as path from 'path'
-import { Logger, format } from 'winston'
-
-const winston = require('winston')
+import winston, { Logger, format } from 'winston'
 
 /* options based on NODE_ENV */
 const options =

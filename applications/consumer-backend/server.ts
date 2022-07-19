@@ -1,6 +1,6 @@
-'use strict'
+import { config } from 'dotenv'
 
-require('dotenv').config()
+config()
 
 /* all imports */
 import express from 'express'
@@ -35,9 +35,6 @@ app.get('/', (_req, res) => {
 /* initialise API routes */
 app.use('/user', userRouter)
 app.use('/oauth', oauthRouter)
-
-// example of route mounting for upcoming oauth-related endpoints
-// app.use('/auth', authRouter)
 
 /* error middlewares */
 app.use(genericErrorHandler)
