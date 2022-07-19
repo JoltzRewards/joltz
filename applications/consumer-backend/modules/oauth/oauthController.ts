@@ -3,8 +3,14 @@ import { Request } from 'express'
 import { StatusCodes } from 'http-status-codes'
 import { OperationResponse } from '../../utils'
 
-const { FB_APP_ID, FB_REDIRECT_URI, FB_CLIENT_SECRET, FB_SCOPES, FB_OAUTH_URL, FB_GRAPH_URL } =
-  process.env
+const {
+  FB_APP_ID,
+  FB_REDIRECT_URI,
+  FB_CLIENT_SECRET,
+  FB_SCOPES,
+  FB_OAUTH_URL,
+  FB_GRAPH_URL,
+} = process.env
 
 interface ITokenResponse {
   access_token: string
