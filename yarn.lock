@@ -3662,7 +3662,7 @@ __metadata:
     prismjs: ^1.22.0
   peerDependencies:
     react: ">=0.14.9"
-  checksum: 65573868ed7f0ccc85db46740f5420d91e9aa07efca3651044c4673b7d0ff28b24126a4e407aa9a4b302978af755d0d41eb53749a6c4dfedce888988eb091d93
+  checksum: 27fdf288d2b90230cc7265119738a0f3e9ab8f75c73f02be3a70e741c7b4d71ede0beafa39a95c228ce30f462f8e10e220751fa5f9ea7c4c6932e1fb83469542
   languageName: node
   linkType: hard
 
@@ -9943,13 +9943,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"D@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "D@npm:1.0.0"
-  checksum: c7aefb83af9b98a04b31b3708a32f5f332183face1b2a6d9eed28b64688d863ca269e04f8b352fba0a8b893ff2aa858c7709352f372f4dd90dfb474a37d2a78d
-  languageName: node
-  linkType: hard
-
 "abab@npm:^2.0.3, abab@npm:^2.0.5, abab@npm:^2.0.6":
   version: 2.0.6
   resolution: "abab@npm:2.0.6"
@@ -12741,10 +12734,10 @@ __metadata:
     "@types/winston": ^2.4.4
     "@typescript-eslint/eslint-plugin": "*"
     "@typescript-eslint/parser": "*"
-    D: ^1.0.0
     axios: ^0.27.2
     dotenv: "*"
     eslint: "*"
+    eslint-config-prettier: "*"
     express: ^4.18.1
     helmet: ^5.0.2
     http-status-codes: ^2.2.0
@@ -14554,7 +14547,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.5.0":
+"eslint-config-prettier@npm:*, eslint-config-prettier@npm:^8.5.0":
   version: 8.5.0
   resolution: "eslint-config-prettier@npm:8.5.0"
   peerDependencies:

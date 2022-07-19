@@ -3,7 +3,11 @@
     "es2021": true
   },
   "root": true,
-  "extends": ["plugin:prettier/recommended"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -11,6 +15,7 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
+    "prettier/prettier": "error",
     "brace-style": "error",
     "prefer-template": "error",
     "radix": "error",
