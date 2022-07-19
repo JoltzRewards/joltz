@@ -7,8 +7,7 @@ import express from 'express'
 import helmet from 'helmet'
 import { morgan, env } from './utils'
 import { genericErrorHandler, notFoundErrorHandler } from './middlewares'
-import { userRouter } from './modules'
-import { oauthRouter } from './modules'
+import { userRouter, oauthRouter } from './modules'
 
 export const app = express()
 
