@@ -25,7 +25,6 @@ export const logger: Logger = winston.createLogger({
   transports: [
     new winston.transports.Console({
       ...options,
-      colorize: true,
     }),
     new winston.transports.File({
       ...options,

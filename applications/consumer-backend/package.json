@@ -23,6 +23,7 @@
     "@types/express": "^4.17.13",
     "@types/helmet": "^4.0.0",
     "@types/mongoose": "^5.11.97",
+    "@types/morgan": "^1.9.3",
     "@types/node": "*",
     "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "*",
