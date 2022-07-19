@@ -1,5 +1,5 @@
 import { logger } from '../utils'
-import { Response, Request } from 'express'
+import { Response, Request, NextFunction } from 'express'
 import { StatusCodes, getReasonPhrase } from 'http-status-codes'
 
 /**
@@ -10,10 +10,15 @@ import { StatusCodes, getReasonPhrase } from 'http-status-codes'
  * @param {Response} res
  */
 
-export const genericErrorHandler = (err: any, req: Request, res: Response): Response => {
+export const genericErrorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
+  if (res.headersSent) {
+    return next(err)
+  }
+
   // Error is of type Boom
   if (err.isBoom) {
     logger.debug(err.output.payload.message)
+
     return res.status(err.output.statusCode).json({
       error: {
         code: err.output.statusCode,
