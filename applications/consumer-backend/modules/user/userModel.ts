@@ -1,10 +1,11 @@
-import { Document, model, Schema } from 'mongoose'
+import { model, Schema } from 'mongoose'
 
-export interface IUser extends Document {
+export interface IUser {
   name: string
+  did: string
 }
 
-const userSchema: Schema = new Schema(
+const userSchema: Schema<IUser> = new Schema(
   {
     did: {
       type: String,
