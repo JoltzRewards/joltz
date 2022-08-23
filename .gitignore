@@ -114,6 +114,7 @@ dist
 
 # Shhhh
 **/.env
+**/*.cert
 
 # artifacts
 dist
