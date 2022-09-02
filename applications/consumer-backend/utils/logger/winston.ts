@@ -18,7 +18,7 @@ const options =
       }
 
 const logFile = process.env.LOG_WINSTON_FILE || 'winston.log'
-const logFilePath = path.join(__dirname, '../../../logs/', logFile)
+const logFilePath = path.join(__dirname, '../../.logs/', logFile)
 
 /**
  * creates a Winston logger
