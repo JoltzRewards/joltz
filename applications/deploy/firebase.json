@@ -15,16 +15,13 @@
   },
   "functions": {
     "runtime": "nodejs16",
-    "source": "functions",
+    "source": ".",
     "ignore": [
       "node_modules",
       ".git",
       "firebase-debug.log",
       "firebase-debug.*.log"
     ],
-    "predeploy": [
-      "yarn --cwd \"$RESOURCE_DIR\" run lint",
-      "yarn --cwd \"$RESOURCE_DIR\" run build"
-    ]
+    "predeploy": ["yarn run lint", "yarn run build"]
   }
 }
