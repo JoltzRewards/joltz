@@ -1,17 +1,17 @@
 {
-  "name": "deploy",
+  "name": "@trubittech/nft-deploy-functions",
   "scripts": {
-    "postinstall": "cd functions && npm install",
+    "postinstall": "cd functions && yarn",
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
     "format": "prettier --config .prettierrc 'functions/src/**/*.ts' --write",
     "build:watch": "tsc --watch",
-    "serve": "npm run build && firebase emulators:start --only functions",
-    "shell": "npm run build && firebase functions:shell",
-    "start": "npm run shell",
+    "serve": "yarn run build && yarn firebase emulators:start --only functions",
+    "shell": "yarn run build && yarn firebase functions:shell",
+    "start": "yarn run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "dev": "npm run build && MODE=debug FIRESTORE_EMULATOR_HOST=localhost:8080 firebase emulators:start --config=\"./firebase.json\""
+    "dev": "yarn run build && MODE=debug FIRESTORE_EMULATOR_HOST=localhost:8080 yarn firebase emulators:start --config=\"./firebase.json\""
   },
   "engines": {
     "node": "16"
