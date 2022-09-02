@@ -1,5 +1,5 @@
 {
   "deno.enable": true,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["etags", "trubittech"]
+  "cSpell.words": ["etags", "HIRO", "trubittech"]
 }
