@@ -3,10 +3,8 @@
     // Required for certain syntax usages
     "ecmaVersion": 2017
   },
-  "plugins": [
-    "promise"
-  ],
-  "extends": "eslint:recommended",
+  "plugins": ["promise"],
+  "extends": ["eslint:recommended", "../../.eslintrc.json"],
   "rules": {
     // Removed rule "disallow the use of console" from recommended eslint rules
     "no-console": "off",
@@ -38,6 +36,8 @@
     // Requre the use of === and !==
     "eqeqeq": 2,
 
+    "no-useless-escape": 0,
+
     // Disallow the use of alert, confirm, and prompt
     "no-alert": 2,
 
@@ -56,7 +56,7 @@
     // Warn against unnecessary calls to .bind()
     "no-extra-bind": 1,
 
-    // Warn against unnecessary labels    
+    // Warn against unnecessary labels
     "no-extra-label": 1,
 
     // Disallow leading or trailing decimal points in numeric literals

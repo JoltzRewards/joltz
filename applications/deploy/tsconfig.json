@@ -1,4 +1,5 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "moduleResolution": "node",
     "module": "commonjs",
@@ -8,7 +9,7 @@
     "strict": true,
     "target": "es2017",
     "outDir": "functions/lib",
-    "rootDir": "functions/src",
+    "rootDir": "functions/src"
   },
   "compileOnSave": true,
   "include": ["./functions/src"],
