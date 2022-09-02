@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "trubit-341013",
+  "private_key_id": "add_info_here",
+  "private_key": "add_info_here",
+  "client_email": "firebase-adminsdk-gpev7@trubit-341013.iam.gserviceaccount.com",
+  "client_id": "100730130282758804274",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-gpev7%40trubit-341013.iam.gserviceaccount.com"
+}

@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "trubit": "trubit-341013",
+    "default": "trubit-341013"
+  },
+  "targets": {},
+  "etags": {}
+}

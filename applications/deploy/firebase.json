@@ -1,0 +1,30 @@
+{
+  "emulators": {
+    "functions": {
+      "host": "localhost",
+      "port": "5001"
+    },
+    "eventarc": {
+      "host": "localhost",
+      "port": "9990",
+      "enabled": false
+    },
+    "ui": {
+      "enabled": false
+    }
+  },
+  "functions": {
+    "runtime": "nodejs16",
+    "source": "functions",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log"
+    ],
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint",
+      "npm --prefix \"$RESOURCE_DIR\" run build"
+    ]
+  }
+}

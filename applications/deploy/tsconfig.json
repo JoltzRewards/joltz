@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
+    "outDir": "functions/lib",
+    "rootDir": "functions/src",
+  },
+  "compileOnSave": true,
+  "include": ["./functions/src"],
+  "exclude": ["./functions/lib"]
+}

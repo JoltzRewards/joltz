@@ -1,0 +1,12 @@
+node_modules
+*lock.json
+*.log
+.yarn
+
+typings
+lib/
+
+lib/**/*.js
+lib/**/*.js.map
+
+account.json
