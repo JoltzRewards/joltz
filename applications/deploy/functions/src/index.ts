@@ -1,6 +1,9 @@
 "use strict"
 
-import path from "path"
+import { config } from "dotenv"
+
+config()
+
 import {
   TransactionVersion,
   makeContractDeploy,
@@ -25,7 +28,7 @@ const phrase =
 const network = process.env.NETWORK || "mocknet"
 const debug = process.env.MODE === "debug" || false
 
-var core = "https://mock.valera.co"
+var core = process.env.MOCKNET_URL || "https://mock.valera.co"
 var provider = new StacksMocknet({ url: core })
 
 if (network === "mainnet" || network === "testnet") {
@@ -38,14 +41,14 @@ if (network === "mainnet" || network === "testnet") {
   }
 }
 
-const domain = debug
-  ? "http://localhost:5001/trubit-341013/us-central1"
-  : "https://us-central1-trubit-341013.cloudfunctions.net"
+const domain = debug ? process.env.DEBUG_DOMAIN : process.env.REMOTE_DOMAIN
 
 admin.initializeApp({
-  credential: admin.credential.cert(
-    path.resolve(process.cwd(), "account.json")
-  ),
+  credential: admin.credential.cert({
+    clientEmail: process.env.GOOGLE_CLIENT_EMAIL,
+    privateKey: process.env.GOOGLE_PRIVATE_KEY,
+    projectId: process.env.GOOGLE_PROJECT_ID,
+  }),
 })
 
 const firestore = getFirestore()

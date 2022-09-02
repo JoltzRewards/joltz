@@ -11,7 +11,7 @@
     "start": "yarn run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "dev": "yarn run build && MODE=debug FIRESTORE_EMULATOR_HOST=localhost:8080 yarn firebase emulators:start --config=\"./firebase.json\""
+    "dev": "yarn run build && FIRESTORE_EMULATOR_HOST=localhost:8080 yarn firebase emulators:start --config=\"./firebase.json\""
   },
   "engines": {
     "node": "16"
