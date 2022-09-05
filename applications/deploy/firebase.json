@@ -1,0 +1,27 @@
+{
+  "emulators": {
+    "functions": {
+      "host": "localhost",
+      "port": "5001"
+    },
+    "eventarc": {
+      "host": "localhost",
+      "port": "9990",
+      "enabled": false
+    },
+    "ui": {
+      "enabled": false
+    }
+  },
+  "functions": {
+    "runtime": "nodejs16",
+    "source": ".",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log"
+    ],
+    "predeploy": ["yarn run lint", "yarn run build"]
+  }
+}

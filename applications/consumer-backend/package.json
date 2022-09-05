@@ -15,8 +15,8 @@
   "homepage": "https://trubit.tech",
   "scripts": {
     "start": "nodemon dist/index.js",
-    "build": "npm run clean && tsc",
-    "lint": "npx eslint . --ext .ts",
+    "build": "yarn run clean && tsc",
+    "lint": "yarn eslint . --ext .ts",
     "dev": "nodemon index.ts"
   },
   "devDependencies": {
