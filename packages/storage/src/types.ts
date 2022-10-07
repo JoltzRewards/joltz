@@ -1,12 +1,14 @@
-type GetResults = {}
-type UploadResults = {}
+// type GetResults = {}
+// type UploadResults = {}
 
 export interface Bridge {
-  adapter: any
+  adapter: Adapter
 }
 
-export interface Adapter {}
+export interface Adapter {
+  identifier: string
+}
 
-export interface TBDAdapter extends Adapter {}
-export interface GaiaAdapter extends Adapter {}
-export interface HyperProtocolAdapter extends Adapter {}
+// export interface TBDAdapter extends Adapter {}
+// export interface GaiaAdapter extends Adapter {}
+// export interface HyperProtocolAdapter extends Adapter {}
