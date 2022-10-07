@@ -24,21 +24,16 @@
   "contributors": [
     {
       "email": "joey@joeyfigaro.com",
-      "name": "Joey Figaro",
-      "url": "https://github.com/joeyfigaro"
+      "name": "Joey Figaro"
     },
     {
       "name": "Gurjit Singh"
+    },
+    {
+      "name": "Linden",
+      "email": "lindenbtc@protonmail.com"
     }
   ],
-  "lint-staged": {
-    "*.{js,ts,tsx, jsx}": [
-      "yarn eslint --quiet --fix"
-    ],
-    "*.{json,md,html,js,jsx,ts,tsx}": [
-      "yarn prettier --write"
-    ]
-  },
   "scripts": {
     "postinstall": "yarn preconstruct dev",
     "precommit": "lint-staged",
@@ -65,7 +60,7 @@
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "dotenv": "^16.0.0",
-    "eslint": "^7.32.0",
+    "eslint": "8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
