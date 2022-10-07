@@ -1,0 +1,4 @@
+{
+  "*.{js,ts,tsx, jsx}": ["yarn eslint --quiet --fix"],
+  "*.{json,md,html,js,jsx,ts,tsx}": ["yarn prettier --write"]
+}
