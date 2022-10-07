@@ -1,6 +1,12 @@
 // type GetResults = {}
 // type UploadResults = {}
 
+export enum StorageProviders {
+  GAIA = 'gaia',
+  HYPERCORE = 'hypercore',
+  TBD = 'tbd',
+}
+
 export interface Bridge {
   adapter: Adapter
 }

@@ -11,9 +11,13 @@
     }
   },
   "scripts": {
-    "dev": "vite --host",
-    "build": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
-    "test": "jest --runInBand",
+    "dev": "run-p build:tsc 'build:vite --watch'",
+    "build:tsc": "yarn tsc",
+    "build:vite": "yarn vite build",
+    "build:dts": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "build": "run-s build:tsc build:vite build:dts",
+    "test": "yarn jest --runInBand",
+    "test:watch": "yarn run test --watch",
     "test:coverage": "jest --runInBand --coverage"
   },
   "devDependencies": {
@@ -26,6 +30,7 @@
     "eslint-config-prettier": "*",
     "eslint-plugin-prettier": "*",
     "jest": "*",
+    "npm-run-all": "*",
     "prettier": "*",
     "ts-jest": "^28.0.8",
     "ts-node": "^10.9.1",
