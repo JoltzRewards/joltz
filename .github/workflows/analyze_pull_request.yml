@@ -27,7 +27,6 @@ jobs:
         run: yarn
         env:
           NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
-
       # - name: Check dependencies
       #   uses: juanigalan91/monorepolyser@0.2.6
       #   with:
@@ -36,18 +35,16 @@ jobs:
       #     impact-analysis: true
       #     on-high-impact: 'comment,add-labels'
       #     high-impact-labels: 'high-impact'
-
-      - name: Execute tests
-        continue-on-error: true
-        run: yarn workspace @trubittech/gaia run test:ci
-
-      - name: Process test results
-        if: always()
-        uses: im-open/process-jest-test-results@v2.0.5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          results-file: './packages/gaia/test-results.json'
-          report-name: 'Test Results for @trubittech/gaia'
-          create-status-check: true
-          create-pr-comment: true
-          update-comment-if-one-exists: true
+      # - name: Execute tests
+      #   continue-on-error: true
+      #   run: yarn workspace @trubittech/gaia run test:ci
+      # - name: Process test results
+      #   if: always()
+      #   uses: im-open/process-jest-test-results@v2.0.5
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     results-file: './packages/gaia/test-results.json'
+      #     report-name: 'Test Results for @trubittech/gaia'
+      #     create-status-check: true
+      #     create-pr-comment: true
+      #     update-comment-if-one-exists: true
