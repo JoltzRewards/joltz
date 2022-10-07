@@ -8869,6 +8869,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@trubittech/storage@workspace:packages/storage":
+  version: 0.0.0-use.local
+  resolution: "@trubittech/storage@workspace:packages/storage"
+  dependencies:
+    typescript: "*"
+  languageName: unknown
+  linkType: soft
+
 "@trubittech/trubittech@workspace:.":
   version: 0.0.0-use.local
   resolution: "@trubittech/trubittech@workspace:."

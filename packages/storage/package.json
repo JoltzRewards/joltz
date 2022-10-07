@@ -1,0 +1,7 @@
+{
+  "name": "@trubittech/storage",
+  "private": true,
+  "devDependencies": {
+    "typescript": "*"
+  }
+}
