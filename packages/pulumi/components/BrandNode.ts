@@ -80,7 +80,7 @@ export class BrandNode extends pulumi.ComponentResource {
         // install umbrel/configure machine
         userData: `
           #!/bin/bash
-          echo "Hello, World! <3, brand node" > hello.txt
+          curl -L https://umbrel.sh | bash
         `
       }
     )
