@@ -1,16 +1,49 @@
-import { LocalWorkspace, fullyQualifiedStackName } from '@pulumi/pulumi/automation'
+import { LocalWorkspace, fullyQualifiedStackName, PulumiFn } from '@pulumi/pulumi/automation'
 import { BrandNode } from './components'
 
-async function createBrandNode() {
-  const node = new BrandNode('shovel-sandbox', { nginxPort: 8080 })
+type CreateStackOptions = {
+  program: PulumiFn;
+  project: string;
+  stack: string;
+}
+
+export function createBrandNode(opts: { brand: string; nginxPort?: number; }) {
+  const node = new BrandNode(opts.brand, { nginxPort: opts.nginxPort || 8080 })
 
   return node
 }
 
-LocalWorkspace.createOrSelectStack({
-  program: createBrandNode,
-  projectName: 'brand-node',
-  stackName: fullyQualifiedStackName('trubit', 'brand-node', 'dev'),
-}).then(stack => stack.up()).then(result => {
-  console.log('stack output:', result.outputs)
-}).catch(e => console.error(e))
+export async function createStack(opts: CreateStackOptions) {
+  let stack = null
+  let upResults = null
+
+  try {
+    stack = await LocalWorkspace.createOrSelectStack({
+      program: opts.program,
+      projectName: opts.project,
+      stackName: opts.stack,
+    })
+  } catch (error) {
+    console.error('Failed to create or find stack\n')
+    console.error(`input: { program: ${opts.program}, stack: ${opts.stack} }\n`)
+    console.error('error:\n', error)
+    throw new Error(error as any)
+  }
+
+  try {
+    upResults = await stack.up()
+  } catch (error) {
+    console.error('Failed to start stack:\n', error)
+    throw new Error(error as any)
+  }
+
+  return {
+    stack,
+    outputs: upResults.outputs,
+    startup: {
+      stderror: upResults.stderr,
+      stdout: upResults.stdout,
+      summary: upResults.summary
+    }
+  }
+}
