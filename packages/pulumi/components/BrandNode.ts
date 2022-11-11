@@ -16,10 +16,12 @@ export class BrandNode extends pulumi.ComponentResource {
   securityGroup: aws.ec2.SecurityGroup
   cluster: awsx.ecs.Cluster
   vpc: awsx.ec2.Vpc
+  instance: aws.ec2.Instance
   //
   vpcId: pulumi.Output<string>
   securityGroupId: pulumi.Output<string>
   clusterId: pulumi.Output<string>
+  instanceId: pulumi.Output<string>
 
   constructor(
     brand: string,
@@ -72,13 +74,35 @@ export class BrandNode extends pulumi.ComponentResource {
       { parent: this },
     )
 
+    const ami = pulumi.output(aws.ec2.getAmi({
+      filters: [
+        { name: "name", values: ["amzn-ami-hvm-*-x86_64-ebs"] },
+      ],
+      owners: ["137112412989"], // Amazon
+      mostRecent: true,
+    })).apply(result => result.id);
+
+    const instance = new aws.ec2.Instance(
+      `${brand}-node`,
+      {
+        ami,
+        // install umbrel/configure machine
+        userData: `
+          #!/bin/bash
+          echo "Hello, World! <3, brand node" > hello.txt
+        `
+      }
+    )
+
     this.securityGroup = securityGroup
     this.cluster = cluster
     this.vpc = vpc
+    this.instance = instance
 
     this.vpcId = vpc.vpc.id
     this.clusterId = cluster.cluster.id
     this.securityGroupId = securityGroup.id
+    this.instanceId = instance.id
 
     this.registerOutputs()
   }
