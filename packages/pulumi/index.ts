@@ -1,4 +1,4 @@
-import { LocalWorkspace } from '@pulumi/pulumi/automation'
+import { LocalWorkspace, fullyQualifiedStackName } from '@pulumi/pulumi/automation'
 import { BrandNode } from './components'
 
 async function createBrandNode() {
@@ -7,8 +7,10 @@ async function createBrandNode() {
   return node
 }
 
-const workspace = LocalWorkspace.createOrSelectStack({
+LocalWorkspace.createOrSelectStack({
   program: createBrandNode,
   projectName: 'brand-node',
-  stackName: 'trubit',
-})
+  stackName: fullyQualifiedStackName('trubit', 'brand-node', 'dev'),
+}).then(stack => stack.up()).then(result => {
+  console.log('stack output:', result.outputs)
+}).catch(e => console.error(e))
