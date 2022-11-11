@@ -1,16 +1,6 @@
 import * as pulumi from '@pulumi/pulumi'
 import * as aws from '@pulumi/aws'
 import * as awsx from '@pulumi/awsx'
-// import { uuid } from 'uuidv4'
-
-// awsx.ecr.Repository
-// const config = new pulumi.Config()
-// const brand = config.get('BRAND_IDENTIFIER') || `brand-${uuid()}`
-
-// Create an AWS resource (S3 Bucket)
-
-// Export the name of the bucket
-// export const bucketName = bucket.id
 
 export class BrandNode extends pulumi.ComponentResource {
   securityGroup: aws.ec2.SecurityGroup
@@ -65,6 +55,7 @@ export class BrandNode extends pulumi.ComponentResource {
       },
       { parent: this },
     )
+
     const cluster = new awsx.ecs.Cluster(
       `${brand}-cluster`,
       {
