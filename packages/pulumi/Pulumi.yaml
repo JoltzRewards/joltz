@@ -1,0 +1,3 @@
+name: brand-resources
+description: Stacks related to deployable brand nodes
+runtime: nodejs

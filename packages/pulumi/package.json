@@ -1,0 +1,16 @@
+{
+  "name": "@trubittech/pulumi",
+  "description": "Pulumi lego for deploying customer infrastructure from our services",
+  "author": "engineering@trubit.tech",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@types/node": "*",
+    "typescript": "*"
+  },
+  "dependencies": {
+    "@pulumi/aws": "^5.0.0",
+    "@pulumi/awsx": "^0.40.0",
+    "@pulumi/pulumi": "^3.0.0",
+    "uuidv4": "^6.2.13"
+  }
+}
