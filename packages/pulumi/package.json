@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "devDependencies": {
     "@types/node": "*",
+    "ts-node-dev": "^2.0.0",
     "typescript": "*"
   },
   "dependencies": {

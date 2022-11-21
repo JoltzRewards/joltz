@@ -1,21 +1,21 @@
-import * as pulumi from '@pulumi/pulumi'
+import { Output, ComponentResource, ComponentResourceOptions, output } from '@pulumi/pulumi'
 import * as aws from '@pulumi/aws'
 import * as awsx from '@pulumi/awsx'
 
-export class BrandNode extends pulumi.ComponentResource {
+export class BrandNode extends ComponentResource {
   securityGroup: aws.ec2.SecurityGroup
   cluster: awsx.ecs.Cluster
   vpc: awsx.ec2.Vpc
   instance: aws.ec2.Instance
   //
-  vpcId: pulumi.Output<string>
-  securityGroupId: pulumi.Output<string>
-  clusterId: pulumi.Output<string>
-  instanceId: pulumi.Output<string>
+  vpcId: Output<string>
+  securityGroupId: Output<string>
+  clusterId: Output<string>
+  instanceId: Output<string>
 
   constructor(
     brand: string,
-    opts: pulumi.ComponentResourceOptions & { nginxPort: number },
+    opts: ComponentResourceOptions & { nginxPort: number },
   ) {
     super('trubit:brand-node', brand, {}, opts)
 
@@ -65,7 +65,7 @@ export class BrandNode extends pulumi.ComponentResource {
       { parent: this },
     )
 
-    const ami = pulumi.output(aws.ec2.getAmi({
+    const ami = output(aws.ec2.getAmi({
       filters: [
         { name: "name", values: ["amzn-ami-hvm-*-x86_64-ebs"] },
       ],
@@ -78,6 +78,7 @@ export class BrandNode extends pulumi.ComponentResource {
       {
         ami,
         // install umbrel/configure machine
+        instanceType: 't2.micro',
         userData: `
           #!/bin/bash
           curl -L https://umbrel.sh | bash
