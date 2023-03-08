@@ -5,7 +5,7 @@
   "types": "dist/trubittech-ui.cjs.d.ts",
   "license": "MIT",
   "packageManager": "yarn@3.1.1",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/trubittech/trubittech",
   "repository": {
     "url": "https://github.com/trubittech/trubittech"
