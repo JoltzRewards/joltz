@@ -1,6 +1,6 @@
-# TrubitTech
+# Jotlz 
 
-Trubit monorepo
+Joltz Monorepo
 
 ## Troubleshooting/Warnings
 
